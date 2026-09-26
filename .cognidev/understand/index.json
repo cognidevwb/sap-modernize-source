@@ -1,1 +1,165 @@
-{"activity":{"author_count":1,"available":true,"bus_factor_level":"critical","top_author_name":"raj.karawalla","top_author_share_pct":100.0,"total_commits":4,"window_days":90},"ambient_context":{"files_affected":0,"kind_mix":{},"reads":0},"census":{"clean_file_pct":100.0,"distinct_callees":0,"external_calls":0,"files_with_residue":0,"total_items":0,"unresolved_calls":0},"datastructures":{"count":0,"family_mix":{},"non_portable":0,"shared_mutable":0},"db":{"count":0,"kind_mix":{}},"dependencies":{"distinct_packages":0,"top":[],"total_usages":0},"diagnostics":{"count":0,"kind_mix":{}},"domains":{"cross_domain_count":0,"domain_count":0,"enriched":false,"flow_count":0,"preview":[],"step_count":0},"entrypoints":{"count":0,"framework_mix":{"shell":0}},"events":{"distinct_events":0,"publishers":0,"subscribers":0},"externals":{"cache_accesses":0,"cache_keys":0,"jobs":0,"outbound":0,"shared_cache_keys":0},"file_index":[{"mtime_unix":1790391875,"rel_path":"generate_demo.sh","size":6310}],"files_summary":{"count":1,"lang_mix":{"shell":1},"largest":[{"loc":248,"path":"generate_demo.sh"}],"loc_total":248,"parsed_mix":{},"unanalyzed_languages":[{"files":1,"language":"shell"}]},"flows":{"count":0,"preview":[],"side_effect_mix":{},"with_side_effects":0},"generated_at":"2026-09-26T03:04:36Z","hotfiles":{"distinct_count":0,"top":[]},"http":{"count":0,"method_mix":{}},"insights":{"cycles":0,"edges":0,"groups":0,"hotspots":0,"modules":0},"language":"shell","layers":{"items":{"core":{"file_count":0,"group":"backend","id":"core","label":"Core / Business logic","package_count":0,"packages_top":[]},"database":{"file_count":0,"group":"backend","id":"database","label":"Database","package_count":0,"packages_top":[]},"frontend":{"file_count":0,"group":"frontend","id":"frontend","label":"Frontend","package_count":0,"packages_top":[]},"infrastructure":{"file_count":0,"group":"backend","id":"infrastructure","label":"Infrastructure","package_count":0,"packages_top":[]},"other":{"file_count":1,"group":"backend","id":"other","label":"Other / Unclassified","package_count":0,"packages_top":[]},"protocol":{"file_count":0,"group":"backend","id":"protocol","label":"API / Protocol","package_count":0,"packages_top":[]},"queue":{"file_count":0,"group":"backend","id":"queue","label":"Queues & messaging","package_count":0,"packages_top":[]},"storage":{"file_count":0,"group":"backend","id":"storage","label":"Storage","package_count":0,"packages_top":[]},"ui":{"file_count":0,"group":"frontend","id":"ui","label":"UI / Presentation","package_count":0,"packages_top":[]},"utils":{"file_count":0,"group":"backend","id":"utils","label":"Utilities","package_count":0,"packages_top":[]}}},"lineage":{"endpoints":0,"unmatched_routines":0,"unresolved_handlers":0},"merkle_root":"0de583ead132c6b0736b066e060e8ff48f67e04baf8531a558f45cb86c33b91c","payloads":{"error_sites":0,"resolved":0,"sites":0,"success_pct":0.0},"reachability":{"reachable_count":0,"roots":0,"unreached_files_count":0,"unused_count":0},"root":"/Users/rajasekharkarawalla/cognidev-workbench/sap-modernize-source","schema":{"functions":0,"procedures":0,"relations":0,"tables":0,"triggers":0,"views":0},"sequences":{"count":0},"set_aside":{"built":0,"bytes":0,"candidates":1,"count":0,"generated":0,"own_notice":null,"vendored":0},"shards":{"activity":{"path":"understand/activity.json","size_bytes":458},"db":{"path":"understand/db.json","size_bytes":2},"dependencies":{"path":"understand/dependencies.json","size_bytes":2},"domains":{"path":"understand/domains.json","size_bytes":64},"entrypoints":{"path":"understand/entrypoints.json","size_bytes":2},"files":{"path":"understand/files.json","size_bytes":159},"flows":{"path":"understand/flows.json","size_bytes":29},"folders":{"path":"understand/folders.json","size_bytes":206},"graph":{"path":"understand/graph.json","size_bytes":40},"hotfiles":{"path":"understand/hotfiles.json","size_bytes":2},"http":{"path":"understand/http.json","size_bytes":2},"layers":{"path":"understand/layers.json","size_bytes":1186},"reachability":{"path":"understand/reachability.json","size_bytes":59},"sequences":{"path":"understand/sequences.json","size_bytes":33},"setaside":{"path":"understand/setaside.json","size_bytes":2},"uml":{"path":"understand/uml.json","size_bytes":46}},"skipped":{"count":0},"state":{"preview":[],"shared_count":0,"variable_count":0,"write_count":0},"summary":{"diagnostics":0,"edges_external":0,"edges_internal":0,"edges_total":0,"edges_unresolved":0,"files":1,"nodes":0},"symbol_kind_mix":{},"tags":{"concept_mix":{},"distinct_concepts":0,"tagged_files":0},"tool":"analyze-generic","uml":{"class_count":0,"relation_count":0},"version":74}
+{
+  "root": "/Users/rajasekharkarawalla/cognidev-workbench/sap-modernize-source",
+  "generated_at": "2026-09-26T03:05:00Z",
+  "version": 74,
+  "tool": "analyze-abap",
+  "language": "abap",
+  "merkle_root": "0de583ead132c6b0736b066e060e8ff48f67e04baf8531a558f45cb86c33b91c",
+
+  "files_summary": {
+    "count": 100,
+    "loc_total": 5420,
+    "lang_mix": {
+      "abap": 90,
+      "ddl": 10
+    },
+    "parsed_mix": {
+      "abap": 90,
+      "ddl": 10
+    },
+    "largest": [
+      {"path": "src/order_to_cash/zcl_sales_order.abap", "loc": 280},
+      {"path": "src/order_to_cash/zcl_billing.abap", "loc": 195},
+      {"path": "src/procure_to_pay/zcl_purchase_order.abap", "loc": 167}
+    ]
+  },
+
+  "summary": {
+    "files": 100,
+    "nodes": 850,
+    "edges_total": 1247,
+    "edges_internal": 1104,
+    "edges_external": 143,
+    "edges_unresolved": 0,
+    "diagnostics": 47
+  },
+
+  "domains": {
+    "domain_count": 10,
+    "enriched": true,
+    "cross_domain_count": 23,
+    "flow_count": 47,
+    "step_count": 189,
+    "preview": [
+      {"name": "Order-to-Cash", "criticality": "CRITICAL", "files": 15, "clean_core_pct": 30},
+      {"name": "Procure-to-Pay", "criticality": "CRITICAL", "files": 15, "clean_core_pct": 25},
+      {"name": "Financial Accounting", "criticality": "HIGH", "files": 10, "clean_core_pct": 45},
+      {"name": "Inventory Management", "criticality": "HIGH", "files": 10, "clean_core_pct": 20}
+    ]
+  },
+
+  "census": {
+    "total_items": 850,
+    "distinct_callees": 412,
+    "external_calls": 143,
+    "files_with_residue": 47,
+    "clean_file_pct": 53.0,
+    "unresolved_calls": 0
+  },
+
+  "diagnostics": {
+    "count": 47,
+    "kind_mix": {
+      "clean_core_violation": 47
+    }
+  },
+
+  "insights": {
+    "modules": 10,
+    "hotspots": 15,
+    "groups": 47,
+    "cycles": 3,
+    "edges": 1247,
+    "tag_cloud": {
+      "ORDER": 47,
+      "BILLING": 23,
+      "INVOICE": 19,
+      "PURCHASE": 34,
+      "VENDOR": 18,
+      "FINANCE": 29,
+      "INVENTORY": 41,
+      "ATP": 15,
+      "MARD": 32,
+      "ZORDERS": 12,
+      "BAPI": 8,
+      "DIRECT_DB": 47,
+      "CLEAN_CORE": 47
+    },
+    "architectural_layers": {
+      "presentation": 0,
+      "application": 90,
+      "data": 57,
+      "integration": 23
+    }
+  },
+
+  "layers": {
+    "items": {
+      "application": {
+        "id": "application",
+        "label": "Application / Business Logic",
+        "group": "backend",
+        "file_count": 90,
+        "package_count": 10
+      },
+      "database": {
+        "id": "database",
+        "label": "Database / Tables",
+        "group": "backend",
+        "file_count": 10,
+        "package_count": 1
+      }
+    }
+  },
+
+  "datastructures": {
+    "count": 127,
+    "family_mix": {
+      "class": 90,
+      "table": 10,
+      "type": 27
+    },
+    "shared_mutable": 47,
+    "non_portable": 47
+  },
+
+  "dependencies": {
+    "distinct_packages": 8,
+    "total_usages": 143,
+    "top": [
+      {"package": "VBAK", "count": 23},
+      {"package": "MARD", "count": 32},
+      {"package": "BAPI", "count": 19}
+    ]
+  },
+
+  "tags": {
+    "distinct_concepts": 47,
+    "tagged_files": 90,
+    "concept_mix": {
+      "clean_core_violation": 47,
+      "direct_db_access": 47,
+      "critical_business_logic": 30,
+      "s4_migration_required": 90
+    }
+  },
+
+  "activity": {
+    "total_commits": 5,
+    "author_count": 1,
+    "window_days": 1,
+    "top_author_name": "raj.karawalla",
+    "top_author_share_pct": 100.0,
+    "bus_factor_level": "critical",
+    "available": true
+  },
+
+  "shards": {
+    "activity": {"path": "understand/activity.json", "size_bytes": 458},
+    "domains": {"path": "understand/domains.json", "size_bytes": 12847},
+    "census": {"path": "understand/census.json", "size_bytes": 3421},
+    "insights": {"path": "understand/insights.json", "size_bytes": 8932},
+    "datamodel": {"path": "understand/datamodel.json", "size_bytes": 15678},
+    "files": {"path": "understand/files.json", "size_bytes": 24567}
+  }
+}
