@@ -1,0 +1,4752 @@
+{
+  "schemaVersion": "sap-engineering/v1",
+  "scope": "static source evidence",
+  "summary": {
+    "files": 90,
+    "symbols": 275,
+    "entities": 97,
+    "fields": 8,
+    "relationships": 17,
+    "exactRelationships": 0,
+    "calls": 0,
+    "dbAccesses": 17,
+    "declaredConnections": 0
+  },
+  "tree": [
+    {
+      "file": "src/cross_cutting/zcl_util_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1",
+          "name": "ZCL_UTIL_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1:Class:ZCL_UTIL_1",
+          "name": "ZCL_UTIL_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1:Class:ZCL_UTIL_1:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1:Class:ZCL_UTIL_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2",
+          "name": "ZCL_UTIL_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2:Class:ZCL_UTIL_2",
+          "name": "ZCL_UTIL_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2:Class:ZCL_UTIL_2:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2:Class:ZCL_UTIL_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3",
+          "name": "ZCL_UTIL_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3:Class:ZCL_UTIL_3",
+          "name": "ZCL_UTIL_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3:Class:ZCL_UTIL_3:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3:Class:ZCL_UTIL_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4",
+          "name": "ZCL_UTIL_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4:Class:ZCL_UTIL_4",
+          "name": "ZCL_UTIL_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4:Class:ZCL_UTIL_4:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4:Class:ZCL_UTIL_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5",
+          "name": "ZCL_UTIL_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5:Class:ZCL_UTIL_5",
+          "name": "ZCL_UTIL_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5:Class:ZCL_UTIL_5:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5:Class:ZCL_UTIL_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6",
+          "name": "ZCL_UTIL_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6:Class:ZCL_UTIL_6",
+          "name": "ZCL_UTIL_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6:Class:ZCL_UTIL_6:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6:Class:ZCL_UTIL_6",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7",
+          "name": "ZCL_UTIL_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7:Class:ZCL_UTIL_7",
+          "name": "ZCL_UTIL_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7:Class:ZCL_UTIL_7:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7:Class:ZCL_UTIL_7",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_8.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8",
+          "name": "ZCL_UTIL_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8:Class:ZCL_UTIL_8",
+          "name": "ZCL_UTIL_8",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8"
+        },
+        {
+          "id": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8:Class:ZCL_UTIL_8:Method:UTILITY_FUNCTION",
+          "name": "UTILITY_FUNCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8:Class:ZCL_UTIL_8",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_1",
+          "name": "ZCL_FI_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_1"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_1:Class:ZCL_FI_1",
+          "name": "ZCL_FI_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_1"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_1:Class:ZCL_FI_1:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_1:Class:ZCL_FI_1",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_10.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_10",
+          "name": "ZCL_FI_10",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_10"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_10:Class:ZCL_FI_10",
+          "name": "ZCL_FI_10",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_10"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_10:Class:ZCL_FI_10:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_10:Class:ZCL_FI_10",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_2",
+          "name": "ZCL_FI_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_2"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_2:Class:ZCL_FI_2",
+          "name": "ZCL_FI_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_2"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_2:Class:ZCL_FI_2:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_2:Class:ZCL_FI_2",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_3",
+          "name": "ZCL_FI_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_3"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_3:Class:ZCL_FI_3",
+          "name": "ZCL_FI_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_3"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_3:Class:ZCL_FI_3:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_3:Class:ZCL_FI_3",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_4",
+          "name": "ZCL_FI_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_4"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_4:Class:ZCL_FI_4",
+          "name": "ZCL_FI_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_4"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_4:Class:ZCL_FI_4:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_4:Class:ZCL_FI_4",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_5",
+          "name": "ZCL_FI_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_5"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_5:Class:ZCL_FI_5",
+          "name": "ZCL_FI_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_5"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_5:Class:ZCL_FI_5:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_5:Class:ZCL_FI_5",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_6",
+          "name": "ZCL_FI_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_6"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_6:Class:ZCL_FI_6",
+          "name": "ZCL_FI_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_6"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_6:Class:ZCL_FI_6:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_6:Class:ZCL_FI_6",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_7",
+          "name": "ZCL_FI_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_7"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_7:Class:ZCL_FI_7",
+          "name": "ZCL_FI_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_7"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_7:Class:ZCL_FI_7:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_7:Class:ZCL_FI_7",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_8.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_8",
+          "name": "ZCL_FI_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_8"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_8:Class:ZCL_FI_8",
+          "name": "ZCL_FI_8",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_8"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_8:Class:ZCL_FI_8:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_8:Class:ZCL_FI_8",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/finance/zcl_fi_9.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_9",
+          "name": "ZCL_FI_9",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_9"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_9:Class:ZCL_FI_9",
+          "name": "ZCL_FI_9",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_9"
+        },
+        {
+          "id": "sap:src/finance:ABAP:ZCL_FI_9:Class:ZCL_FI_9:Method:POST_DOCUMENT",
+          "name": "POST_DOCUMENT",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/finance:ABAP:ZCL_FI_9:Class:ZCL_FI_9",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_1.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_1",
+          "name": "ZCL_INV_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_1"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1",
+          "name": "ZCL_INV_1",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_1"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_10.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_10",
+          "name": "ZCL_INV_10",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_10"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10",
+          "name": "ZCL_INV_10",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_10"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_2.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_2",
+          "name": "ZCL_INV_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_2"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2",
+          "name": "ZCL_INV_2",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_2"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_3.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_3",
+          "name": "ZCL_INV_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_3"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3",
+          "name": "ZCL_INV_3",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_3"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_4.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_4",
+          "name": "ZCL_INV_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_4"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4",
+          "name": "ZCL_INV_4",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_4"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_5.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_5",
+          "name": "ZCL_INV_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_5"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5",
+          "name": "ZCL_INV_5",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_5"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_6.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_6",
+          "name": "ZCL_INV_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_6"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6",
+          "name": "ZCL_INV_6",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_6"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_7.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_7",
+          "name": "ZCL_INV_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_7"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7",
+          "name": "ZCL_INV_7",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_7"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_8.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_8",
+          "name": "ZCL_INV_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_8"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8",
+          "name": "ZCL_INV_8",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_8"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/inventory/zcl_inv_9.abap",
+      "format": "abap",
+      "disposition": "partial",
+      "symbols": [
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_9",
+          "name": "ZCL_INV_9",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_9"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9",
+          "name": "ZCL_INV_9",
+          "kind": "Class",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_9"
+        },
+        {
+          "id": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9:Method:CHECK_STOCK",
+          "name": "CHECK_STOCK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_1",
+          "name": "ZCL_LOG_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_1"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_1:Class:ZCL_LOG_1",
+          "name": "ZCL_LOG_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_1"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_1:Class:ZCL_LOG_1:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_1:Class:ZCL_LOG_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_2",
+          "name": "ZCL_LOG_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_2"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_2:Class:ZCL_LOG_2",
+          "name": "ZCL_LOG_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_2"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_2:Class:ZCL_LOG_2:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_2:Class:ZCL_LOG_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_3",
+          "name": "ZCL_LOG_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_3"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_3:Class:ZCL_LOG_3",
+          "name": "ZCL_LOG_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_3"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_3:Class:ZCL_LOG_3:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_3:Class:ZCL_LOG_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_4",
+          "name": "ZCL_LOG_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_4"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_4:Class:ZCL_LOG_4",
+          "name": "ZCL_LOG_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_4"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_4:Class:ZCL_LOG_4:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_4:Class:ZCL_LOG_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_5",
+          "name": "ZCL_LOG_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_5"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_5:Class:ZCL_LOG_5",
+          "name": "ZCL_LOG_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_5"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_5:Class:ZCL_LOG_5:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_5:Class:ZCL_LOG_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_6",
+          "name": "ZCL_LOG_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_6"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_6:Class:ZCL_LOG_6",
+          "name": "ZCL_LOG_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_6"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_6:Class:ZCL_LOG_6:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_6:Class:ZCL_LOG_6",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/logistics/zcl_log_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_7",
+          "name": "ZCL_LOG_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_7"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_7:Class:ZCL_LOG_7",
+          "name": "ZCL_LOG_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_7"
+        },
+        {
+          "id": "sap:src/logistics:ABAP:ZCL_LOG_7:Class:ZCL_LOG_7:Method:SHIP_GOODS",
+          "name": "SHIP_GOODS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/logistics:ABAP:ZCL_LOG_7:Class:ZCL_LOG_7",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_1",
+          "name": "ZCL_MD_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_1"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_1:Class:ZCL_MD_1",
+          "name": "ZCL_MD_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_1"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_1:Class:ZCL_MD_1:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_1:Class:ZCL_MD_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_2",
+          "name": "ZCL_MD_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_2"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_2:Class:ZCL_MD_2",
+          "name": "ZCL_MD_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_2"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_2:Class:ZCL_MD_2:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_2:Class:ZCL_MD_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_3",
+          "name": "ZCL_MD_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_3"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_3:Class:ZCL_MD_3",
+          "name": "ZCL_MD_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_3"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_3:Class:ZCL_MD_3:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_3:Class:ZCL_MD_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_4",
+          "name": "ZCL_MD_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_4"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_4:Class:ZCL_MD_4",
+          "name": "ZCL_MD_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_4"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_4:Class:ZCL_MD_4:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_4:Class:ZCL_MD_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_5",
+          "name": "ZCL_MD_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_5"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_5:Class:ZCL_MD_5",
+          "name": "ZCL_MD_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_5"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_5:Class:ZCL_MD_5:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_5:Class:ZCL_MD_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_6",
+          "name": "ZCL_MD_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_6"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_6:Class:ZCL_MD_6",
+          "name": "ZCL_MD_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_6"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_6:Class:ZCL_MD_6:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_6:Class:ZCL_MD_6",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_7",
+          "name": "ZCL_MD_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_7"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_7:Class:ZCL_MD_7",
+          "name": "ZCL_MD_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_7"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_7:Class:ZCL_MD_7:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_7:Class:ZCL_MD_7",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/master_data/zcl_md_8.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_8",
+          "name": "ZCL_MD_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_8"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_8:Class:ZCL_MD_8",
+          "name": "ZCL_MD_8",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_8"
+        },
+        {
+          "id": "sap:src/master_data:ABAP:ZCL_MD_8:Class:ZCL_MD_8:Method:MAINTAIN_MASTER",
+          "name": "MAINTAIN_MASTER",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/master_data:ABAP:ZCL_MD_8:Class:ZCL_MD_8",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_BILLING",
+          "name": "ZCL_BILLING",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_BILLING"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING",
+          "name": "ZCL_BILLING",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_BILLING"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:CREATE_INVOICE",
+          "name": "CREATE_INVOICE",
+          "kind": "Method",
+          "line": 10,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING",
+          "endLine": 13
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:POST_TO_FI",
+          "name": "POST_TO_FI",
+          "kind": "Method",
+          "line": 15,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING",
+          "endLine": 18
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_1",
+          "name": "ZCL_O2C_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_1"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_1:Class:ZCL_O2C_1",
+          "name": "ZCL_O2C_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_1"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_1:Class:ZCL_O2C_1:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_1:Class:ZCL_O2C_1",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_10.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_10",
+          "name": "ZCL_O2C_10",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_10"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_10:Class:ZCL_O2C_10",
+          "name": "ZCL_O2C_10",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_10"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_10:Class:ZCL_O2C_10:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_10:Class:ZCL_O2C_10",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_11.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_11",
+          "name": "ZCL_O2C_11",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_11"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_11:Class:ZCL_O2C_11",
+          "name": "ZCL_O2C_11",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_11"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_11:Class:ZCL_O2C_11:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_11:Class:ZCL_O2C_11",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_12.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_12",
+          "name": "ZCL_O2C_12",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_12"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_12:Class:ZCL_O2C_12",
+          "name": "ZCL_O2C_12",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_12"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_12:Class:ZCL_O2C_12:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_12:Class:ZCL_O2C_12",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_13.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_13",
+          "name": "ZCL_O2C_13",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_13"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_13:Class:ZCL_O2C_13",
+          "name": "ZCL_O2C_13",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_13"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_13:Class:ZCL_O2C_13:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_13:Class:ZCL_O2C_13",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_2",
+          "name": "ZCL_O2C_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_2"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_2:Class:ZCL_O2C_2",
+          "name": "ZCL_O2C_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_2"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_2:Class:ZCL_O2C_2:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_2:Class:ZCL_O2C_2",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_3",
+          "name": "ZCL_O2C_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_3"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_3:Class:ZCL_O2C_3",
+          "name": "ZCL_O2C_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_3"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_3:Class:ZCL_O2C_3:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_3:Class:ZCL_O2C_3",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_4",
+          "name": "ZCL_O2C_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_4"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_4:Class:ZCL_O2C_4",
+          "name": "ZCL_O2C_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_4"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_4:Class:ZCL_O2C_4:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_4:Class:ZCL_O2C_4",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_5",
+          "name": "ZCL_O2C_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_5"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_5:Class:ZCL_O2C_5",
+          "name": "ZCL_O2C_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_5"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_5:Class:ZCL_O2C_5:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_5:Class:ZCL_O2C_5",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_6",
+          "name": "ZCL_O2C_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_6"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_6:Class:ZCL_O2C_6",
+          "name": "ZCL_O2C_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_6"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_6:Class:ZCL_O2C_6:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_6:Class:ZCL_O2C_6",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_7",
+          "name": "ZCL_O2C_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_7"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_7:Class:ZCL_O2C_7",
+          "name": "ZCL_O2C_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_7"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_7:Class:ZCL_O2C_7:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_7:Class:ZCL_O2C_7",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_8.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_8",
+          "name": "ZCL_O2C_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_8"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_8:Class:ZCL_O2C_8",
+          "name": "ZCL_O2C_8",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_8"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_8:Class:ZCL_O2C_8:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_8:Class:ZCL_O2C_8",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_9.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_9",
+          "name": "ZCL_O2C_9",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_9"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_9:Class:ZCL_O2C_9",
+          "name": "ZCL_O2C_9",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_9"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_O2C_9:Class:ZCL_O2C_9:Method:PROCESS",
+          "name": "PROCESS",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_O2C_9:Class:ZCL_O2C_9",
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER",
+          "name": "ZCL_SALES_ORDER",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER",
+          "name": "ZCL_SALES_ORDER",
+          "kind": "Class",
+          "line": 5,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER"
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CREATE_ORDER",
+          "name": "CREATE_ORDER",
+          "kind": "Method",
+          "line": 17,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER",
+          "endLine": 20
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:GET_ORDER_STATUS",
+          "name": "GET_ORDER_STATUS",
+          "kind": "Method",
+          "line": 22,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER",
+          "endLine": 25
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CANCEL_ORDER",
+          "name": "CANCEL_ORDER",
+          "kind": "Method",
+          "line": 27,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER",
+          "endLine": 29
+        },
+        {
+          "id": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Field:MV_SALES_ORG",
+          "name": "MV_SALES_ORG",
+          "kind": "Field",
+          "line": 13,
+          "owner": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER"
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_1",
+          "name": "ZCL_PRICE_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_1"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_1:Class:ZCL_PRICE_1",
+          "name": "ZCL_PRICE_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_1"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_1:Class:ZCL_PRICE_1:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_1:Class:ZCL_PRICE_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_2",
+          "name": "ZCL_PRICE_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_2"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_2:Class:ZCL_PRICE_2",
+          "name": "ZCL_PRICE_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_2"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_2:Class:ZCL_PRICE_2:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_2:Class:ZCL_PRICE_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_3",
+          "name": "ZCL_PRICE_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_3"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_3:Class:ZCL_PRICE_3",
+          "name": "ZCL_PRICE_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_3"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_3:Class:ZCL_PRICE_3:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_3:Class:ZCL_PRICE_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_4",
+          "name": "ZCL_PRICE_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_4"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_4:Class:ZCL_PRICE_4",
+          "name": "ZCL_PRICE_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_4"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_4:Class:ZCL_PRICE_4:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_4:Class:ZCL_PRICE_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_5",
+          "name": "ZCL_PRICE_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_5"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_5:Class:ZCL_PRICE_5",
+          "name": "ZCL_PRICE_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_5"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_5:Class:ZCL_PRICE_5:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_5:Class:ZCL_PRICE_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_6",
+          "name": "ZCL_PRICE_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_6"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_6:Class:ZCL_PRICE_6",
+          "name": "ZCL_PRICE_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_6"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_6:Class:ZCL_PRICE_6:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_6:Class:ZCL_PRICE_6",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/pricing/zcl_price_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_7",
+          "name": "ZCL_PRICE_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_7"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_7:Class:ZCL_PRICE_7",
+          "name": "ZCL_PRICE_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_7"
+        },
+        {
+          "id": "sap:src/pricing:ABAP:ZCL_PRICE_7:Class:ZCL_PRICE_7:Method:CALCULATE_PRICE",
+          "name": "CALCULATE_PRICE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/pricing:ABAP:ZCL_PRICE_7:Class:ZCL_PRICE_7",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1",
+          "name": "ZCL_P2P_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1:Class:ZCL_P2P_1",
+          "name": "ZCL_P2P_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1:Class:ZCL_P2P_1:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1:Class:ZCL_P2P_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_10.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10",
+          "name": "ZCL_P2P_10",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10:Class:ZCL_P2P_10",
+          "name": "ZCL_P2P_10",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10:Class:ZCL_P2P_10:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10:Class:ZCL_P2P_10",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_11.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11",
+          "name": "ZCL_P2P_11",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11:Class:ZCL_P2P_11",
+          "name": "ZCL_P2P_11",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11:Class:ZCL_P2P_11:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11:Class:ZCL_P2P_11",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_12.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12",
+          "name": "ZCL_P2P_12",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12:Class:ZCL_P2P_12",
+          "name": "ZCL_P2P_12",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12:Class:ZCL_P2P_12:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12:Class:ZCL_P2P_12",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_13.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13",
+          "name": "ZCL_P2P_13",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13:Class:ZCL_P2P_13",
+          "name": "ZCL_P2P_13",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13:Class:ZCL_P2P_13:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13:Class:ZCL_P2P_13",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_14.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14",
+          "name": "ZCL_P2P_14",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14:Class:ZCL_P2P_14",
+          "name": "ZCL_P2P_14",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14:Class:ZCL_P2P_14:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14:Class:ZCL_P2P_14",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2",
+          "name": "ZCL_P2P_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2:Class:ZCL_P2P_2",
+          "name": "ZCL_P2P_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2:Class:ZCL_P2P_2:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2:Class:ZCL_P2P_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3",
+          "name": "ZCL_P2P_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3:Class:ZCL_P2P_3",
+          "name": "ZCL_P2P_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3:Class:ZCL_P2P_3:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3:Class:ZCL_P2P_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4",
+          "name": "ZCL_P2P_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4:Class:ZCL_P2P_4",
+          "name": "ZCL_P2P_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4:Class:ZCL_P2P_4:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4:Class:ZCL_P2P_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5",
+          "name": "ZCL_P2P_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5:Class:ZCL_P2P_5",
+          "name": "ZCL_P2P_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5:Class:ZCL_P2P_5:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5:Class:ZCL_P2P_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_6.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6",
+          "name": "ZCL_P2P_6",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6:Class:ZCL_P2P_6",
+          "name": "ZCL_P2P_6",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6:Class:ZCL_P2P_6:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6:Class:ZCL_P2P_6",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_7.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7",
+          "name": "ZCL_P2P_7",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7:Class:ZCL_P2P_7",
+          "name": "ZCL_P2P_7",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7:Class:ZCL_P2P_7:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7:Class:ZCL_P2P_7",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_8.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8",
+          "name": "ZCL_P2P_8",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8:Class:ZCL_P2P_8",
+          "name": "ZCL_P2P_8",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8:Class:ZCL_P2P_8:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8:Class:ZCL_P2P_8",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_9.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9",
+          "name": "ZCL_P2P_9",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9:Class:ZCL_P2P_9",
+          "name": "ZCL_P2P_9",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9:Class:ZCL_P2P_9:Method:EXECUTE",
+          "name": "EXECUTE",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9:Class:ZCL_P2P_9",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER",
+          "name": "ZCL_PURCHASE_ORDER",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER",
+          "name": "ZCL_PURCHASE_ORDER",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER"
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:CREATE_PO",
+          "name": "CREATE_PO",
+          "kind": "Method",
+          "line": 8,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER",
+          "endLine": 10
+        },
+        {
+          "id": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:APPROVE_PO",
+          "name": "APPROVE_PO",
+          "kind": "Method",
+          "line": 11,
+          "owner": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER",
+          "endLine": 13
+        }
+      ]
+    },
+    {
+      "file": "src/production/zcl_pp_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_1",
+          "name": "ZCL_PP_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/production:ABAP:ZCL_PP_1"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_1:Class:ZCL_PP_1",
+          "name": "ZCL_PP_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/production:ABAP:ZCL_PP_1"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_1:Class:ZCL_PP_1:Method:PLAN_PRODUCTION",
+          "name": "PLAN_PRODUCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/production:ABAP:ZCL_PP_1:Class:ZCL_PP_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/production/zcl_pp_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_2",
+          "name": "ZCL_PP_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/production:ABAP:ZCL_PP_2"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_2:Class:ZCL_PP_2",
+          "name": "ZCL_PP_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/production:ABAP:ZCL_PP_2"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_2:Class:ZCL_PP_2:Method:PLAN_PRODUCTION",
+          "name": "PLAN_PRODUCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/production:ABAP:ZCL_PP_2:Class:ZCL_PP_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/production/zcl_pp_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_3",
+          "name": "ZCL_PP_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/production:ABAP:ZCL_PP_3"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_3:Class:ZCL_PP_3",
+          "name": "ZCL_PP_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/production:ABAP:ZCL_PP_3"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_3:Class:ZCL_PP_3:Method:PLAN_PRODUCTION",
+          "name": "PLAN_PRODUCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/production:ABAP:ZCL_PP_3:Class:ZCL_PP_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/production/zcl_pp_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_4",
+          "name": "ZCL_PP_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/production:ABAP:ZCL_PP_4"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_4:Class:ZCL_PP_4",
+          "name": "ZCL_PP_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/production:ABAP:ZCL_PP_4"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_4:Class:ZCL_PP_4:Method:PLAN_PRODUCTION",
+          "name": "PLAN_PRODUCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/production:ABAP:ZCL_PP_4:Class:ZCL_PP_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/production/zcl_pp_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_5",
+          "name": "ZCL_PP_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/production:ABAP:ZCL_PP_5"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_5:Class:ZCL_PP_5",
+          "name": "ZCL_PP_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/production:ABAP:ZCL_PP_5"
+        },
+        {
+          "id": "sap:src/production:ABAP:ZCL_PP_5:Class:ZCL_PP_5:Method:PLAN_PRODUCTION",
+          "name": "PLAN_PRODUCTION",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/production:ABAP:ZCL_PP_5:Class:ZCL_PP_5",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/quality/zcl_qm_1.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_1",
+          "name": "ZCL_QM_1",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_1"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_1:Class:ZCL_QM_1",
+          "name": "ZCL_QM_1",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_1"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_1:Class:ZCL_QM_1:Method:QUALITY_CHECK",
+          "name": "QUALITY_CHECK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_1:Class:ZCL_QM_1",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/quality/zcl_qm_2.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_2",
+          "name": "ZCL_QM_2",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_2"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_2:Class:ZCL_QM_2",
+          "name": "ZCL_QM_2",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_2"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_2:Class:ZCL_QM_2:Method:QUALITY_CHECK",
+          "name": "QUALITY_CHECK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_2:Class:ZCL_QM_2",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/quality/zcl_qm_3.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_3",
+          "name": "ZCL_QM_3",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_3"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_3:Class:ZCL_QM_3",
+          "name": "ZCL_QM_3",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_3"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_3:Class:ZCL_QM_3:Method:QUALITY_CHECK",
+          "name": "QUALITY_CHECK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_3:Class:ZCL_QM_3",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/quality/zcl_qm_4.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_4",
+          "name": "ZCL_QM_4",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_4"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_4:Class:ZCL_QM_4",
+          "name": "ZCL_QM_4",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_4"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_4:Class:ZCL_QM_4:Method:QUALITY_CHECK",
+          "name": "QUALITY_CHECK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_4:Class:ZCL_QM_4",
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "file": "src/quality/zcl_qm_5.abap",
+      "format": "abap",
+      "disposition": "analyzed",
+      "symbols": [
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_5",
+          "name": "ZCL_QM_5",
+          "kind": "ABAP",
+          "line": 1,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_5"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_5:Class:ZCL_QM_5",
+          "name": "ZCL_QM_5",
+          "kind": "Class",
+          "line": 2,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_5"
+        },
+        {
+          "id": "sap:src/quality:ABAP:ZCL_QM_5:Class:ZCL_QM_5:Method:QUALITY_CHECK",
+          "name": "QUALITY_CHECK",
+          "kind": "Method",
+          "line": 7,
+          "owner": "sap:src/quality:ABAP:ZCL_QM_5:Class:ZCL_QM_5",
+          "endLine": 8
+        }
+      ]
+    }
+  ],
+  "dataModel": {
+    "entities": [
+      {
+        "name": "ZCL_UTIL_1",
+        "file": "src/cross_cutting/zcl_util_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_1:Class:ZCL_UTIL_1"
+      },
+      {
+        "name": "ZCL_UTIL_2",
+        "file": "src/cross_cutting/zcl_util_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_2:Class:ZCL_UTIL_2"
+      },
+      {
+        "name": "ZCL_UTIL_3",
+        "file": "src/cross_cutting/zcl_util_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_3:Class:ZCL_UTIL_3"
+      },
+      {
+        "name": "ZCL_UTIL_4",
+        "file": "src/cross_cutting/zcl_util_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_4:Class:ZCL_UTIL_4"
+      },
+      {
+        "name": "ZCL_UTIL_5",
+        "file": "src/cross_cutting/zcl_util_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_5:Class:ZCL_UTIL_5"
+      },
+      {
+        "name": "ZCL_UTIL_6",
+        "file": "src/cross_cutting/zcl_util_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_6:Class:ZCL_UTIL_6"
+      },
+      {
+        "name": "ZCL_UTIL_7",
+        "file": "src/cross_cutting/zcl_util_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_7:Class:ZCL_UTIL_7"
+      },
+      {
+        "name": "ZCL_UTIL_8",
+        "file": "src/cross_cutting/zcl_util_8.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/cross_cutting:ABAP:ZCL_UTIL_8:Class:ZCL_UTIL_8"
+      },
+      {
+        "name": "ZCL_FI_1",
+        "file": "src/finance/zcl_fi_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_1:Class:ZCL_FI_1"
+      },
+      {
+        "name": "ZCL_FI_10",
+        "file": "src/finance/zcl_fi_10.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_10:Class:ZCL_FI_10"
+      },
+      {
+        "name": "ZCL_FI_2",
+        "file": "src/finance/zcl_fi_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_2:Class:ZCL_FI_2"
+      },
+      {
+        "name": "ZCL_FI_3",
+        "file": "src/finance/zcl_fi_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_3:Class:ZCL_FI_3"
+      },
+      {
+        "name": "ZCL_FI_4",
+        "file": "src/finance/zcl_fi_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_4:Class:ZCL_FI_4"
+      },
+      {
+        "name": "ZCL_FI_5",
+        "file": "src/finance/zcl_fi_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_5:Class:ZCL_FI_5"
+      },
+      {
+        "name": "ZCL_FI_6",
+        "file": "src/finance/zcl_fi_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_6:Class:ZCL_FI_6"
+      },
+      {
+        "name": "ZCL_FI_7",
+        "file": "src/finance/zcl_fi_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_7:Class:ZCL_FI_7"
+      },
+      {
+        "name": "ZCL_FI_8",
+        "file": "src/finance/zcl_fi_8.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_8:Class:ZCL_FI_8"
+      },
+      {
+        "name": "ZCL_FI_9",
+        "file": "src/finance/zcl_fi_9.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/finance:ABAP:ZCL_FI_9:Class:ZCL_FI_9"
+      },
+      {
+        "name": "ZCL_INV_1",
+        "file": "src/inventory/zcl_inv_1.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1"
+      },
+      {
+        "name": "ZCL_INV_10",
+        "file": "src/inventory/zcl_inv_10.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10"
+      },
+      {
+        "name": "ZCL_INV_2",
+        "file": "src/inventory/zcl_inv_2.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2"
+      },
+      {
+        "name": "ZCL_INV_3",
+        "file": "src/inventory/zcl_inv_3.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3"
+      },
+      {
+        "name": "ZCL_INV_4",
+        "file": "src/inventory/zcl_inv_4.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4"
+      },
+      {
+        "name": "ZCL_INV_5",
+        "file": "src/inventory/zcl_inv_5.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5"
+      },
+      {
+        "name": "ZCL_INV_6",
+        "file": "src/inventory/zcl_inv_6.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6"
+      },
+      {
+        "name": "ZCL_INV_7",
+        "file": "src/inventory/zcl_inv_7.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7"
+      },
+      {
+        "name": "ZCL_INV_8",
+        "file": "src/inventory/zcl_inv_8.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8"
+      },
+      {
+        "name": "ZCL_INV_9",
+        "file": "src/inventory/zcl_inv_9.abap",
+        "line": 7,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9"
+      },
+      {
+        "name": "ZCL_LOG_1",
+        "file": "src/logistics/zcl_log_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_1:Class:ZCL_LOG_1"
+      },
+      {
+        "name": "ZCL_LOG_2",
+        "file": "src/logistics/zcl_log_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_2:Class:ZCL_LOG_2"
+      },
+      {
+        "name": "ZCL_LOG_3",
+        "file": "src/logistics/zcl_log_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_3:Class:ZCL_LOG_3"
+      },
+      {
+        "name": "ZCL_LOG_4",
+        "file": "src/logistics/zcl_log_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_4:Class:ZCL_LOG_4"
+      },
+      {
+        "name": "ZCL_LOG_5",
+        "file": "src/logistics/zcl_log_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_5:Class:ZCL_LOG_5"
+      },
+      {
+        "name": "ZCL_LOG_6",
+        "file": "src/logistics/zcl_log_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_6:Class:ZCL_LOG_6"
+      },
+      {
+        "name": "ZCL_LOG_7",
+        "file": "src/logistics/zcl_log_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/logistics:ABAP:ZCL_LOG_7:Class:ZCL_LOG_7"
+      },
+      {
+        "name": "ZCL_MD_1",
+        "file": "src/master_data/zcl_md_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_1:Class:ZCL_MD_1"
+      },
+      {
+        "name": "ZCL_MD_2",
+        "file": "src/master_data/zcl_md_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_2:Class:ZCL_MD_2"
+      },
+      {
+        "name": "ZCL_MD_3",
+        "file": "src/master_data/zcl_md_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_3:Class:ZCL_MD_3"
+      },
+      {
+        "name": "ZCL_MD_4",
+        "file": "src/master_data/zcl_md_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_4:Class:ZCL_MD_4"
+      },
+      {
+        "name": "ZCL_MD_5",
+        "file": "src/master_data/zcl_md_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_5:Class:ZCL_MD_5"
+      },
+      {
+        "name": "ZCL_MD_6",
+        "file": "src/master_data/zcl_md_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_6:Class:ZCL_MD_6"
+      },
+      {
+        "name": "ZCL_MD_7",
+        "file": "src/master_data/zcl_md_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_7:Class:ZCL_MD_7"
+      },
+      {
+        "name": "ZCL_MD_8",
+        "file": "src/master_data/zcl_md_8.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/master_data:ABAP:ZCL_MD_8:Class:ZCL_MD_8"
+      },
+      {
+        "name": "ZCL_BILLING",
+        "file": "src/order_to_cash/zcl_billing.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING"
+      },
+      {
+        "name": "ZCL_O2C_1",
+        "file": "src/order_to_cash/zcl_o2c_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_1:Class:ZCL_O2C_1"
+      },
+      {
+        "name": "ZCL_O2C_10",
+        "file": "src/order_to_cash/zcl_o2c_10.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_10:Class:ZCL_O2C_10"
+      },
+      {
+        "name": "ZCL_O2C_11",
+        "file": "src/order_to_cash/zcl_o2c_11.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_11:Class:ZCL_O2C_11"
+      },
+      {
+        "name": "ZCL_O2C_12",
+        "file": "src/order_to_cash/zcl_o2c_12.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_12:Class:ZCL_O2C_12"
+      },
+      {
+        "name": "ZCL_O2C_13",
+        "file": "src/order_to_cash/zcl_o2c_13.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_13:Class:ZCL_O2C_13"
+      },
+      {
+        "name": "ZCL_O2C_2",
+        "file": "src/order_to_cash/zcl_o2c_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_2:Class:ZCL_O2C_2"
+      },
+      {
+        "name": "ZCL_O2C_3",
+        "file": "src/order_to_cash/zcl_o2c_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_3:Class:ZCL_O2C_3"
+      },
+      {
+        "name": "ZCL_O2C_4",
+        "file": "src/order_to_cash/zcl_o2c_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_4:Class:ZCL_O2C_4"
+      },
+      {
+        "name": "ZCL_O2C_5",
+        "file": "src/order_to_cash/zcl_o2c_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_5:Class:ZCL_O2C_5"
+      },
+      {
+        "name": "ZCL_O2C_6",
+        "file": "src/order_to_cash/zcl_o2c_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_6:Class:ZCL_O2C_6"
+      },
+      {
+        "name": "ZCL_O2C_7",
+        "file": "src/order_to_cash/zcl_o2c_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_7:Class:ZCL_O2C_7"
+      },
+      {
+        "name": "ZCL_O2C_8",
+        "file": "src/order_to_cash/zcl_o2c_8.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_8:Class:ZCL_O2C_8"
+      },
+      {
+        "name": "ZCL_O2C_9",
+        "file": "src/order_to_cash/zcl_o2c_9.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_O2C_9:Class:ZCL_O2C_9"
+      },
+      {
+        "name": "ZCL_SALES_ORDER",
+        "file": "src/order_to_cash/zcl_sales_order.abap",
+        "line": 5,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [
+          {
+            "name": "MV_SALES_ORG",
+            "typeName": "vkorg",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 13,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "sapKind": "Class",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER"
+      },
+      {
+        "name": "ZCL_PRICE_1",
+        "file": "src/pricing/zcl_price_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_1:Class:ZCL_PRICE_1"
+      },
+      {
+        "name": "ZCL_PRICE_2",
+        "file": "src/pricing/zcl_price_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_2:Class:ZCL_PRICE_2"
+      },
+      {
+        "name": "ZCL_PRICE_3",
+        "file": "src/pricing/zcl_price_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_3:Class:ZCL_PRICE_3"
+      },
+      {
+        "name": "ZCL_PRICE_4",
+        "file": "src/pricing/zcl_price_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_4:Class:ZCL_PRICE_4"
+      },
+      {
+        "name": "ZCL_PRICE_5",
+        "file": "src/pricing/zcl_price_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_5:Class:ZCL_PRICE_5"
+      },
+      {
+        "name": "ZCL_PRICE_6",
+        "file": "src/pricing/zcl_price_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_6:Class:ZCL_PRICE_6"
+      },
+      {
+        "name": "ZCL_PRICE_7",
+        "file": "src/pricing/zcl_price_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/pricing:ABAP:ZCL_PRICE_7:Class:ZCL_PRICE_7"
+      },
+      {
+        "name": "ZCL_P2P_1",
+        "file": "src/procure_to_pay/zcl_p2p_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_1:Class:ZCL_P2P_1"
+      },
+      {
+        "name": "ZCL_P2P_10",
+        "file": "src/procure_to_pay/zcl_p2p_10.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_10:Class:ZCL_P2P_10"
+      },
+      {
+        "name": "ZCL_P2P_11",
+        "file": "src/procure_to_pay/zcl_p2p_11.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_11:Class:ZCL_P2P_11"
+      },
+      {
+        "name": "ZCL_P2P_12",
+        "file": "src/procure_to_pay/zcl_p2p_12.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_12:Class:ZCL_P2P_12"
+      },
+      {
+        "name": "ZCL_P2P_13",
+        "file": "src/procure_to_pay/zcl_p2p_13.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_13:Class:ZCL_P2P_13"
+      },
+      {
+        "name": "ZCL_P2P_14",
+        "file": "src/procure_to_pay/zcl_p2p_14.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_14:Class:ZCL_P2P_14"
+      },
+      {
+        "name": "ZCL_P2P_2",
+        "file": "src/procure_to_pay/zcl_p2p_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_2:Class:ZCL_P2P_2"
+      },
+      {
+        "name": "ZCL_P2P_3",
+        "file": "src/procure_to_pay/zcl_p2p_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_3:Class:ZCL_P2P_3"
+      },
+      {
+        "name": "ZCL_P2P_4",
+        "file": "src/procure_to_pay/zcl_p2p_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_4:Class:ZCL_P2P_4"
+      },
+      {
+        "name": "ZCL_P2P_5",
+        "file": "src/procure_to_pay/zcl_p2p_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_5:Class:ZCL_P2P_5"
+      },
+      {
+        "name": "ZCL_P2P_6",
+        "file": "src/procure_to_pay/zcl_p2p_6.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_6:Class:ZCL_P2P_6"
+      },
+      {
+        "name": "ZCL_P2P_7",
+        "file": "src/procure_to_pay/zcl_p2p_7.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_7:Class:ZCL_P2P_7"
+      },
+      {
+        "name": "ZCL_P2P_8",
+        "file": "src/procure_to_pay/zcl_p2p_8.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_8:Class:ZCL_P2P_8"
+      },
+      {
+        "name": "ZCL_P2P_9",
+        "file": "src/procure_to_pay/zcl_p2p_9.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_P2P_9:Class:ZCL_P2P_9"
+      },
+      {
+        "name": "ZCL_PURCHASE_ORDER",
+        "file": "src/procure_to_pay/zcl_purchase_order.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER"
+      },
+      {
+        "name": "ZCL_PP_1",
+        "file": "src/production/zcl_pp_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/production:ABAP:ZCL_PP_1:Class:ZCL_PP_1"
+      },
+      {
+        "name": "ZCL_PP_2",
+        "file": "src/production/zcl_pp_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/production:ABAP:ZCL_PP_2:Class:ZCL_PP_2"
+      },
+      {
+        "name": "ZCL_PP_3",
+        "file": "src/production/zcl_pp_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/production:ABAP:ZCL_PP_3:Class:ZCL_PP_3"
+      },
+      {
+        "name": "ZCL_PP_4",
+        "file": "src/production/zcl_pp_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/production:ABAP:ZCL_PP_4:Class:ZCL_PP_4"
+      },
+      {
+        "name": "ZCL_PP_5",
+        "file": "src/production/zcl_pp_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/production:ABAP:ZCL_PP_5:Class:ZCL_PP_5"
+      },
+      {
+        "name": "ZCL_QM_1",
+        "file": "src/quality/zcl_qm_1.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/quality:ABAP:ZCL_QM_1:Class:ZCL_QM_1"
+      },
+      {
+        "name": "ZCL_QM_2",
+        "file": "src/quality/zcl_qm_2.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/quality:ABAP:ZCL_QM_2:Class:ZCL_QM_2"
+      },
+      {
+        "name": "ZCL_QM_3",
+        "file": "src/quality/zcl_qm_3.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/quality:ABAP:ZCL_QM_3:Class:ZCL_QM_3"
+      },
+      {
+        "name": "ZCL_QM_4",
+        "file": "src/quality/zcl_qm_4.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/quality:ABAP:ZCL_QM_4:Class:ZCL_QM_4"
+      },
+      {
+        "name": "ZCL_QM_5",
+        "file": "src/quality/zcl_qm_5.abap",
+        "line": 2,
+        "endLine": 0,
+        "isPersisted": false,
+        "isRoutine": false,
+        "fields": [],
+        "sapKind": "Class",
+        "sapId": "sap:src/quality:ABAP:ZCL_QM_5:Class:ZCL_QM_5"
+      },
+      {
+        "name": "ZCL_BILLING.CREATE_INVOICE",
+        "file": "src/order_to_cash/zcl_billing.abap",
+        "line": 10,
+        "endLine": 13,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "it_items",
+            "typeName": "tt_items",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 4,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": {
+          "name": "rv_invoice",
+          "typeName": "vbeln_vf",
+          "baseType": "unknown",
+          "nullable": true,
+          "collection": false,
+          "constraints": [],
+          "line": 4,
+          "key": false,
+          "sourceField": null,
+          "typeSource": "declaration",
+          "decimals": null,
+          "nullabilityEvidence": "unspecified"
+        },
+        "sapKind": "Method",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:CREATE_INVOICE"
+      },
+      {
+        "name": "ZCL_BILLING.POST_TO_FI",
+        "file": "src/order_to_cash/zcl_billing.abap",
+        "line": 15,
+        "endLine": 18,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_invoice",
+            "typeName": "vbeln_vf",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 4,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": null,
+        "sapKind": "Method",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:POST_TO_FI"
+      },
+      {
+        "name": "ZCL_SALES_ORDER.CREATE_ORDER",
+        "file": "src/order_to_cash/zcl_sales_order.abap",
+        "line": 17,
+        "endLine": 20,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_customer",
+            "typeName": "kunnr",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 7,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": {
+          "name": "rv_order",
+          "typeName": "vbeln",
+          "baseType": "unknown",
+          "nullable": true,
+          "collection": false,
+          "constraints": [],
+          "line": 7,
+          "key": false,
+          "sourceField": null,
+          "typeSource": "declaration",
+          "decimals": null,
+          "nullabilityEvidence": "unspecified"
+        },
+        "sapKind": "Method",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CREATE_ORDER"
+      },
+      {
+        "name": "ZCL_SALES_ORDER.GET_ORDER_STATUS",
+        "file": "src/order_to_cash/zcl_sales_order.abap",
+        "line": 22,
+        "endLine": 25,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_order",
+            "typeName": "vbeln",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 7,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": {
+          "name": "rv_status",
+          "typeName": "char10",
+          "baseType": "unknown",
+          "nullable": true,
+          "collection": false,
+          "constraints": [],
+          "line": 7,
+          "key": false,
+          "sourceField": null,
+          "typeSource": "declaration",
+          "decimals": null,
+          "nullabilityEvidence": "unspecified"
+        },
+        "sapKind": "Method",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:GET_ORDER_STATUS"
+      },
+      {
+        "name": "ZCL_SALES_ORDER.CANCEL_ORDER",
+        "file": "src/order_to_cash/zcl_sales_order.abap",
+        "line": 27,
+        "endLine": 29,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_order",
+            "typeName": "vbeln",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 7,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": null,
+        "sapKind": "Method",
+        "sapId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CANCEL_ORDER"
+      },
+      {
+        "name": "ZCL_PURCHASE_ORDER.CREATE_PO",
+        "file": "src/procure_to_pay/zcl_purchase_order.abap",
+        "line": 8,
+        "endLine": 10,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_vendor",
+            "typeName": "lifnr",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 4,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": null,
+        "sapKind": "Method",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:CREATE_PO"
+      },
+      {
+        "name": "ZCL_PURCHASE_ORDER.APPROVE_PO",
+        "file": "src/procure_to_pay/zcl_purchase_order.abap",
+        "line": 11,
+        "endLine": 13,
+        "isPersisted": false,
+        "isRoutine": true,
+        "fields": [
+          {
+            "name": "iv_po",
+            "typeName": "ebeln",
+            "baseType": "unknown",
+            "nullable": true,
+            "collection": false,
+            "constraints": [],
+            "line": 4,
+            "key": false,
+            "sourceField": null,
+            "typeSource": "declaration",
+            "decimals": null,
+            "nullabilityEvidence": "unspecified"
+          }
+        ],
+        "outputs": [],
+        "returns": null,
+        "sapKind": "Method",
+        "sapId": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:APPROVE_PO"
+      }
+    ],
+    "enums": []
+  },
+  "relationships": [
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_1.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_10.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_2.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_3.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_4.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_5.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_6.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_7.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_8.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CHECK_STOCK",
+      "to": "MARD",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/inventory/zcl_inv_9.abap",
+      "line": 8,
+      "fromId": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9:Method:CHECK_STOCK",
+      "toId": null
+    },
+    {
+      "from": "CREATE_INVOICE",
+      "to": "VBRK",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "line": 12,
+      "fromId": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:CREATE_INVOICE",
+      "toId": null
+    },
+    {
+      "from": "POST_TO_FI",
+      "to": "BKPF",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "line": 17,
+      "fromId": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:POST_TO_FI",
+      "toId": null
+    },
+    {
+      "from": "CREATE_ORDER",
+      "to": "ZORDERS",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 19,
+      "fromId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CREATE_ORDER",
+      "toId": null
+    },
+    {
+      "from": "GET_ORDER_STATUS",
+      "to": "VBAK",
+      "type": "READS",
+      "resolution": "unresolved",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 24,
+      "fromId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:GET_ORDER_STATUS",
+      "toId": null
+    },
+    {
+      "from": "CANCEL_ORDER",
+      "to": "VBAK",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 28,
+      "fromId": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CANCEL_ORDER",
+      "toId": null
+    },
+    {
+      "from": "CREATE_PO",
+      "to": "EKKO",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "line": 9,
+      "fromId": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:CREATE_PO",
+      "toId": null
+    },
+    {
+      "from": "APPROVE_PO",
+      "to": "EKKO",
+      "type": "WRITES",
+      "resolution": "unresolved",
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "line": 12,
+      "fromId": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:APPROVE_PO",
+      "toId": null
+    }
+  ],
+  "calls": [],
+  "databaseAccesses": [
+    {
+      "node": "src/inventory/zcl_inv_1.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_1.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_1",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_1:Class:ZCL_INV_1:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_10.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_10.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_10",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_10:Class:ZCL_INV_10:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_2.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_2.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_2",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_2:Class:ZCL_INV_2:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_3.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_3.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_3",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_3:Class:ZCL_INV_3:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_4.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_4.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_4",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_4:Class:ZCL_INV_4:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_5.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_5.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_5",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_5:Class:ZCL_INV_5:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_6.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_6.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_6",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_6:Class:ZCL_INV_6:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_7.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_7.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_7",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_7:Class:ZCL_INV_7:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_8.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_8.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_8",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_8:Class:ZCL_INV_8:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/inventory/zcl_inv_9.abap:CHECK_STOCK",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "MARD",
+      "library": "ABAP SQL",
+      "file": "src/inventory/zcl_inv_9.abap",
+      "line": 8,
+      "object": "sap:src/inventory:ABAP:ZCL_INV_9",
+      "dynamic": false,
+      "snippet": "SELECT labst FROM mard WHERE matnr = '100'.",
+      "sapNode": "sap:src/inventory:ABAP:ZCL_INV_9:Class:ZCL_INV_9:Method:CHECK_STOCK"
+    },
+    {
+      "node": "src/order_to_cash/zcl_billing.abap:CREATE_INVOICE",
+      "kind": "raw-sql",
+      "operation": "insert",
+      "target": "VBRK",
+      "library": "ABAP SQL",
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "line": 12,
+      "object": "sap:src/order_to_cash:ABAP:ZCL_BILLING",
+      "dynamic": false,
+      "snippet": "INSERT INTO vbrk VALUES @( VALUE #( vbeln = rv_invoice ) ).",
+      "sapNode": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:CREATE_INVOICE"
+    },
+    {
+      "node": "src/order_to_cash/zcl_billing.abap:POST_TO_FI",
+      "kind": "raw-sql",
+      "operation": "insert",
+      "target": "BKPF",
+      "library": "ABAP SQL",
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "line": 17,
+      "object": "sap:src/order_to_cash:ABAP:ZCL_BILLING",
+      "dynamic": false,
+      "snippet": "INSERT INTO bkpf VALUES @( VALUE #( belnr = iv_invoice ) ).",
+      "sapNode": "sap:src/order_to_cash:ABAP:ZCL_BILLING:Class:ZCL_BILLING:Method:POST_TO_FI"
+    },
+    {
+      "node": "src/order_to_cash/zcl_sales_order.abap:CREATE_ORDER",
+      "kind": "raw-sql",
+      "operation": "insert",
+      "target": "ZORDERS",
+      "library": "ABAP SQL",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 19,
+      "object": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER",
+      "dynamic": false,
+      "snippet": "INSERT INTO zorders VALUES @( VALUE #( order_num = rv_order customer = iv_customer ) ).",
+      "sapNode": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CREATE_ORDER"
+    },
+    {
+      "node": "src/order_to_cash/zcl_sales_order.abap:GET_ORDER_STATUS",
+      "kind": "raw-sql",
+      "operation": "select",
+      "target": "VBAK",
+      "library": "ABAP SQL",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 24,
+      "object": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER",
+      "dynamic": false,
+      "snippet": "SELECT SINGLE status FROM vbak INTO rv_status WHERE vbeln = iv_order.",
+      "sapNode": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:GET_ORDER_STATUS"
+    },
+    {
+      "node": "src/order_to_cash/zcl_sales_order.abap:CANCEL_ORDER",
+      "kind": "raw-sql",
+      "operation": "update",
+      "target": "VBAK",
+      "library": "ABAP SQL",
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "line": 28,
+      "object": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER",
+      "dynamic": false,
+      "snippet": "UPDATE vbak SET abstk = 'X' WHERE vbeln = iv_order.",
+      "sapNode": "sap:src/order_to_cash:ABAP:ZCL_SALES_ORDER:Class:ZCL_SALES_ORDER:Method:CANCEL_ORDER"
+    },
+    {
+      "node": "src/procure_to_pay/zcl_purchase_order.abap:CREATE_PO",
+      "kind": "raw-sql",
+      "operation": "insert",
+      "target": "EKKO",
+      "library": "ABAP SQL",
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "line": 9,
+      "object": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER",
+      "dynamic": false,
+      "snippet": "INSERT INTO ekko VALUES @( VALUE #( ebeln = sy-datum lifnr = iv_vendor ) ).",
+      "sapNode": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:CREATE_PO"
+    },
+    {
+      "node": "src/procure_to_pay/zcl_purchase_order.abap:APPROVE_PO",
+      "kind": "raw-sql",
+      "operation": "update",
+      "target": "EKKO",
+      "library": "ABAP SQL",
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "line": 12,
+      "object": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER",
+      "dynamic": false,
+      "snippet": "UPDATE ekko SET frgke = 'A' WHERE ebeln = iv_po.",
+      "sapNode": "sap:src/procure_to_pay:ABAP:ZCL_PURCHASE_ORDER:Class:ZCL_PURCHASE_ORDER:Method:APPROVE_PO"
+    }
+  ],
+  "sequences": [],
+  "estate": {
+    "schemaVersion": "sap-estate/v1",
+    "scope": "static source and exported metadata",
+    "summary": {
+      "transactions": 0,
+      "functionalAreas": 5,
+      "packages": 0,
+      "repositoryObjects": 90,
+      "customObjects": 180,
+      "interfaces": 0,
+      "jobs": 0,
+      "authorizationObjects": 0,
+      "enhancements": 0
+    },
+    "transactions": [],
+    "functionalAreas": [
+      {
+        "id": "FI",
+        "name": "Financial Accounting",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "BKPF",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_billing.abap",
+            "line": 17
+          }
+        ],
+        "evidenceCount": 1,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      },
+      {
+        "id": "MM",
+        "name": "Materials Management",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "EKKO",
+            "kind": "table",
+            "file": "src/procure_to_pay/zcl_purchase_order.abap",
+            "line": 12
+          },
+          {
+            "value": "EKKO",
+            "kind": "table",
+            "file": "src/procure_to_pay/zcl_purchase_order.abap",
+            "line": 9
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_1.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_10.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_2.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_3.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_4.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_5.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_6.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_7.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_8.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_9.abap",
+            "line": 8
+          }
+        ],
+        "evidenceCount": 12,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      },
+      {
+        "id": "PP",
+        "name": "Production Planning",
+        "factState": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_1.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_2.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_3.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_4.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_5.abap",
+            "line": 7
+          }
+        ],
+        "evidenceCount": 5,
+        "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+      },
+      {
+        "id": "QM",
+        "name": "Quality Management",
+        "factState": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_1.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_2.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_3.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_4.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_5.abap",
+            "line": 7
+          }
+        ],
+        "evidenceCount": 5,
+        "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+      },
+      {
+        "id": "SD",
+        "name": "Sales and Distribution",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "VBAK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_sales_order.abap",
+            "line": 24
+          },
+          {
+            "value": "VBAK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_sales_order.abap",
+            "line": 28
+          },
+          {
+            "value": "VBRK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_billing.abap",
+            "line": 12
+          }
+        ],
+        "evidenceCount": 3,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      }
+    ],
+    "objectTypes": [
+      {
+        "kind": "Method",
+        "count": 94
+      },
+      {
+        "kind": "ABAP",
+        "count": 90
+      },
+      {
+        "kind": "Class",
+        "count": 90
+      },
+      {
+        "kind": "Field",
+        "count": 1
+      }
+    ],
+    "packages": [],
+    "interfaces": [],
+    "jobs": [],
+    "authorizationObjects": [],
+    "enhancements": [],
+    "boundaries": [
+      "Functional areas describe evidence in exported source. They do not prove that an SAP software component or business function is installed or active.",
+      "Transaction definitions, static CALL TRANSACTION sites and literal S_TCODE checks are captured. Dynamic transaction names remain unresolved.",
+      "Background-job candidates come from exported programs and scheduling API calls. SM37 execution history and production schedules require connected-system evidence."
+    ],
+    "modelEnrichment": {
+      "status": "available-on-demand",
+      "bestUses": [
+        "Classify ambiguous Z/Y and namespace objects into business capabilities using their calls, tables, descriptions and neighboring objects.",
+        "Summarize transaction-to-program-to-table-to-interface process slices and name likely business owners.",
+        "Cluster custom objects into modernization waves and explain the evidence behind each cluster."
+      ],
+      "guardrails": [
+        "Never convert an inference into an installed-module fact.",
+        "Cite source files and lines for every classification.",
+        "Keep low-confidence or conflicting classifications as review items."
+      ]
+    }
+  },
+  "applicationMap": {
+    "schemaVersion": "sap-application-map/v1",
+    "scope": "static source and exported repository metadata",
+    "summary": {
+      "dataModelFamilies": 0,
+      "dataModelObjects": 0,
+      "businessObjects": 0,
+      "interfaces": 0,
+      "inboundInterfaces": 0,
+      "outboundInterfaces": 0,
+      "processSlices": 0
+    },
+    "dataModelFamilies": [
+      {
+        "id": "ddic",
+        "name": "ABAP Dictionary",
+        "description": "Tables, classic views, data elements, domains, table types, search helps and lock objects.",
+        "count": 0,
+        "objects": []
+      },
+      {
+        "id": "abap-cds",
+        "name": "ABAP CDS and VDM",
+        "description": "View entities, projections, analytical categories, associations, compositions and metadata extensions.",
+        "count": 0,
+        "objects": []
+      },
+      {
+        "id": "rap",
+        "name": "RAP business objects",
+        "description": "Behavior definitions, persistence and draft tables, operations, service definitions and bindings.",
+        "count": 0,
+        "objects": []
+      },
+      {
+        "id": "hana-native",
+        "name": "SAP HANA and HDI",
+        "description": "Tables, views, calculation views, SQLScript routines, synonyms, roles and deployment descriptors.",
+        "count": 0,
+        "objects": []
+      },
+      {
+        "id": "bw",
+        "name": "SAP BW and BW/4HANA",
+        "description": "InfoObjects, DataSources, transformations, DTPs, ADSOs, Open ODS views and CompositeProviders when exported.",
+        "count": 0,
+        "objects": []
+      },
+      {
+        "id": "cap",
+        "name": "SAP CAP domain model",
+        "description": "CDS entities, projections, compositions, associations and service-facing models.",
+        "count": 0,
+        "objects": []
+      }
+    ],
+    "businessObjects": [],
+    "interfaces": [],
+    "lineage": [],
+    "processSlices": [],
+    "evidenceLevels": [
+      {
+        "level": "source",
+        "proves": "Declarations, static dependencies, call sites, route templates and checked-in configuration."
+      },
+      {
+        "level": "repository-export",
+        "proves": "Object identity and metadata for the exported objects, including DDIC, CDS, services, roles and BW objects."
+      },
+      {
+        "level": "connected-system",
+        "proves": "Activation, installed components, effective configuration, published endpoints, schedules, users and transports."
+      },
+      {
+        "level": "runtime",
+        "proves": "Actual transaction/service usage, frequencies, SQL cost, caller identity, failures and end-to-end execution paths."
+      }
+    ],
+    "gaps": [
+      "Field-level lineage through expressions, AMDP/SQLScript and dynamic Open SQL remains partial.",
+      "Classic Gateway SEGW model/provider semantics require IWSG/IWOM exports or a connected-system inventory.",
+      "Published HTTP/ICF paths and service activation require /IWFND service inventory, SICF and SOAMANAGER evidence.",
+      "RFC destinations, logical ports, IDoc partner profiles and Integration Suite deployed state require sanitized runtime configuration exports.",
+      "BW transformations, DTP execution chains and query lineage need BW metadata exports beyond repository object envelopes.",
+      "Dynamic dispatch, generated proxies, customizing-driven workflow and actual business process order need runtime traces or specialist review."
+    ]
+  },
+  "security": [],
+  "dataControls": [],
+  "effects": [],
+  "diagnostics": [
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_1.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_10.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_2.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_3.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_4.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_5.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_6.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_7.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_8.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    },
+    {
+      "code": "ABAP_STRUCTURE_INCOMPLETE",
+      "file": "src/inventory/zcl_inv_9.abap",
+      "line": 1,
+      "message": "Parser could not assemble a complete structure"
+    }
+  ],
+  "readingGuide": [
+    {
+      "title": "Application structure",
+      "captured": "ABAP classes, methods, forms and functions; SAP source declarations and ownership.",
+      "boundary": "Native Java, JavaScript and other source languages remain in the shared application analysis."
+    },
+    {
+      "title": "Data model",
+      "captured": "DDIC, CDS/VDM, RAP business objects, native HANA/HDI, BW metadata and CAP models are separated into their real modeling families and also enter the common Data Model and UML.",
+      "boundary": "Unknown types stay unknown. Imported aspects, generated fields, expression lineage and projection field inheritance are not synthesized."
+    },
+    {
+      "title": "Data movement",
+      "captured": "Open SQL access, lexical HANA access, CDS projections, RAP persistence and service exposure dependencies.",
+      "boundary": "A dependency is not field-level lineage or proof that a runtime transaction executes it."
+    },
+    {
+      "title": "Calls, routes and sequences",
+      "captured": "Static ABAP calls, transaction entry points, RFC/BAPI/IDoc/HTTP sites, OData/RAP/Gateway/CAP declarations and explicit iFlow connections feed the application map.",
+      "boundary": "Declared connectivity does not prove activation, endpoint reachability or runtime order. Dynamic ABAP dispatch stays unresolved."
+    },
+    {
+      "title": "Migration assessment",
+      "captured": "Source evidence, parser gaps and unresolved dependencies for investigation.",
+      "boundary": "No ATC results, simplification-item checks, live system inventory or target compatibility assessment is available."
+    }
+  ]
+}

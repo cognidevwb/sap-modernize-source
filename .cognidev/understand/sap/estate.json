@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "sap-estate/v1",
+  "producer": "understand-sap",
+  "producerVersion": "0.4.0",
+  "parser": "@abaplint/core@2.120.54",
+  "scope": "static source and exported metadata",
+  "productRelease": "unknown",
+  "targetReadiness": "not-assessed",
+  "supportMatrixVersion": "sap-export-0.4",
+  "inputDigest": "599f9334a868189da9abd61ef397f06953310eb0171793703652ab6787f006ef",
+  "summary": {
+    "transactions": 0,
+    "functionalAreas": 5,
+    "packages": 0,
+    "repositoryObjects": 90,
+    "customObjects": 180,
+    "interfaces": 0,
+    "jobs": 0,
+    "authorizationObjects": 0,
+    "enhancements": 0
+  },
+  "transactions": [],
+  "functionalAreas": [
+    {
+      "id": "FI",
+      "name": "Financial Accounting",
+      "factState": "observed",
+      "confidence": 1,
+      "evidence": [
+        {
+          "value": "BKPF",
+          "kind": "table",
+          "file": "src/order_to_cash/zcl_billing.abap",
+          "line": 17
+        }
+      ],
+      "evidenceCount": 1,
+      "statement": "Standard SAP transaction or table-family evidence was found in source."
+    },
+    {
+      "id": "MM",
+      "name": "Materials Management",
+      "factState": "observed",
+      "confidence": 1,
+      "evidence": [
+        {
+          "value": "EKKO",
+          "kind": "table",
+          "file": "src/procure_to_pay/zcl_purchase_order.abap",
+          "line": 12
+        },
+        {
+          "value": "EKKO",
+          "kind": "table",
+          "file": "src/procure_to_pay/zcl_purchase_order.abap",
+          "line": 9
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_1.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_10.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_2.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_3.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_4.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_5.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_6.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_7.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_8.abap",
+          "line": 8
+        },
+        {
+          "value": "MARD",
+          "kind": "table",
+          "file": "src/inventory/zcl_inv_9.abap",
+          "line": 8
+        }
+      ],
+      "evidenceCount": 12,
+      "statement": "Standard SAP transaction or table-family evidence was found in source."
+    },
+    {
+      "id": "PP",
+      "name": "Production Planning",
+      "factState": "inferred",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "value": "PLAN_PRODUCTION",
+          "kind": "object",
+          "file": "src/production/zcl_pp_1.abap",
+          "line": 7
+        },
+        {
+          "value": "PLAN_PRODUCTION",
+          "kind": "object",
+          "file": "src/production/zcl_pp_2.abap",
+          "line": 7
+        },
+        {
+          "value": "PLAN_PRODUCTION",
+          "kind": "object",
+          "file": "src/production/zcl_pp_3.abap",
+          "line": 7
+        },
+        {
+          "value": "PLAN_PRODUCTION",
+          "kind": "object",
+          "file": "src/production/zcl_pp_4.abap",
+          "line": 7
+        },
+        {
+          "value": "PLAN_PRODUCTION",
+          "kind": "object",
+          "file": "src/production/zcl_pp_5.abap",
+          "line": 7
+        }
+      ],
+      "evidenceCount": 5,
+      "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+    },
+    {
+      "id": "QM",
+      "name": "Quality Management",
+      "factState": "inferred",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "value": "QUALITY_CHECK",
+          "kind": "object",
+          "file": "src/quality/zcl_qm_1.abap",
+          "line": 7
+        },
+        {
+          "value": "QUALITY_CHECK",
+          "kind": "object",
+          "file": "src/quality/zcl_qm_2.abap",
+          "line": 7
+        },
+        {
+          "value": "QUALITY_CHECK",
+          "kind": "object",
+          "file": "src/quality/zcl_qm_3.abap",
+          "line": 7
+        },
+        {
+          "value": "QUALITY_CHECK",
+          "kind": "object",
+          "file": "src/quality/zcl_qm_4.abap",
+          "line": 7
+        },
+        {
+          "value": "QUALITY_CHECK",
+          "kind": "object",
+          "file": "src/quality/zcl_qm_5.abap",
+          "line": 7
+        }
+      ],
+      "evidenceCount": 5,
+      "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+    },
+    {
+      "id": "SD",
+      "name": "Sales and Distribution",
+      "factState": "observed",
+      "confidence": 1,
+      "evidence": [
+        {
+          "value": "VBAK",
+          "kind": "table",
+          "file": "src/order_to_cash/zcl_sales_order.abap",
+          "line": 24
+        },
+        {
+          "value": "VBAK",
+          "kind": "table",
+          "file": "src/order_to_cash/zcl_sales_order.abap",
+          "line": 28
+        },
+        {
+          "value": "VBRK",
+          "kind": "table",
+          "file": "src/order_to_cash/zcl_billing.abap",
+          "line": 12
+        }
+      ],
+      "evidenceCount": 3,
+      "statement": "Standard SAP transaction or table-family evidence was found in source."
+    }
+  ],
+  "objectTypes": [
+    {
+      "kind": "Method",
+      "count": 94
+    },
+    {
+      "kind": "ABAP",
+      "count": 90
+    },
+    {
+      "kind": "Class",
+      "count": 90
+    },
+    {
+      "kind": "Field",
+      "count": 1
+    }
+  ],
+  "packages": [],
+  "interfaces": [],
+  "jobs": [],
+  "authorizationObjects": [],
+  "enhancements": [],
+  "boundaries": [
+    "Functional areas describe evidence in exported source. They do not prove that an SAP software component or business function is installed or active.",
+    "Transaction definitions, static CALL TRANSACTION sites and literal S_TCODE checks are captured. Dynamic transaction names remain unresolved.",
+    "Background-job candidates come from exported programs and scheduling API calls. SM37 execution history and production schedules require connected-system evidence."
+  ],
+  "modelEnrichment": {
+    "status": "available-on-demand",
+    "bestUses": [
+      "Classify ambiguous Z/Y and namespace objects into business capabilities using their calls, tables, descriptions and neighboring objects.",
+      "Summarize transaction-to-program-to-table-to-interface process slices and name likely business owners.",
+      "Cluster custom objects into modernization waves and explain the evidence behind each cluster."
+    ],
+    "guardrails": [
+      "Never convert an inference into an installed-module fact.",
+      "Cite source files and lines for every classification.",
+      "Keep low-confidence or conflicting classifications as review items."
+    ]
+  }
+}

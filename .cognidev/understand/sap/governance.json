@@ -1,0 +1,625 @@
+{
+  "schemaVersion": "sap-governance/v1",
+  "producer": "understand-sap",
+  "producerVersion": "0.3.5",
+  "inputDigest": "599f9334a868189da9abd61ef397f06953310eb0171793703652ab6787f006ef",
+  "scope": "source-and-assessment-evidence",
+  "assessment": {
+    "state": "not-run",
+    "path": ".cognidev/sap-modernization/assessment-bundle.json",
+    "changedEvidence": [],
+    "assessmentState": "not-run",
+    "migrationReadiness": "not-established"
+  },
+  "summary": {
+    "blockerCount": 6,
+    "warningCount": 2,
+    "controlCount": 12,
+    "scenarioCount": 0,
+    "candidateScenarioCount": 0,
+    "factStates": {
+      "observed": 3,
+      "unknown": 9
+    }
+  },
+  "targetContract": {
+    "factState": "unknown",
+    "route": "unknown",
+    "product": "unknown",
+    "edition": "unknown",
+    "release": "unknown",
+    "qualification": "incomplete"
+  },
+  "tracks": [
+    {
+      "id": "same-release-maintenance",
+      "title": "SAP FPS/SPS Update",
+      "purpose": "Apply a Feature Package Stack or Support Package Stack with component Support Packages, patches and SAP Notes.",
+      "state": "not-assessed",
+      "candidateScenarios": [],
+      "stages": [
+        {
+          "id": "baseline",
+          "title": "Baseline landscape",
+          "state": "missing"
+        },
+        {
+          "id": "applicability",
+          "title": "Qualify Notes and compatibility",
+          "state": "missing"
+        },
+        {
+          "id": "plan",
+          "title": "Plan stack, transports and downtime",
+          "state": "missing"
+        },
+        {
+          "id": "remediate",
+          "title": "Resolve ATC, SPAU and SPDD",
+          "state": "missing"
+        },
+        {
+          "id": "validate",
+          "title": "Rehearse and validate",
+          "state": "missing"
+        },
+        {
+          "id": "operate",
+          "title": "Cut over, observe and rollback",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "id": "s4-transformation",
+      "title": "S/4HANA transformation",
+      "purpose": "Convert or migrate the legacy SAP landscape to the declared current target, with clean-core, data, integration and cutover controls.",
+      "state": "not-assessed",
+      "candidateScenarios": [],
+      "stages": [
+        {
+          "id": "target",
+          "title": "Qualify source and target",
+          "state": "missing"
+        },
+        {
+          "id": "readiness",
+          "title": "Run readiness and simplification checks",
+          "state": "missing"
+        },
+        {
+          "id": "portfolio",
+          "title": "Remediate custom code and clean core",
+          "state": "missing"
+        },
+        {
+          "id": "data",
+          "title": "Transform data, interfaces and security",
+          "state": "missing"
+        },
+        {
+          "id": "validate",
+          "title": "Reconcile business outcomes",
+          "state": "missing"
+        },
+        {
+          "id": "cutover",
+          "title": "Rehearse cutover and retirement",
+          "state": "missing"
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "source-inventory",
+      "title": "SAP source inventory",
+      "area": "engineering",
+      "factState": "observed",
+      "state": "partial",
+      "summary": "90 SAP inputs; 10 need deeper analysis.",
+      "evidence": [
+        ".cognidev/understand/sap/inventory.json"
+      ],
+      "requiredEvidence": [
+        "resolve partial and unsupported inputs"
+      ]
+    },
+    {
+      "id": "engineering-model",
+      "title": "Application structure and dependencies",
+      "area": "engineering",
+      "factState": "observed",
+      "state": "partial",
+      "summary": "0 exact references; 17 unresolved or external.",
+      "evidence": [
+        ".cognidev/understand/sap/engineering.json"
+      ],
+      "requiredEvidence": [
+        "resolve external, ambiguous and dynamic references"
+      ]
+    },
+    {
+      "id": "business-footprint",
+      "title": "Transactions and functional footprint",
+      "area": "modules",
+      "factState": "observed",
+      "state": "observed",
+      "summary": "0 transactions and 5 functional areas are evidenced in exported source.",
+      "evidence": [
+        ".cognidev/understand/sap/estate.json"
+      ],
+      "requiredEvidence": []
+    },
+    {
+      "id": "landscape-baseline",
+      "title": "Landscape and release baseline",
+      "area": "landscape",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "The repository cannot prove the running SAP product or maintenance level.",
+      "evidence": [],
+      "requiredEvidence": [
+        "system component inventory",
+        "source product and release",
+        "support-package and feature-package level"
+      ]
+    },
+    {
+      "id": "components-addons",
+      "title": "Installed components and add-ons",
+      "area": "components",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Source evidence points to FI, MM, PP, QM, SD. Installed software components, add-ons and activation still require system evidence.",
+      "evidence": [
+        ".cognidev/understand/sap/estate.json"
+      ],
+      "requiredEvidence": [
+        "installed component and add-on inventory",
+        "activated business functions",
+        "vendor support status"
+      ]
+    },
+    {
+      "id": "maintenance-planning",
+      "title": "Maintenance Planner and compatibility",
+      "area": "maintenance",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Stack calculation, add-on compatibility, kernel/database prerequisites and downtime plan require system and vendor evidence.",
+      "evidence": [],
+      "requiredEvidence": [
+        "Maintenance Planner result",
+        "stack.xml or equivalent plan",
+        "add-on compatibility",
+        "kernel and database prerequisites"
+      ]
+    },
+    {
+      "id": "notes-security",
+      "title": "SAP Notes and Security Notes",
+      "area": "maintenance",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Applicability, prerequisites, manual activities and superseded Notes are not established from source.",
+      "evidence": [],
+      "requiredEvidence": [
+        "SAP Note applicability ledger",
+        "Security Note priorities",
+        "prerequisites and manual activities"
+      ]
+    },
+    {
+      "id": "custom-code",
+      "title": "Custom code, ATC and clean core",
+      "area": "readiness",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Static source structure is available; target-specific ATC and simplification results remain a separate evidence set.",
+      "evidence": [
+        ".cognidev/understand/sap/engineering.json"
+      ],
+      "requiredEvidence": [
+        "SAP Readiness Check",
+        "target-specific simplification findings",
+        "ATC/custom code findings",
+        "Maintenance Planner compatibility evidence"
+      ]
+    },
+    {
+      "id": "runtime-security",
+      "title": "Runtime, customizing and authorizations",
+      "area": "runtime",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Effective behavior and access must be measured in connected systems.",
+      "evidence": [],
+      "requiredEvidence": [
+        "activated object inventory",
+        "customizing and client scope",
+        "jobs and interface inventory",
+        "effective authorizations",
+        "runtime usage"
+      ]
+    },
+    {
+      "id": "validation",
+      "title": "Business, data and regression validation",
+      "area": "validation",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Process cases, control totals, interfaces and non-functional baselines gate release acceptance.",
+      "evidence": [],
+      "requiredEvidence": [
+        "process scope and owners",
+        "representative business cases",
+        "control totals and tolerances"
+      ]
+    },
+    {
+      "id": "target-contract",
+      "title": "Modernization target contract",
+      "area": "target",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "No current modernization assessment supplies a target route and release.",
+      "evidence": [],
+      "requiredEvidence": [
+        "run SAP modernization assessment"
+      ]
+    },
+    {
+      "id": "handoffs",
+      "title": "Specialist playbook handoffs",
+      "area": "governance",
+      "factState": "unknown",
+      "state": "missing",
+      "summary": "Specialist playbooks have not been routed from a current foundation assessment.",
+      "evidence": [],
+      "requiredEvidence": [
+        "run SAP modernization assessment"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "source-product-release-unknown",
+      "severity": "blocker",
+      "area": "landscape",
+      "factState": "unknown",
+      "summary": "Source product, edition, release and support-package level are not established.",
+      "requiredEvidence": [
+        "system component inventory",
+        "source product and release",
+        "support-package and feature-package level"
+      ]
+    },
+    {
+      "id": "installed-components-unavailable",
+      "severity": "blocker",
+      "area": "components",
+      "factState": "unknown",
+      "summary": "Installed modules, software components, add-ons, business functions and support levels are not observed.",
+      "requiredEvidence": [
+        "installed component and add-on inventory",
+        "activated business functions",
+        "vendor support status"
+      ]
+    },
+    {
+      "id": "live-system-state-unavailable",
+      "severity": "blocker",
+      "area": "runtime",
+      "factState": "unknown",
+      "summary": "Activation, customizing, clients, jobs, interfaces, effective roles and runtime usage are not observed.",
+      "requiredEvidence": [
+        "activated object inventory",
+        "customizing and client scope",
+        "jobs and interface inventory",
+        "effective authorizations",
+        "runtime usage"
+      ]
+    },
+    {
+      "id": "sap-readiness-imports-missing",
+      "severity": "blocker",
+      "area": "readiness",
+      "factState": "unknown",
+      "summary": "Readiness Check, simplification, ATC and compatibility results have not been imported.",
+      "requiredEvidence": [
+        "SAP Readiness Check",
+        "target-specific simplification findings",
+        "ATC/custom code findings",
+        "Maintenance Planner compatibility evidence"
+      ]
+    },
+    {
+      "id": "business-baseline-missing",
+      "severity": "blocker",
+      "area": "validation",
+      "factState": "unknown",
+      "summary": "Business-process, data and reconciliation baselines are not established.",
+      "requiredEvidence": [
+        "process scope and owners",
+        "representative business cases",
+        "control totals and tolerances"
+      ]
+    },
+    {
+      "id": "maintenance-evidence-missing",
+      "severity": "blocker",
+      "area": "maintenance",
+      "factState": "unknown",
+      "summary": "Patch applicability, SAP Notes, SUM plan, SPAU/SPDD impact, regression scope and rollback evidence are not established.",
+      "requiredEvidence": [
+        "Maintenance Planner or equivalent plan",
+        "SAP Note applicability ledger",
+        "SUM/stack plan",
+        "SPAU/SPDD inventory",
+        "regression selection",
+        "rehearsal and rollback evidence"
+      ]
+    },
+    {
+      "id": "partial-source-coverage",
+      "severity": "warning",
+      "area": "engineering",
+      "factState": "unknown",
+      "summary": "10 SAP inputs are partial, malformed or unsupported.",
+      "requiredEvidence": [
+        "resolve each inventory disposition"
+      ]
+    },
+    {
+      "id": "unresolved-source-references",
+      "severity": "warning",
+      "area": "engineering",
+      "factState": "unknown",
+      "summary": "17 SAP references are unresolved, ambiguous, dynamic or external.",
+      "requiredEvidence": [
+        "referenced exports",
+        "runtime traces",
+        "external contracts"
+      ]
+    }
+  ],
+  "estate": {
+    "summary": {
+      "transactions": 0,
+      "functionalAreas": 5,
+      "packages": 0,
+      "repositoryObjects": 90,
+      "customObjects": 180,
+      "interfaces": 0,
+      "jobs": 0,
+      "authorizationObjects": 0,
+      "enhancements": 0
+    },
+    "functionalAreas": [
+      {
+        "id": "FI",
+        "name": "Financial Accounting",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "BKPF",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_billing.abap",
+            "line": 17
+          }
+        ],
+        "evidenceCount": 1,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      },
+      {
+        "id": "MM",
+        "name": "Materials Management",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "EKKO",
+            "kind": "table",
+            "file": "src/procure_to_pay/zcl_purchase_order.abap",
+            "line": 12
+          },
+          {
+            "value": "EKKO",
+            "kind": "table",
+            "file": "src/procure_to_pay/zcl_purchase_order.abap",
+            "line": 9
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_1.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_10.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_2.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_3.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_4.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_5.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_6.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_7.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_8.abap",
+            "line": 8
+          },
+          {
+            "value": "MARD",
+            "kind": "table",
+            "file": "src/inventory/zcl_inv_9.abap",
+            "line": 8
+          }
+        ],
+        "evidenceCount": 12,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      },
+      {
+        "id": "PP",
+        "name": "Production Planning",
+        "factState": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_1.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_2.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_3.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_4.abap",
+            "line": 7
+          },
+          {
+            "value": "PLAN_PRODUCTION",
+            "kind": "object",
+            "file": "src/production/zcl_pp_5.abap",
+            "line": 7
+          }
+        ],
+        "evidenceCount": 5,
+        "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+      },
+      {
+        "id": "QM",
+        "name": "Quality Management",
+        "factState": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_1.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_2.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_3.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_4.abap",
+            "line": 7
+          },
+          {
+            "value": "QUALITY_CHECK",
+            "kind": "object",
+            "file": "src/quality/zcl_qm_5.abap",
+            "line": 7
+          }
+        ],
+        "evidenceCount": 5,
+        "statement": "Custom-object naming or descriptions suggest this functional area; confirm with owners or runtime usage."
+      },
+      {
+        "id": "SD",
+        "name": "Sales and Distribution",
+        "factState": "observed",
+        "confidence": 1,
+        "evidence": [
+          {
+            "value": "VBAK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_sales_order.abap",
+            "line": 24
+          },
+          {
+            "value": "VBAK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_sales_order.abap",
+            "line": 28
+          },
+          {
+            "value": "VBRK",
+            "kind": "table",
+            "file": "src/order_to_cash/zcl_billing.abap",
+            "line": 12
+          }
+        ],
+        "evidenceCount": 3,
+        "statement": "Standard SAP transaction or table-family evidence was found in source."
+      }
+    ],
+    "transactions": []
+  },
+  "capabilities": [
+    {
+      "id": "abap-rap",
+      "factState": "observed",
+      "detected": true,
+      "evidence": [
+        ".cognidev/understand/sap/coverage.json"
+      ]
+    }
+  ],
+  "handoffs": [],
+  "rules": [
+    "Observed, inferred, proposed and unknown facts remain distinct.",
+    "Missing live-system evidence is a gap, never a clean result.",
+    "A stale foundation assessment is not used for readiness or routing."
+  ]
+}

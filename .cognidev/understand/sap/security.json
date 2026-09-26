@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "sap-understand/v1",
+  "producer": "understand-sap",
+  "producerVersion": "0.4.0",
+  "parser": "@abaplint/core@2.120.54",
+  "scope": "export-only",
+  "productRelease": "unknown",
+  "targetReadiness": "not-assessed",
+  "supportMatrixVersion": "sap-export-0.4",
+  "inputDigest": "599f9334a868189da9abd61ef397f06953310eb0171793703652ab6787f006ef",
+  "checks": [],
+  "dataControls": [],
+  "runtimeAuthorization": "not-assessed"
+}

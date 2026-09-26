@@ -1,0 +1,1480 @@
+{
+  "schemaVersion": "sap-understand/v1",
+  "producer": "understand-sap",
+  "producerVersion": "0.4.0",
+  "parser": "@abaplint/core@2.120.54",
+  "scope": "export-only",
+  "productRelease": "unknown",
+  "targetReadiness": "not-assessed",
+  "supportMatrixVersion": "sap-export-0.4",
+  "inputDigest": "599f9334a868189da9abd61ef397f06953310eb0171793703652ab6787f006ef",
+  "files": [
+    {
+      "file": "cognidev/README.md",
+      "format": "other",
+      "type": null,
+      "name": "readme.md",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 738
+    },
+    {
+      "file": "database/ztable_1.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_1.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_10.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_10.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 196
+    },
+    {
+      "file": "database/ztable_2.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_2.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_3.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_3.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_4.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_4.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_5.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_5.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_6.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_6.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_7.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_7.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_8.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_8.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "database/ztable_9.ddl",
+      "format": "other",
+      "type": null,
+      "name": "ztable_9.ddl",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 194
+    },
+    {
+      "file": "generate_demo.sh",
+      "format": "other",
+      "type": null,
+      "name": "generate_demo.sh",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 6310
+    },
+    {
+      "file": "README.md",
+      "format": "other",
+      "type": null,
+      "name": "readme.md",
+      "disposition": "excluded",
+      "reason": "not a supported SAP input",
+      "bytes": 656
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "84defdb4031797e6344a887156caeeca085bd4d3ecce779ffe253621c7abe036",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "2845bbc5d0cb0c35a7522ee592a3556312ef493ca95c9f17ec02c21f8d01973a",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "dbe4cd780b94d272edc27425fffa794d36bdce1c128cffb2f1208278cacacde3",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "f13135345b1bfca91d8a708f59a4df31ee23b48f14be582cf1079c476d378a41",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "55417204f4a9f2f5259451cfc4fd052a68e8900261a8112e6950eeaf1b6eae33",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "1d04518b7b0b04569bf7c07270284ceeca6cbb2e83a7d48c2961c03188d5c20c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "600716303bbba180f3055d241a6181d7cd924ea5f02fbd5e325af91de09fa283",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/cross_cutting/zcl_util_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_UTIL_8",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 220,
+      "sha256": "90946b186bcdcc08b387020d5fbe4eb89076c9a7df8b85fbff921bda1ccedb22",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "7000ec3db9ad66c708b129da9ce113aefc5f460896543730a45bb17faa0b061c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_10.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_10",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 240,
+      "sha256": "4563c85d0626d820c0f868ae5f473205e33250e7410677c882513c3eb7956d31",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "4f5d1162f26037a7f8afbdf588c0acd4d33e247dbba4d9bb81e16e5df6179a61",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "bf9108cef202f63844d285d01d123c457d044b21a2350ace5477f551e804f245",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "b6c0a409583101ace4426c5b6f896e7557adf42c4b2adeb5e46a847a56e88e45",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "063d2b27da7a231c99649709858b87d966dea0e266a47390498a8f85d17b8ca6",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "c34d8ae185084b2a66af9915d6d6f2e52006b637e746b3c8bb921da7d370ec1b",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "f3d1013e34080373356d3196129139b28975edb16c4447fffc5851758dc44796",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_8",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "82507cf71a1840d7b6315333b8aa5d6334a1a00ade75368d1c5f442e173324e3",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/finance/zcl_fi_9.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_FI_9",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 237,
+      "sha256": "512dac2cdacc8335529f3d709a5ef51e0e5333d3a38bce687cfc15a18072657d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_1",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "d230b9e9c0629de05767b28d6f8826e1217faf17c7f616e936421f8adecd8b95",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_10.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_10",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 263,
+      "sha256": "8527d6649bc36a25163225a82d6fe15843a0e68337583a685f5658e5e893129c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_2",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "63c4481c6a9239ae08c219fa662350bfc1332df85bdedb559fb9061fc6d03fce",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_3",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "30a09dd7958af473550a7e55a26c8045f6a66ae33d0351aa0424a771dba3c82d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_4",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "ea1f8e3b7d9215f6af57e05081de5755fad1bb009deb93a809a18fd56a7513f9",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_5",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "41902420df3dd272cf5e7550a785d10651d36c0fd8c4d17f1eeb8f5e048adb54",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_6",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "78f86cede0a3b894b560aa434f05e81a6fd559d004197b992d59546b4d58b84d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_7",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "edd69566a2a825a2fe8116898b1f0500d43a2d2f41536b23ccbfe64f824b66e8",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_8",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "ec28c4be2c88fddf101180f909f60f98aba5112b4003dd5b89b925416f545932",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/inventory/zcl_inv_9.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_INV_9",
+      "synthetic": true,
+      "disposition": "partial",
+      "bytes": 260,
+      "sha256": "fc10f45b930d1738711a5dd0d31e9b4e5c27327a930aa509a6ce2ba67ac59f86",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 9,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "e28b357403e94c6b9607d2bc67fea0f5b5f081f1a138a59fefe149057a200268",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "9ced0314f8c91ab0947c44edee2cc8853b1dbc35257ee4196224c61e986d205a",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "fa07ee393bb4cec48e273a29174faadfa935b3502876c2b8aa656ee34038cd25",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "0bd0bae6d34ce14b4540354de2b5288d2af731f3f360a9662122fa46c40e396f",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "1b66fced92f47fa8af4f0e489779e46ec9f06c7c1175059d297f26509fd39e68",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "e9c7079506f74b9e1807e6a4c8123509da4c99dfb7ba9b4629d0c0bf4906a06c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/logistics/zcl_log_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_LOG_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "ae1925c4f7593a0f3de578608a16edc5f13759ef37b512bd55c77ba58625a6a3",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "74b2a988206d095347f9b398ddc311bce2e38c3e8ccce249fee6f99118f66c3f",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "fb4429249438a4240da833912674472f78542541cc46fa5a1bbf88a0e7ac262b",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "74a2687de475e2fc9d63f4cc2d8dcb453cb20016f60208fdf7fb9a70c7e49d76",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "a526b28787d943ab5d2b8dc71f69f1450730cd700e05827a3075ae7583e4eba1",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "3dc41b1011320471b6a2a833ab5d3f8e646d9551f3e0eca8b4d03bf035e9f768",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "b416648a04e03d5e51d6d58d1e6ce9ab896458ce1977dff0998c1d1ae9ae16d3",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "55e3671451a6c867a7fd7116e5a8c9cdb0b40aa08715beb0bc105d92f786aef5",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/master_data/zcl_md_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_MD_8",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 209,
+      "sha256": "14948a07a85dba2c81bb8868fc2e26f7a869a90fcd78b71628baf683ed871d1c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_billing.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_BILLING",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 648,
+      "sha256": "78440379a0658fe065dc589d08bb612dfef215fa0a46b4c658ffcb8934491b89",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 13,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "1470d8051a2f6bd45b1baaeab100388cb8ed3bd39e5d50653e93ce2d6a33af4b",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_10.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_10",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 214,
+      "sha256": "92b4f53ed724a106b138dfd321d067cd09e51e8b3e6ba6f8bf05b8c6b148c9c4",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_11.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_11",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 214,
+      "sha256": "da8ae9516d930febf8d6629a720691d05220086dd43a29586b7941e80c05e690",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_12.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_12",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 214,
+      "sha256": "4b9bfdaeed6f3dd4ccc38529c1913812751494d1651faacd82c9fbdf0b713f91",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_13.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_13",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 214,
+      "sha256": "afc8749c71bbbfbd207f3218727a3c18490f13ee9d7dbf1d9397b53b5112ce0a",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "cdc7e4a88a88247231118cfedcbc4df2be18eda7144d3f13f9be89df4c5cfff2",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "fe8d08615aead24f2f1ed380a19a32fee62d9673fd4fe50ad3a0ad406b9d5486",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "362f62f0480155a015e2ace5378690ee15ef6708cc36df037349ae77ed1e0131",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "ea9f60af20eb677014b830a4709661eb25909feb32b77f4930e9ff458be25bf5",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "17a1c0addb37852440994762d9356b7a1ec0990495cad6acdca28d41d668eb9d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "8d99d2a93d6eb0e66ffb3b6a49050f61da03fe6c5c4a51e676c65ce515a75bef",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_8",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "66a96b5164542fc993a89c958850c3d4bf815b51bbef0431239e62ab4a4d4f52",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_o2c_9.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_O2C_9",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 210,
+      "sha256": "1c306d65e190e28c3c47c3a52936299ab545dec3796214f630287a743ad73428",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/order_to_cash/zcl_sales_order.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_SALES_ORDER",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 1145,
+      "sha256": "eeeba8257aba8a65c6f191c2ac3b36ea03823c0ecffd765fb35590128ae748ec",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 19,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "0c9044efe31c2295dd750acec1bf934ee562d781a9ae3ada61cab029250ccb92",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "3a529ad1e005ba0aaf5b6dfae8c8cef344298795fe8e2d359cfc0af3c90ec7e1",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "a522b2c19e1b335bc21e42a8bb11579f8f87e22b65d5ffd254e1ae374cbb090c",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "d2099fab28ab5dbc40655ed752182e85f1e2f360ea73034e7d147a12ff982a09",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "185a86dc0272b63b1a123f19a52c42c6ef8091900227146881f122c11743157f",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "9f844e9802e248f0c8ae043f08525f379f71feded2e3fbaaca347baa1324950d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/pricing/zcl_price_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PRICE_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 224,
+      "sha256": "cf9bb36168154bd5ba7509c85eca7871876f0d04f5eb3c5e258ac47366b870bf",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "202058c37c442f12699e901c64bc57721a161169ea741c9683a3f2d9d87cbe1d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_10.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_10",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 191,
+      "sha256": "4d37ee2edbf3728074d3bdf27f974878001a71b18d86cd1736409792a160474f",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_11.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_11",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 191,
+      "sha256": "7fe464fb11bc9f8dd0eba9d74ac4d62ee08b1b83f19ebf3daa07e27bd6030da8",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_12.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_12",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 191,
+      "sha256": "9a8384fa1f9f196968049bf2faa43e56f946c2c2ac536053ce301346909097ac",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_13.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_13",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 191,
+      "sha256": "4842eed744b9f0cedab039dc3360592ed3925b164b6572feec3aa146af2696c7",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_14.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_14",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 191,
+      "sha256": "602a2ad064234566ba925ea2e89177ad35bf0c1183c9ccd2ccbf1b1e4b68c903",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "12c3fea94be7bdcc5c9f2d0fe18160d8c866cb52b728ccb03fd8c1ced8382650",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "e25f889a3766546d0d490bf530fbe33f5d4b4ca024bb5fbf32cd697c772e533d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "6b6f093dfc038f224af7bc13319f0bc624b8f91930eb58939ba47b8b5b78be8d",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "691ebddf2b406afc9a86f1bd58e752f76589da519466e0a8920cfbd45caa14c8",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_6.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_6",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "cd9baaec06d2b5df7cb4f8eff0d11026909804f1ba81e642e1f984baed49777b",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_7.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_7",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "5fc2ab34ead5b06e4a69a3f81c7e0815ecc78649f9faabdbf518e7af2dc0b0f1",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_8.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_8",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "b37b9e8ec234bae6eb6927de62bddfe2d00d71bf0908fb0adcc5b15bb6fdb04b",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_p2p_9.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_P2P_9",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 188,
+      "sha256": "ff3ecc4141c45530b09b9801224879ce6b802abdf09e3f3c2fca21ff8725cc32",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/procure_to_pay/zcl_purchase_order.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PURCHASE_ORDER",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 480,
+      "sha256": "ba5e201a8f9eebf3d10ee712898e0dcba8a2ddf9cea2e1d20e1952b45639b2bb",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 13,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/production/zcl_pp_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PP_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 217,
+      "sha256": "1dc05fa4196f2450d16aa80ff34c43dd03139e6a65a5c945b1575af8bcdd4b05",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/production/zcl_pp_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PP_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 217,
+      "sha256": "6090b5ecf74228e084705d7fe4bd14c473de0683bc0b2e33f06da8eed92ab4d5",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/production/zcl_pp_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PP_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 217,
+      "sha256": "069f9fbb229c689c7c1fddb4967e655493c486a0eefa8b92fecd8b1858ca0cfd",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/production/zcl_pp_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PP_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 217,
+      "sha256": "959a675002a4af7d436224ed9630bb2f1191d67abcb64109c1913e6e23abf0f0",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/production/zcl_pp_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_PP_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 217,
+      "sha256": "9139b141c9cadd1bd8b4cf9c691b188f34fa17be2528a05b8640a0ef0e66a7bd",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/quality/zcl_qm_1.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_QM_1",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 212,
+      "sha256": "83ddcbc0e0c9180bfbe39f033fe53ad2829e11676dd58fd73840975d8d719f85",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/quality/zcl_qm_2.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_QM_2",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 212,
+      "sha256": "dfe06ffb8311315fd9301ada6a664013d9e07a289cf7f022af9db4638e59f044",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/quality/zcl_qm_3.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_QM_3",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 212,
+      "sha256": "b075c317621268573aa3102b0676633a17122eaea921f077f6731323d52b93ab",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/quality/zcl_qm_4.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_QM_4",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 212,
+      "sha256": "47f2212c40edab9dfb00c7f54db31ac7bc0f9882d4c2b375c738bb58240b43e9",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    },
+    {
+      "file": "src/quality/zcl_qm_5.abap",
+      "format": "abap",
+      "type": "ABAP",
+      "name": "ZCL_QM_5",
+      "synthetic": true,
+      "disposition": "analyzed",
+      "bytes": 212,
+      "sha256": "1bd188667b9cc9a54b1c6282c7520cbc8a70a48225f237f8628e1b894e41a638",
+      "analysisScope": "ABAP syntax and selected structural semantics; not a SAP compiler check",
+      "statements": {
+        "recognized": 8,
+        "unsupported": 0
+      }
+    }
+  ]
+}
