@@ -1,0 +1,9 @@
+*& Procure-to-Pay Component 8
+CLASS zcl_p2p_8 DEFINITION PUBLIC.
+  PUBLIC SECTION.
+    METHODS: execute.
+ENDCLASS.
+CLASS zcl_p2p_8 IMPLEMENTATION.
+  METHOD execute.
+  ENDMETHOD.
+ENDCLASS.

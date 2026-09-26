@@ -1,0 +1,27 @@
+{
+  "spec_version": 1,
+  "built_at": "2026-09-26T03:04:01Z",
+  "root_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stack": [],
+  "packs": [
+    {
+      "id": "_generic",
+      "title": "General project context",
+      "summary": "Top-level overview when no specific pack matches.",
+      "headings": [
+        "Overview",
+        "Project shape"
+      ],
+      "symbol_ids": [],
+      "file_globs": [],
+      "token_estimate": 600,
+      "weight_hints": {
+        "layers": [],
+        "frameworks": [],
+        "verbs": []
+      }
+    }
+  ],
+  "current_file_packs": {},
+  "symbols": []
+}

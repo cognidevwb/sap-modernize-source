@@ -1,0 +1,9 @@
+*& Procure-to-Pay Component 5
+CLASS zcl_p2p_5 DEFINITION PUBLIC.
+  PUBLIC SECTION.
+    METHODS: execute.
+ENDCLASS.
+CLASS zcl_p2p_5 IMPLEMENTATION.
+  METHOD execute.
+  ENDMETHOD.
+ENDCLASS.

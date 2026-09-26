@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "activeView": "activity",
+  "primarySidebar": {
+    "visible": true,
+    "width": 240
+  },
+  "secondarySidebar": {
+    "visible": true,
+    "width": 340
+  },
+  "panel": {
+    "visible": false,
+    "height": 220,
+    "activeTab": "problems"
+  },
+  "editorGroup": {
+    "tabs": [],
+    "activeTab": "welcome"
+  }
+}

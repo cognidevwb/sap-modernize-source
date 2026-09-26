@@ -1,0 +1,9 @@
+*& Procure-to-Pay Component 13
+CLASS zcl_p2p_13 DEFINITION PUBLIC.
+  PUBLIC SECTION.
+    METHODS: execute.
+ENDCLASS.
+CLASS zcl_p2p_13 IMPLEMENTATION.
+  METHOD execute.
+  ENDMETHOD.
+ENDCLASS.
