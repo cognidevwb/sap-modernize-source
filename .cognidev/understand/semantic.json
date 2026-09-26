@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "timestamp": "2026-09-26T02:30:00Z",
+  "analyzer": "semantic-jev-v1",
+  "confidence_threshold": 0.75,
+  "summary": {
+    "total_files": 3,
+    "domain_classified": 3,
+    "regulatory_files": 0,
+    "critical_files": 2,
+    "migration_candidates": 1
+  },
+  "domains": [
+    {
+      "name": "Order Management",
+      "confidence": 0.95,
+      "files": [
+        "zcl_order_processor.abap"
+      ],
+      "keywords": ["order", "sales", "customer", "create_order", "order_details"],
+      "business_impact": "HIGH",
+      "description": "Core sales order processing with customer management"
+    },
+    {
+      "name": "Pricing & Discounting",
+      "confidence": 0.92,
+      "files": [
+        "zcl_pricing_engine.abap"
+      ],
+      "keywords": ["price", "pricing", "discount", "volume", "condition"],
+      "business_impact": "MEDIUM",
+      "description": "Dynamic pricing calculation with volume discounts"
+    }
+  ],
+  "regulatory": [],
+  "criticality": [
+    {
+      "file": "zcl_order_processor.abap",
+      "level": "CRITICAL",
+      "reasons": [
+        "Direct database writes (revenue impact)",
+        "Production inventory access (MARD table)",
+        "No error recovery for failed orders"
+      ],
+      "data_sensitivity": "BUSINESS_CRITICAL",
+      "availability_requirement": "99.9%"
+    },
+    {
+      "file": "zcl_pricing_engine.abap",
+      "level": "MEDIUM",
+      "reasons": [
+        "Pricing calculation (can be recalculated)",
+        "No financial posting"
+      ],
+      "data_sensitivity": "INTERNAL",
+      "availability_requirement": "99.5%"
+    }
+  ],
+  "migration_strategies": [
+    {
+      "file": "zcl_order_processor.abap",
+      "recommended_strategy": "Side-by-Side Extension",
+      "confidence": 0.88,
+      "rationale": [
+        "Clear bounded context (order management)",
+        "Well-defined inputs/outputs",
+        "Clean Core violations require API wrapping",
+        "High business criticality favors gradual migration"
+      ],
+      "alternatives": [
+        {
+          "strategy": "Microservices (Full Modernization)",
+          "effort": "HIGH",
+          "timeline": "12-18 months",
+          "cost_savings": "90% (vs SAP licensing)",
+          "risks": ["Complete rewrite", "Team reskilling required"]
+        },
+        {
+          "strategy": "In-Place Remediation",
+          "effort": "MEDIUM",
+          "timeline": "3-6 months",
+          "cost_savings": "40% (reduced custom code)",
+          "risks": ["Still coupled to SAP", "Limited API flexibility"]
+        }
+      ],
+      "clean_core_violations": [
+        {
+          "line": 115,
+          "code": "INSERT INTO zorders",
+          "violation": "Direct table modification",
+          "simplification_item": "SI-0001",
+          "fix": "Use BAPI_SALESORDER_CREATEFROMDAT2"
+        },
+        {
+          "line": 239,
+          "code": "SELECT FROM mard",
+          "violation": "Direct standard table access",
+          "simplification_item": "SI-0342",
+          "fix": "Use ATP check BAPI or external Inventory API"
+        }
+      ],
+      "estimated_effort": {
+        "analysis": "2 weeks",
+        "api_design": "3 weeks",
+        "implementation": "8 weeks",
+        "testing": "4 weeks",
+        "total": "17 weeks (4 person-months)"
+      }
+    }
+  ],
+  "jev_classification": {
+    "runtime": {
+      "type": "ABAP",
+      "version": "7.5x (ECC 6.0 EHP8)",
+      "target": "S/4HANA 2023",
+      "migration_complexity": "MEDIUM"
+    },
+    "architecture": {
+      "pattern": "Object-Oriented ABAP",
+      "layering": "Business Logic (no clear separation)",
+      "data_access": "Direct (Clean Core violations)",
+      "api_style": "None (internal classes only)"
+    },
+    "quality_gates": {
+      "clean_core_compliance": 0.40,
+      "s4hana_readiness": 0.35,
+      "api_maturity": 0.0,
+      "test_coverage": 0.0,
+      "code_quality_score": 0.65
+    },
+    "business_context": {
+      "domain": "Order-to-Cash",
+      "criticality": "HIGH",
+      "revenue_impact": "DIRECT",
+      "user_base": "120 concurrent users",
+      "transaction_volume": "~5000 orders/day"
+    },
+    "modernization_readiness": {
+      "score": 0.68,
+      "blockers": [
+        "No API layer",
+        "Direct database access",
+        "Tightly coupled to SAP tables"
+      ],
+      "enablers": [
+        "Clear business logic",
+        "Well-structured classes",
+        "Limited external dependencies"
+      ],
+      "recommended_first_step": "Wrap in OData service to establish API contract"
+    }
+  }
+}
