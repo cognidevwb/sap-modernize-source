@@ -1,0 +1,432 @@
+{
+  "domain": "Enterprise resource planning (ERP) \u2014 sales, procurement, inventory, manufacturing, quality, and finance operations (SAP-based)",
+  "summary": "This application is a full-scale ERP system covering the core operational and financial processes of a manufacturing/distribution enterprise: taking and fulfilling sales orders, procuring materials from suppliers, tracking inventory and warehouse tasks across plants, running production and quality inspections, and posting the resulting financial transactions. It serves order management and customer service teams, procurement/purchasing staff, warehouse and logistics personnel, quality inspectors, finance/accounting teams, and business/operations managers who need a real-time view of the business through a control-tower dashboard.\n\nThe system is organized around classic end-to-end business chains: order-to-cash (create an order, check credit and stock, reserve inventory, release for fulfillment, ship and invoice the customer, post revenue) and procure-to-pay (create and approve a purchase order, receive goods, inspect supplier quality lots and findings). Supporting these chains are master data (companies, plants, business partners, materials, suppliers, cost centers, exchange rates), pricing conditions, production orders and bills of material, and quality lots/findings. A control-tower layer built on dedicated services and views gives managers visibility into open orders, stock, incidents, and objectives, with monitoring-event ingestion, incident acknowledgement, and scheduled reconciliation jobs keeping records consistent.\n\nIntegration flows connect these processes across systems: releasing an order runs authorization and credit checks before recording the release and emitting an integration event; supplier quality inspection results can block or release stock; and operational monitoring events feed incidents into the control tower for acknowledgement. Together the pieces give the business a single, auditable operational backbone from customer order through fulfillment, quality assurance, and financial close.",
+  "useCases": [
+    {
+      "id": "create-sales-order",
+      "title": "Create a sales order",
+      "actor": "Order manager",
+      "description": "An order management user captures a new customer sales order for fulfillment.",
+      "steps": [
+        "Order manager submits order details",
+        "Order is validated and created via CREATE_ORDER",
+        "Order record is stored in SalesOrders/SalesOrderItems for downstream processing"
+      ],
+      "evidence": "CREATE_ORDER (zcl_sales_order.abap); enterprise.SalesOrders, enterprise.SalesOrderItems (sales.cds)",
+      "files": [
+        "src/order_to_cash/zcl_sales_order.abap",
+        "enterprise/db/sales.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "src/order_to_cash"
+      ]
+    },
+    {
+      "id": "cancel-sales-order",
+      "title": "Cancel a sales order",
+      "actor": "Order manager",
+      "description": "An order manager cancels an existing sales order before or during processing.",
+      "steps": [
+        "Order manager selects the order to cancel",
+        "System validates order state",
+        "Order status is updated to cancelled via CANCEL_ORDER"
+      ],
+      "evidence": "CANCEL_ORDER (zcl_sales_order.abap)",
+      "files": [
+        "src/order_to_cash/zcl_sales_order.abap"
+      ],
+      "folders": [
+        "src/order_to_cash"
+      ]
+    },
+    {
+      "id": "check-order-status",
+      "title": "Check the status of an order",
+      "actor": "Customer service representative",
+      "description": "A user looks up the current fulfillment/billing status of a sales order.",
+      "steps": [
+        "User queries an order by ID",
+        "GET_ORDER_STATUS retrieves current order status",
+        "Status is displayed"
+      ],
+      "evidence": "GET_ORDER_STATUS (zcl_sales_order.abap)",
+      "files": [
+        "src/order_to_cash/zcl_sales_order.abap"
+      ],
+      "folders": [
+        "src/order_to_cash"
+      ]
+    },
+    {
+      "id": "release-sales-order",
+      "title": "Release a held sales order for fulfillment",
+      "actor": "Order manager",
+      "description": "An order manager (or scheduled job) releases an order so it can proceed through delivery and billing, after authorization and credit checks pass.",
+      "steps": [
+        "releaseOrder is triggered for an order",
+        "Company/customer is checked against authorization rules (CHECK_COMPANY)",
+        "Order is checked against credit exposure (CHECK_ORDER)",
+        "RELEASE and RECORD_RELEASE record the release",
+        "An integration event is emitted for downstream systems"
+      ],
+      "evidence": "releaseOrder (order-workflow.js); RELEASE (zcl_ent_order.clas.abap); CHECK_COMPANY (zcl_ent_auth.clas.abap); CHECK_ORDER (zcl_ent_credit.clas.abap); RECORD_RELEASE (zcl_ent_events.clas.abap)",
+      "files": [
+        "enterprise/srv/lib/order-workflow.js",
+        "enterprise/abap/classes/zcl_ent_order.clas.abap",
+        "enterprise/abap/classes/zcl_ent_auth.clas.abap",
+        "enterprise/abap/classes/zcl_ent_credit.clas.abap",
+        "enterprise/abap/classes/zcl_ent_events.clas.abap"
+      ],
+      "folders": [
+        "enterprise/abap/classes",
+        "enterprise/srv/lib"
+      ]
+    },
+    {
+      "id": "check-release-credit-hold",
+      "title": "Check and release customer credit holds on orders",
+      "actor": "Credit manager",
+      "description": "A credit/finance team member reviews orders blocked due to customer credit exposure and records credit decisions.",
+      "steps": [
+        "Order is checked against customer credit limit (CHECK_ORDER)",
+        "Credit hold is identified",
+        "Credit decision is recorded (CreditDecisions)",
+        "Order release proceeds"
+      ],
+      "evidence": "CHECK_ORDER (zcl_ent_credit.clas.abap); enterprise.CreditDecisions (finance.cds)",
+      "files": [
+        "enterprise/abap/classes/zcl_ent_credit.clas.abap",
+        "enterprise/db/finance.cds"
+      ],
+      "folders": [
+        "enterprise/abap/classes",
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "reserve-inventory-order",
+      "title": "Reserve inventory for an order",
+      "actor": "Warehouse planner",
+      "description": "Stock is reserved against a sales order to guarantee fulfillment ahead of shipping.",
+      "steps": [
+        "Order requiring fulfillment is identified",
+        "Available stock is checked at the plant",
+        "RESERVE creates a Reservation record against Stock"
+      ],
+      "evidence": "RESERVE (zcl_ent_inventory.clas.abap); enterprise.Stock, enterprise.Reservations (supply.cds)",
+      "files": [
+        "enterprise/abap/classes/zcl_ent_inventory.clas.abap",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/abap/classes",
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "check-stock-availability",
+      "title": "Check stock availability for a material",
+      "actor": "Order manager",
+      "description": "A user checks whether sufficient stock exists to fulfill an order line before committing.",
+      "steps": [
+        "User requests availability for a material/plant",
+        "CHECK_STOCK calculates available quantity",
+        "Result is returned to the user"
+      ],
+      "evidence": "CHECK_STOCK (zcl_inv_1.abap); enterprise.Stock (supply.cds)",
+      "files": [
+        "src/inventory/zcl_inv_1.abap",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "src/inventory"
+      ]
+    },
+    {
+      "id": "generate-customer-invoice",
+      "title": "Generate a customer invoice for a sales order",
+      "actor": "Billing clerk",
+      "description": "A billing clerk creates an invoice for a fulfilled sales order and posts it to financial accounting.",
+      "steps": [
+        "Order is confirmed as delivered/billable",
+        "CREATE_INVOICE generates an invoice with line items and pricing",
+        "POST_TO_FI posts the invoice to finance"
+      ],
+      "evidence": "CREATE_INVOICE, POST_TO_FI (zcl_billing.abap); enterprise.Invoices (finance.cds)",
+      "files": [
+        "src/order_to_cash/zcl_billing.abap",
+        "enterprise/db/finance.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "src/order_to_cash"
+      ]
+    },
+    {
+      "id": "post-financial-document",
+      "title": "Post a financial accounting document",
+      "actor": "Accountant",
+      "description": "An accountant or automated process posts a journal entry resulting from a billing or procurement transaction.",
+      "steps": [
+        "Transaction requiring financial posting is identified",
+        "POST_DOCUMENT prepares the journal entry",
+        "postJournal writes JournalEntries/JournalLines to the ledger"
+      ],
+      "evidence": "POST_DOCUMENT (zcl_fi_1..10.abap); postJournal (finance.js); enterprise.JournalEntries, enterprise.JournalLines (finance.cds)",
+      "files": [
+        "src/finance/zcl_fi_1.abap",
+        "enterprise/srv/lib/finance.js",
+        "enterprise/db/finance.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib",
+        "src/finance"
+      ]
+    },
+    {
+      "id": "record-payment",
+      "title": "Record a customer payment against an invoice",
+      "actor": "Accountant",
+      "description": "An accountant records a payment received against a customer invoice, closing out the receivable.",
+      "steps": [
+        "Invoice awaiting payment is identified",
+        "Payment amount and reference are recorded",
+        "Payment is linked to the invoice"
+      ],
+      "evidence": "enterprise.Payments (finance.cds)",
+      "files": [
+        "enterprise/db/finance.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "create-purchase-order",
+      "title": "Create a purchase order for a supplier",
+      "actor": "Procurement officer",
+      "description": "A procurement officer creates a purchase order to source materials from a supplier.",
+      "steps": [
+        "Procurement officer selects supplier and materials",
+        "CREATE_PO creates the purchase order with line items",
+        "Order is stored for approval"
+      ],
+      "evidence": "CREATE_PO (zcl_purchase_order.abap); enterprise.PurchaseOrders, enterprise.PurchaseOrderItems (supply.cds)",
+      "files": [
+        "src/procure_to_pay/zcl_purchase_order.abap",
+        "enterprise/db/supply.cds",
+        "enterprise/srv/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv",
+        "src/procure_to_pay"
+      ]
+    },
+    {
+      "id": "approve-purchase-order",
+      "title": "Approve a purchase order",
+      "actor": "Procurement manager",
+      "description": "A procurement manager reviews and approves a submitted purchase order before it is sent to the supplier.",
+      "steps": [
+        "Manager reviews pending purchase order",
+        "APPROVE_PO records the approval decision",
+        "Order status is updated to approved"
+      ],
+      "evidence": "APPROVE_PO (zcl_purchase_order.abap)",
+      "files": [
+        "src/procure_to_pay/zcl_purchase_order.abap"
+      ],
+      "folders": [
+        "src/procure_to_pay"
+      ]
+    },
+    {
+      "id": "receive-goods",
+      "title": "Receive goods against a purchase order",
+      "actor": "Warehouse operator",
+      "description": "A warehouse operator records receipt of goods delivered by a supplier against an open purchase order.",
+      "steps": [
+        "Delivered goods are matched to a purchase order",
+        "Goods receipt is recorded",
+        "Stock is updated for the received quantity"
+      ],
+      "evidence": "enterprise.GoodsReceipts (supply.cds)",
+      "files": [
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "supplier-quality-inspection",
+      "title": "Inspect and disposition a supplier-delivered quality lot",
+      "actor": "Quality inspector",
+      "description": "A quality inspector reviews an inspection result on a received supplier lot and records findings to decide whether to block or release the batch.",
+      "steps": [
+        "Supplier lot is received and queued for inspection",
+        "Inspector records QualityFindings against the QualityLot",
+        "If failed, the lot is blocked and purchasing is notified",
+        "If passed, stock is released for use"
+      ],
+      "evidence": "enterprise.QualityLots, enterprise.QualityFindings (supply.cds)",
+      "files": [
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "plan-production",
+      "title": "Plan and schedule production orders",
+      "actor": "Production planner",
+      "description": "A production planner schedules manufacturing runs, consuming bills of material, to replenish stock or fulfill demand.",
+      "steps": [
+        "Demand or stock shortfall is identified",
+        "A production order is created against a bill of materials",
+        "Plan is recorded for execution"
+      ],
+      "evidence": "enterprise.ProductionOrders, enterprise.BillsOfMaterial (supply.cds)",
+      "files": [
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "manage-warehouse-tasks",
+      "title": "Manage warehouse tasks for picking and put-away",
+      "actor": "Warehouse operator",
+      "description": "A warehouse operator works through generated warehouse tasks to pick, move, or put away stock in support of orders and receipts.",
+      "steps": [
+        "Warehouse task is generated (e.g. from a reservation or goods receipt)",
+        "Operator executes the task",
+        "Task completion updates stock/location"
+      ],
+      "evidence": "enterprise.WarehouseTasks (supply.cds)",
+      "files": [
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "monitor-control-tower",
+      "title": "Monitor open orders, stock, and incidents via control tower dashboard",
+      "actor": "Operations manager",
+      "description": "An operations manager views a real-time dashboard of open orders, materials, stock levels, and incidents to manage the business.",
+      "steps": [
+        "Manager opens the control tower dashboard",
+        "Open orders, materials, and stock levels are displayed via ControlTower.Orders/Materials/Stock",
+        "Incidents are surfaced via ControlTower.Incidents",
+        "Objectives/KPIs are shown via ControlTower.Objectives"
+      ],
+      "evidence": "ControlTower.Orders, ControlTower.Materials, ControlTower.Stock, ControlTower.Incidents, ControlTower.Objectives (control-tower.cds)",
+      "files": [
+        "enterprise/srv/control-tower.cds"
+      ],
+      "folders": [
+        "enterprise/srv"
+      ]
+    },
+    {
+      "id": "acknowledge-incident",
+      "title": "Acknowledge and resolve an operational incident",
+      "actor": "Operations manager",
+      "description": "An operations manager acknowledges an incident flagged by monitoring so it can be tracked and resolved.",
+      "steps": [
+        "Monitoring event is ingested via ingestMonitoringEvent",
+        "Event is evaluated and an Incident record is created",
+        "Manager acknowledges the incident via acknowledgeIncident"
+      ],
+      "evidence": "ingestMonitoringEvent, acknowledgeIncident (monitoring.js); enterprise.Incidents, enterprise.MonitoringEvents (operations.cds)",
+      "files": [
+        "enterprise/srv/lib/monitoring.js",
+        "enterprise/db/operations.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib"
+      ]
+    },
+    {
+      "id": "reconcile-orders",
+      "title": "Reconcile orders against fulfillment and financial records",
+      "actor": "Operations analyst",
+      "description": "A scheduled reconciliation process compares orders against fulfillment and finance events to detect discrepancies.",
+      "steps": [
+        "A reconciliation run is initiated (ReconciliationRuns)",
+        "Order and integration events are compared to fulfillment/financial records",
+        "Discrepancies are logged as reconciliation results"
+      ],
+      "evidence": "enterprise.ReconciliationRuns, enterprise.IntegrationEvents (operations.cds)",
+      "files": [
+        "enterprise/db/operations.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "manage-master-data",
+      "title": "Create and maintain master data records",
+      "actor": "Master data administrator",
+      "description": "A master data administrator creates and updates core records such as companies, plants, business partners, materials, suppliers, and cost centers used throughout the ERP.",
+      "steps": [
+        "Administrator selects a master data object",
+        "Record is created or updated",
+        "Record is validated and stored"
+      ],
+      "evidence": "enterprise.Companies, enterprise.Plants, enterprise.BusinessPartners, enterprise.Materials, enterprise.Suppliers, enterprise.CostCenters, enterprise.ExchangeRates (master.cds)",
+      "files": [
+        "enterprise/db/master.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "manage-pricing-conditions",
+      "title": "Maintain pricing conditions for orders",
+      "actor": "Pricing administrator",
+      "description": "A pricing administrator sets up and maintains the pricing conditions applied to sales orders and items.",
+      "steps": [
+        "Pricing condition record is created or updated",
+        "Condition is scoped to material/customer/plant",
+        "Condition is applied during order pricing"
+      ],
+      "evidence": "enterprise.PricingConditions (sales.cds)",
+      "files": [
+        "enterprise/db/sales.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    },
+    {
+      "id": "process-return",
+      "title": "Process a customer return",
+      "actor": "Customer service representative",
+      "description": "A customer service representative records a return of previously delivered goods against a sales order.",
+      "steps": [
+        "Customer requests a return for a delivered order",
+        "Return record is created against the order/delivery",
+        "Return status is tracked to resolution"
+      ],
+      "evidence": "enterprise.Returns (sales.cds)",
+      "files": [
+        "enterprise/db/sales.cds"
+      ],
+      "folders": [
+        "enterprise/db"
+      ]
+    }
+  ]
+}

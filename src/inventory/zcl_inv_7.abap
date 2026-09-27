@@ -5,6 +5,6 @@ CLASS zcl_inv_7 DEFINITION PUBLIC.
 ENDCLASS.
 CLASS zcl_inv_7 IMPLEMENTATION.
   METHOD check_stock.
-    SELECT labst FROM mard WHERE matnr = '100'.
+    SELECT labst FROM mard WHERE matnr = '100' INTO TABLE @DATA(stock).
   ENDMETHOD.
 ENDCLASS.

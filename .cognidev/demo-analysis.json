@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "sap-demo-model-reports/v1",
+  "generatedAt": "2026-09-27T05:08:28.124207+00:00",
+  "provider": "claude-cli",
+  "model": "sonnet",
+  "inferenceState": "model-inferred-from-source",
+  "runtimeVerified": false,
+  "tools": {
+    "understand-brief": {
+      "script": "understand-brief/understand_brief.py",
+      "sha256": "17f775b656271df37c59ded41c6420df572ec236c1c20bf551bd9ea06934fc53"
+    },
+    "reading-guide": {
+      "script": "reading-guide/reading_guide.py",
+      "sha256": "b8f8060c15d06a0486fd6350d9259099a30f8583fd541fbc698cfb04f78ece66"
+    }
+  },
+  "counts": {
+    "useCases": 22,
+    "tourSteps": 37,
+    "taggedFiles": 36
+  },
+  "readingStats": {
+    "candidates": 36,
+    "llm_calls": 1,
+    "cache_hits": 35,
+    "fallbacks": 0
+  },
+  "validation": {
+    "allCitedFilesExist": true,
+    "tagContentHashesMatch": true,
+    "fallbackTags": 0,
+    "privatePathAndTokenPatternScan": "passed"
+  },
+  "declarationOnlyUseCases": [
+    {
+      "id": "record-payment",
+      "title": "Record a customer payment against an invoice",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "receive-goods",
+      "title": "Receive goods against a purchase order",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "supplier-quality-inspection",
+      "title": "Inspect and disposition a supplier-delivered quality lot",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "plan-production",
+      "title": "Plan and schedule production orders",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "manage-warehouse-tasks",
+      "title": "Manage warehouse tasks for picking and put-away",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "monitor-control-tower",
+      "title": "Monitor open orders, stock, and incidents via control tower dashboard",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "reconcile-orders",
+      "title": "Reconcile orders against fulfillment and financial records",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "manage-master-data",
+      "title": "Create and maintain master data records",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "manage-pricing-conditions",
+      "title": "Maintain pricing conditions for orders",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    },
+    {
+      "id": "process-return",
+      "title": "Process a customer return",
+      "reason": "Cited files are declarative models or services; a complete executable workflow is not established by these citations."
+    }
+  ],
+  "evidenceSha256": {
+    "README.md": "dac444e5d909192e6dff880dc38c2a7a01aa419fb9f710e84e6d9189025ceb63",
+    "database/ztable_1.ddl": "8a89dcec2344df914b34d502286417a4b9b0a5d80f8a9775132dfc939b59b0eb",
+    "database/ztable_10.ddl": "2f6e5f1d84768e0407086ce195995e5e5bda101aa62c930ef78b1221fa7ea7e0",
+    "database/ztable_2.ddl": "ff28085d0527c8287818a64d196c77a5da501ebc4e8ae6e69b7935e2d582a49e",
+    "database/ztable_3.ddl": "581751e6f4a46fd5a9b2597520a9baf09f18b20d8b275d981283e63f05b746a1",
+    "database/ztable_4.ddl": "1f8eb099432de78538efba9f786c3ccdcce5914da15b352771a178a8f117e5b3",
+    "database/ztable_5.ddl": "3003863f0811ee46d0c2d2826708a96c8a0105ac1a10463eb69c59d1c3e964c2",
+    "database/ztable_6.ddl": "b8e8d87f1373586d478f7fdbf4cba4409cf8e6c6b82a0013dabeb1177cb2c663",
+    "database/ztable_7.ddl": "bd631ae5a99e74cbdb1db4c88ba750634c9a94a956134e4104e1c13cb87b24ef",
+    "database/ztable_8.ddl": "84eed617aba817889a3ae09db6c641282437e6a5a64c9029419ec032838f302c",
+    "database/ztable_9.ddl": "1950ba4ce0fe28072c160308e62d656ceec36e039d6370ac28cbf4173e1ea8b3",
+    "enterprise/.gitignore": "f7b02ec5d75400fc3e0357cbae9e52087ce9785f9b7b2931d6730cdfb907f2eb",
+    "enterprise/README.md": "3aa8a00037feaf012f0d1c28f0f0e7048a64443fe4b841a7c63e4f9ff88fc850",
+    "enterprise/abap/classes/zcl_ent_auth.clas.abap": "c30a78ee0ca1b36db25a31da724df1a1ce5c07d96f1f5884d8a1af91e787cd6e",
+    "enterprise/abap/classes/zcl_ent_credit.clas.abap": "3bf8bf04eedd9cfd8eaf2032cdd1cd04d88aeaa4d3585704a8fcb3a9bd8324f0",
+    "enterprise/abap/classes/zcl_ent_delivery_reader.clas.abap": "c68a55c6d8e3868f02c24806612813015a292bb403490c0c531e41075c123e19",
+    "enterprise/abap/classes/zcl_ent_events.clas.abap": "f41d7772166ea1723c4d48af1afa54c2ae22512945dc2d8c198945d774c876c5",
+    "enterprise/abap/classes/zcl_ent_inventory.clas.abap": "44f00697dff87651bfe8e218243dceb9a52d115a2e81ab412bec75ea18058791",
+    "enterprise/abap/classes/zcl_ent_order.clas.abap": "9be28273ead37a9fc21e7ff624bce8725fc450a26600c9a2ad86894cb8142db0",
+    "enterprise/abap/classes/zcl_ent_quality_reader.clas.abap": "94680b0302e6f227f18d0a1af7e4a3e8aa37bccb4e15504c6999d042afd5432e",
+    "enterprise/abap/classes/zcl_ent_stock_reader.clas.abap": "cf0072406a8e5baebf00019617d58bcb558e6f00b21e441df69f7fdf7b40b445",
+    "enterprise/abap/classes/zcx_ent_domain.clas.abap": "bdb48198f64c9ae7487647a5a4ea7d74cccdb9a8a5ce47f470b6c1518b803f6f",
+    "enterprise/abap/rap/zc_entorder.ddls.asddls": "0b130f4f018b55935d2268c6a920c012f6810573350fff9f74742f002db06e3f",
+    "enterprise/abap/rap/zi_entorder.dcls.asdcls": "ecb814bb883008c587f6a473dc6362e6c828164c5c9f3892397743748faab218",
+    "enterprise/abap/rap/zi_entorder.ddls.asddls": "7dc3e78a2d3df8a50f3d46e21ce9dd9c729972d2f00f0ae7bc86fe05fca15ac0",
+    "enterprise/abap/reports/zent_reconcile.prog.abap": "c4654c162d4810083b0687f2bcf5a3e278938faf5e3506baee37fc9b2df6f108",
+    "enterprise/abap/reports/zent_release.prog.abap": "b1f89306a6b690a98ecd710cfc12c8fad9d28d8d0dbe6f8dd6482961ac8bc788",
+    "enterprise/app/controltower/webapp/Component.js": "af34e9665ccf3fa818353bbbbb054177251287d76078c067bfe72dd0c2d39ef3",
+    "enterprise/db/finance.cds": "133f1a3cc67300c1f45d8e8fe97813d8dc94a5a8edeb106bac399b68cec66dc1",
+    "enterprise/db/master.cds": "a37909db209ed98f6143c33ff7acd0814818703baf9a8dd9d827293468caf865",
+    "enterprise/db/operations.cds": "d5ea3d18b194f9062c61cecf1ab271baf8950a8d6797932ebea50d287c3b1cbc",
+    "enterprise/db/sales.cds": "4d8973ea62540c47994662a9ecf19414af6972faab7ed1515869b6357025b738",
+    "enterprise/db/supply.cds": "c3fa79e5b52d9af16ad43daaacaa9fba796766f5f0431a8dc3b4f7901c32fd09",
+    "enterprise/scripts/package-ui.js": "97324fbac385f473a9135ac718c839d3298d26f5fba0450c504a81140038fdcb",
+    "enterprise/srv/control-tower.cds": "dc03fd4f4c733db2e288ec71ced16a562fc0d6cbbfc1e81eab508cd9a1506f33",
+    "enterprise/srv/control-tower.js": "2dbd71993254946d6f6678d2d1933118d73da51cfc3325f95d0fcdd7425143fd",
+    "enterprise/srv/finance.js": "dd7ca2c3d0ec15a994f39a6dea1a5c52228149e9d7dab2f68a16aba01b811041",
+    "enterprise/srv/lib/errors.js": "663d636d6c60a9844abc48c487031e307084d59c5bb420b828b11ceffc608755",
+    "enterprise/srv/lib/finance.js": "0fc8582ccce6a9a7b4760ccdcb3831646d3af00036656e32fbcd9fcfd622d030",
+    "enterprise/srv/lib/monitoring.js": "afafb59178fc2122ed626686b0fb05841853fc1524147424863c57bac7ca8a83",
+    "enterprise/srv/lib/order-workflow.js": "4d7017289cea26c969f2dbd905d8fbbe84f16087e894f30b7736b12a36536ffd",
+    "enterprise/srv/lib/outbox.js": "5c091d1cc048aa53833dbd0fd8509f357527432b11697c57a1898c06e6bed886",
+    "enterprise/srv/supply.cds": "2907ae476e98a6be4262f555e894f2a77dde377f330a5d89135d6771632afc9b",
+    "src/finance/zcl_fi_1.abap": "7000ec3db9ad66c708b129da9ce113aefc5f460896543730a45bb17faa0b061c",
+    "src/inventory/zcl_inv_1.abap": "f23dd8e55c7c7ab151a1f25115d4966db31a8d78d1932de088f58ef46ecfac2a",
+    "src/order_to_cash/zcl_billing.abap": "78440379a0658fe065dc589d08bb612dfef215fa0a46b4c658ffcb8934491b89",
+    "src/order_to_cash/zcl_sales_order.abap": "eeeba8257aba8a65c6f191c2ac3b36ea03823c0ecffd765fb35590128ae748ec",
+    "src/procure_to_pay/zcl_purchase_order.abap": "ba5e201a8f9eebf3d10ee712898e0dcba8a2ddf9cea2e1d20e1952b45639b2bb"
+  },
+  "reportSha256": {
+    "usecases.json": "8e49959cda1414bc02292fdcc370be986fbc77a6f12eb1d74345cddf1bd49d54",
+    "reading.json": "1814b06de30468e65b2cad29d73f71c2f5e9add1bffe6fc13b5de7f0c396098f",
+    "reading-tags.json": "032dfacd75bb7fcf920081ea7fc6d55d3261feafe2218c7dc15941fecc0250fa"
+  }
+}

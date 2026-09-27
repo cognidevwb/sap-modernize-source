@@ -1,0 +1,696 @@
+{
+ "version": 1,
+ "prompt_version": 1,
+ "generated_from_merkle": "3bbeb4bf8209ecc1a5bc01d6441de4c9ec45e2d5e207c7c6d066dd92f301c9f5",
+ "chapters": [
+  {
+   "id": "orientation",
+   "label": "Get oriented",
+   "steps": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "id": "entry",
+   "label": "Where execution starts",
+   "steps": [
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "id": "data",
+   "label": "The data model",
+   "steps": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+   ]
+  },
+  {
+   "id": "logic",
+   "label": "The core logic",
+   "steps": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "id": "api",
+   "label": "The API surface",
+   "steps": [
+    34,
+    35,
+    36
+   ]
+  },
+  {
+   "id": "supporting",
+   "label": "Supporting cast",
+   "steps": [
+    37
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "path": "README.md",
+   "chapter": "orientation",
+   "role": "config",
+   "one_liner": "The project's own introduction \u2014 what it is and how to run it.",
+   "teaches": [
+    "what the project does",
+    "how to run it locally"
+   ],
+   "why_now": "Always start with what the authors wanted you to know.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 0
+  },
+  {
+   "n": 2,
+   "path": "enterprise/README.md",
+   "chapter": "orientation",
+   "role": "config",
+   "one_liner": "README introducing the enterprise SAP control-tower sample project and pointing to key files to read first.",
+   "teaches": [
+    "project scope and purpose",
+    "which files/docs to read first",
+    "how to run tests/build"
+   ],
+   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 5
+  },
+  {
+   "n": 3,
+   "path": "enterprise/abap/rap/zi_entorder.dcls.asdcls",
+   "chapter": "orientation",
+   "role": "config",
+   "one_liner": "Defines a DCL access control role restricting ZI_EntOrder rows by company code authorization.",
+   "teaches": [
+    "ABAP CDS role-based row-level security",
+    "PFCG authorization checks on entity fields",
+    "Company code data segregation pattern"
+   ],
+   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 3
+  },
+  {
+   "n": 4,
+   "path": "enterprise/.gitignore",
+   "chapter": "orientation",
+   "role": "config",
+   "one_liner": "Git ignore rules excluding build artifacts, dependencies, and local env files from version control.",
+   "teaches": [
+    "project build/output directories",
+    "local secrets/config are excluded"
+   ],
+   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 8
+  },
+  {
+   "n": 5,
+   "path": "enterprise/scripts/package-ui.js",
+   "chapter": "orientation",
+   "role": "config",
+   "one_liner": "Build script that copies the app UI folder into the dist server directory for packaging.",
+   "teaches": [
+    "build/packaging steps",
+    "expected dist folder layout"
+   ],
+   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 3
+  },
+  {
+   "n": 6,
+   "path": "README.md",
+   "chapter": "entry",
+   "role": "entry",
+   "one_liner": "SAP modernization reference: enterprise fixture + ABAP core with CAP services, HANA artifacts, and BTP integration patterns",
+   "teaches": [
+    "Layered SAP application structure (ABAP classic + CAP + BTP)",
+    "Local-first enterprise demo setup with pinned dependencies",
+    "How to explore multi-stack SAP codebases in CogniDev"
+   ],
+   "why_now": "Execution starts here. Everything else hangs off this file.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 29
+  },
+  {
+   "n": 7,
+   "path": "enterprise/app/controltower/webapp/Component.js",
+   "chapter": "entry",
+   "role": "entry",
+   "one_liner": "SAPUI5 Fiori app component bootstrap for the ControlTower module, extending AppComponent with manifest-based config.",
+   "teaches": [
+    "SAP Fiori Elements app component pattern",
+    "sap.ui.define module declaration",
+    "manifest.json-driven component setup"
+   ],
+   "why_now": "Execution starts here. Everything else hangs off this file.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 4
+  },
+  {
+   "n": 8,
+   "path": "enterprise/abap/reports/zent_release.prog.abap",
+   "chapter": "entry",
+   "role": "entry",
+   "one_liner": "ABAP report that lets a user trigger release of an enterprise order by ID and company code",
+   "teaches": [
+    "report parameter input pattern",
+    "calling domain class static methods",
+    "commit/rollback on domain exceptions"
+   ],
+   "why_now": "Execution starts here. Everything else hangs off this file.",
+   "depends_on": [
+    "enterprise/abap/classes/zcl_ent_order.clas.abap"
+   ],
+   "imported_by": 0,
+   "loc": 11
+  },
+  {
+   "n": 9,
+   "path": "enterprise/abap/rap/zi_entorder.ddls.asddls",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "CDS view entity exposing enterprise order fields (id, company code, customer, status, amount) from zent_order table.",
+   "teaches": [
+    "ABAP RAP CDS view definition",
+    "Root view entity with authorization check",
+    "Field renaming/projection from a database table"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 1,
+   "loc": 3
+  },
+  {
+   "n": 10,
+   "path": "database/ztable_1.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS DDL definition for a custom database table (ZTABLE_1) with a key and two fields",
+   "teaches": [
+    "ABAP table definition syntax",
+    "key vs non-key fields",
+    "basic data typing (char, dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 11,
+   "path": "database/ztable_2.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "DDL defining ztable_2, a custom ABAP database table with an ID key and two data fields",
+   "teaches": [
+    "ABAP table DDL syntax",
+    "custom table structure with key and fields"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 12,
+   "path": "enterprise/abap/classes/zcl_ent_quality_reader.clas.abap",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP class that reads a count of open records from the ZENT_QUALITY table",
+   "teaches": [
+    "ABAP class-methods pattern",
+    "simple SELECT COUNT query",
+    "public static read access to a DB table"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 9
+  },
+  {
+   "n": 13,
+   "path": "database/ztable_10.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for ztable_10 with an id key and two data fields",
+   "teaches": [
+    "ABAP DDL table syntax",
+    "custom table field types (char, dec)",
+    "AbapCatalog annotations"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 14,
+   "path": "database/ztable_3.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for ztable_3 with an id key and two data fields",
+   "teaches": [
+    "ABAP table (DDL) syntax",
+    "primary key definition",
+    "basic field typing (char, dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 15,
+   "path": "database/ztable_4.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for ztable_4, a custom table with id, field1, and field2 columns.",
+   "teaches": [
+    "ABAP table definition syntax",
+    "AbapCatalog annotations",
+    "basic field typing (char/dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 16,
+   "path": "database/ztable_5.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for a custom table storing an id key with two fields",
+   "teaches": [
+    "ABAP table definition syntax",
+    "AbapCatalog annotations",
+    "basic field typing (char, dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 17,
+   "path": "database/ztable_6.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS DDL defining a custom database table 'ztable_6' with id, field1, and field2 columns",
+   "teaches": [
+    "ABAP table definition syntax",
+    "AbapCatalog annotations",
+    "basic field typing (char, dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 18,
+   "path": "database/ztable_7.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for ztable_7 with an id key and two data fields.",
+   "teaches": [
+    "ABAP table DDL syntax",
+    "custom Z-table structure",
+    "key/field declaration"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 19,
+   "path": "database/ztable_8.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "Defines the custom ABAP database table ZTABLE_8 with an id key and two data fields.",
+   "teaches": [
+    "ABAP CDS table definition syntax",
+    "primary key declaration",
+    "basic field typing (char, dec)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 20,
+   "path": "database/ztable_9.ddl",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP CDS table definition for ztable_9 with an id key and two data fields",
+   "teaches": [
+    "ABAP table DDL syntax",
+    "custom Z-table structure",
+    "primary key definition"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 7
+  },
+  {
+   "n": 21,
+   "path": "enterprise/abap/classes/zcl_ent_delivery_reader.clas.abap",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP class that reads a count of open delivery records from the zent_delivery table.",
+   "teaches": [
+    "ABAP class definition/implementation syntax",
+    "SELECT COUNT query pattern"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 9
+  },
+  {
+   "n": 22,
+   "path": "enterprise/abap/classes/zcl_ent_stock_reader.clas.abap",
+   "chapter": "data",
+   "role": "data",
+   "one_liner": "ABAP class that counts open stock records from the zent_stock table.",
+   "teaches": [
+    "ABAP class definition/implementation syntax",
+    "simple SELECT COUNT query pattern"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 9
+  },
+  {
+   "n": 23,
+   "path": "enterprise/srv/lib/order-workflow.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Implements the transactional order-release workflow: validation, idempotency, credit check, stock allocation, and event/audit logging.",
+   "teaches": [
+    "idempotent command handling via request ID",
+    "optimistic concurrency with atomic conditional updates",
+    "credit limit enforcement pattern",
+    "outbox/audit event emission within a single transaction"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 2,
+   "loc": 43
+  },
+  {
+   "n": 24,
+   "path": "enterprise/srv/lib/finance.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Business logic for posting balanced accounting journal entries with integer-cent math and audit logging",
+   "teaches": [
+    "converting decimal amounts to safe integer minor units",
+    "double-entry journal validation rules",
+    "role/company authorization checks before mutation",
+    "audit event recording pattern"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 12,
+   "loc": 30
+  },
+  {
+   "n": 25,
+   "path": "enterprise/srv/lib/outbox.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Implements outbox pattern delivery: sends pending integration events with retry/backoff and dead-lettering.",
+   "teaches": [
+    "transactional outbox pattern",
+    "at-least-once delivery with dedup by event ID",
+    "exponential backoff retry",
+    "dead letter queue handling"
+   ],
+   "why_now": "A load-bearing file \u2014 5 files import it.",
+   "depends_on": [],
+   "imported_by": 5,
+   "loc": 25
+  },
+  {
+   "n": 26,
+   "path": "enterprise/abap/classes/zcl_ent_auth.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Checks a user's authorization for a company code (BUKRS) via an ABAP authority check.",
+   "teaches": [
+    "ABAP AUTHORITY-CHECK usage",
+    "custom exception raising",
+    "authorization object pattern for company code"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 1,
+   "loc": 10
+  },
+  {
+   "n": 27,
+   "path": "enterprise/abap/classes/zcl_ent_credit.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Checks credit validity of an order by verifying its total amount is positive, raising a domain exception otherwise.",
+   "teaches": [
+    "ABAP class definition/implementation split",
+    "domain validation via exception raising",
+    "inline SELECT SINGLE with @DATA declaration"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 1,
+   "loc": 10
+  },
+  {
+   "n": 28,
+   "path": "enterprise/srv/lib/monitoring.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Ingests normalized monitoring events into incidents and handles incident acknowledgement with auth/validation checks.",
+   "teaches": [
+    "turning external monitoring events into internal incidents",
+    "idempotent ingestion via externalEventID dedup",
+    "role/company authorization checks before mutations",
+    "audit trail logging on state changes"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 7,
+   "loc": 32
+  },
+  {
+   "n": 29,
+   "path": "enterprise/abap/classes/zcl_ent_events.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "ABAP class that records an order release event by inserting a pending status row into zent_event.",
+   "teaches": [
+    "Recording domain events for order releases",
+    "Raising domain exceptions on insert failure",
+    "Basic ABAP class-method pattern with static methods"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 1,
+   "loc": 14
+  },
+  {
+   "n": 30,
+   "path": "enterprise/abap/classes/zcl_ent_order.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "ABAP class that releases a draft order after checking company auth and credit, then records the event.",
+   "teaches": [
+    "order release workflow",
+    "cross-check with auth and credit domain classes",
+    "status transition via direct UPDATE",
+    "domain exception raising on failure"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/abap/classes/zcl_ent_auth.clas.abap",
+    "enterprise/abap/classes/zcl_ent_credit.clas.abap",
+    "enterprise/abap/classes/zcl_ent_events.clas.abap"
+   ],
+   "imported_by": 1,
+   "loc": 13
+  },
+  {
+   "n": 31,
+   "path": "enterprise/abap/classes/zcl_ent_inventory.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "ABAP class implementing inventory reservation logic that decrements stock for a material",
+   "teaches": [
+    "domain exception raising pattern",
+    "reserving stock with conditional UPDATE",
+    "checking sy-dbcnt for row-affected validation"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 11
+  },
+  {
+   "n": 32,
+   "path": "enterprise/abap/classes/zcx_ent_domain.clas.abap",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Defines a custom exception class for domain-level errors in the enterprise ABAP module.",
+   "teaches": [
+    "custom exception class definition",
+    "inheriting from cx_static_check",
+    "ABAP error-handling convention"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 4
+  },
+  {
+   "n": 33,
+   "path": "enterprise/abap/reports/zent_reconcile.prog.abap",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "ABAP report that reconciles released orders against integration events and flags missing ones",
+   "teaches": [
+    "authority-check pattern",
+    "reconciliation via table lookup between two entities",
+    "reporting missing integration events for orders"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 9
+  },
+  {
+   "n": 34,
+   "path": "enterprise/srv/control-tower.js",
+   "chapter": "api",
+   "role": "api",
+   "one_liner": "CAP application service exposing order release and monitoring/incident event handlers.",
+   "teaches": [
+    "CDS ApplicationService event wiring",
+    "delegating request handling to lib workflow/monitoring modules",
+    "using cds.tx for transactional context"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/order-workflow.js",
+    "enterprise/srv/lib/monitoring.js"
+   ],
+   "imported_by": 0,
+   "loc": 12
+  },
+  {
+   "n": 35,
+   "path": "enterprise/abap/rap/zc_entorder.ddls.asddls",
+   "chapter": "api",
+   "role": "api",
+   "one_liner": "CDS projection view exposing enterprise order fields for consumption on top of the base interface view.",
+   "teaches": [
+    "CDS projection view syntax",
+    "authorization check annotation",
+    "field exposure/consumption pattern"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/abap/rap/zi_entorder.ddls.asddls"
+   ],
+   "imported_by": 0,
+   "loc": 3
+  },
+  {
+   "n": 36,
+   "path": "enterprise/srv/finance.js",
+   "chapter": "api",
+   "role": "api",
+   "one_liner": "CDS application service exposing a postJournal action that delegates to finance library logic",
+   "teaches": [
+    "CDS ApplicationService event handler pattern",
+    "wiring service actions to lib functions",
+    "using cds.tx for transactional context"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 5
+  },
+  {
+   "n": 37,
+   "path": "enterprise/srv/lib/errors.js",
+   "chapter": "supporting",
+   "role": "util",
+   "one_liner": "Shared helper functions for throwing HTTP errors and enforcing role/company authorization checks.",
+   "teaches": [
+    "how to reject requests with status codes",
+    "role-based access control pattern",
+    "company-scoped authorization pattern"
+   ],
+   "why_now": "A load-bearing file \u2014 30 files import it.",
+   "depends_on": [],
+   "imported_by": 30,
+   "loc": 5
+  }
+ ],
+ "stats": {
+  "candidates": 36,
+  "llm_calls": 1,
+  "cache_hits": 35,
+  "fallbacks": 0
+ }
+}

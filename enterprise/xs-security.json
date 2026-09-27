@@ -1,0 +1,72 @@
+{
+  "xsappname": "enterprise-control-tower",
+  "tenant-mode": "dedicated",
+  "description": "Company-scoped enterprise control tower",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer access"
+    },
+    {
+      "name": "$XSAPPNAME.Planner",
+      "description": "Planner access"
+    },
+    {
+      "name": "$XSAPPNAME.Operator",
+      "description": "Operator access"
+    },
+    {
+      "name": "$XSAPPNAME.Accountant",
+      "description": "Accountant access"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "companyCode",
+      "description": "Assigned company code",
+      "valueType": "string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Viewer",
+      "scope-references": [
+        "$XSAPPNAME.Viewer"
+      ],
+      "attribute-references": [
+        "companyCode"
+      ]
+    },
+    {
+      "name": "Planner",
+      "description": "Planner",
+      "scope-references": [
+        "$XSAPPNAME.Planner"
+      ],
+      "attribute-references": [
+        "companyCode"
+      ]
+    },
+    {
+      "name": "Operator",
+      "description": "Operator",
+      "scope-references": [
+        "$XSAPPNAME.Operator"
+      ],
+      "attribute-references": [
+        "companyCode"
+      ]
+    },
+    {
+      "name": "Accountant",
+      "description": "Accountant",
+      "scope-references": [
+        "$XSAPPNAME.Accountant"
+      ],
+      "attribute-references": [
+        "companyCode"
+      ]
+    }
+  ]
+}

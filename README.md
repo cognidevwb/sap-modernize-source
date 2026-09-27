@@ -1,19 +1,33 @@
-# SAP modernization source — structural-analysis demo
+# SAP modernization — expanded enterprise source
 
-A synthetic legacy-style ABAP example for exploring a modernization candidate. This repository is a demo fixture, not an export from a running ECC system.
+Open **this folder** in CogniDev, choose **Understand it → SAP**, and explore the detail cards. Use **Re-analyze** if it is already open.
 
-## Explore in CogniDev
+The original 90-file ABAP fixture remains in `src/`. The new `enterprise/` application adds:
 
-Open this folder and choose **Understand**. Structural analysis runs automatically; no separate SAP playbook needs to be started. Open the **SAP** subsection for smaller cards covering classes, data entities, dependencies, database access, functional areas, transactions, and coverage. **Source files & tags** retains source-folder groups and parsed symbol types; functional-area inferences are labeled separately from observed facts.
+- 36 business entities spanning sales, inventory, procurement, manufacturing, quality, finance, and operations.
+- Three CAP services with atomic order release, stock/credit reservation, idempotency, finance posting, audit evidence, event outbox and normalized Cloud ALM incident handling.
+- Native HANA tables, joined analytical views, SQLScript functions/procedures, HDI configuration and an analyst role.
+- ABAP classes, DDIC tables/domain/data element, authorization checks, transactions, scheduled jobs, CDS projection, DCL and an OData V4 service definition/binding.
+- BTP MTA/XSUAA/app-router descriptors, Fiori elements source, and three branching Integration Suite design flows.
+- Executable local tests, synthetic master data, architecture and operational documentation.
 
-- 90 ABAP source files across ten business areas.
-- Examples of direct database access, including MARD and VBAK.
-- 10 illustrative custom-table DDL files in `database/`. Their `.ddl` format is not consumed by the current SAP export adapter; inspect them as source files.
+## Run the core
 
-Inspect classes, routines, database accesses, and source links. Compare the structure with `sap-modernize-target`. SAP standard objects and omitted declarations can remain unresolved.
+```sh
+cd enterprise
+npm ci
+npm test
+npm run check:model
+npm run build
+npm start
+```
 
-Analysis artifacts are generated locally and are not committed to this repository.
+Dependencies are pinned to registry versions verified on 2026-09-26. No external SAP credentials are included.
 
-## Scope
+This is an enterprise-oriented reference application with a locally tested core. Live HANA execution, ABAP activation, Fiori/identity-provider integration and deployment qualification still require your SAP environment. Integration flow files are explicitly non-executable designs. See `enterprise/docs/OPERATIONS.md` and `enterprise/docs/SOURCES.md`.
 
-This fixture does not establish a readiness percentage, Clean Core compliance score, migration effort, or runtime correctness. Those require separate assessments and SAP-system evidence. Static analysis coverage is partial.
+The original ABAP fixture remains under `src/` for comparison with the enterprise additions.
+
+## Model-generated demo reports
+
+The existing **Use Cases** and **Guided Tour** cycles were run with Claude Sonnet. Open Understand to load the saved views; structural analysis rebuilds locally. See [.cognidev/DEMO_ANALYSIS.md](.cognidev/DEMO_ANALYSIS.md) for provenance, validation and interpretation limits. These are source-inferred reports, not proof of deployed functionality.
