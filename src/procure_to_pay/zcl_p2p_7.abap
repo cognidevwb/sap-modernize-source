@@ -1,9 +1,0 @@
-*& Procure-to-Pay Component 7
-CLASS zcl_p2p_7 DEFINITION PUBLIC.
-  PUBLIC SECTION.
-    METHODS: execute.
-ENDCLASS.
-CLASS zcl_p2p_7 IMPLEMENTATION.
-  METHOD execute.
-  ENDMETHOD.
-ENDCLASS.

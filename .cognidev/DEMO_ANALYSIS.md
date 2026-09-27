@@ -1,8 +1,8 @@
 # SAP demo model analysis
 
-Generated with the existing `understand-brief` and `reading-guide` cycles using `claude-cli / sonnet`.
+Generated with the existing `understand-brief` and `reading-guide` cycles using `claude-cli / sonnet`, then reviewed against source implementations. The original model report, correction log and explicitly added source-review cases are retained in demo-analysis.json.
 
-- 22 source-inferred use cases.
+- 34 reviewed source-inferred use cases (including explicitly recorded source-review additions).
 - 37 reading steps; 36 cached file tags.
 - All cited files exist and all cached tag hashes match this source snapshot. No fallback tags.
 - Tool hashes, evidence hashes and report hashes are recorded in [demo-analysis.json](demo-analysis.json).
@@ -15,17 +15,10 @@ Open the repository in CogniDev and choose Understand. Structural analysis rebui
 
 These are model-generated source interpretations, not certification, runtime validation, or proof that every described workflow is implemented. The model's wording may describe the intended ERP domain more broadly than this synthetic demo implements. An entity declaration alone does not prove an end-to-end business operation. Source references were checked for existence; semantic correctness still requires review.
 
-Only the model report JSON and file-tag cache are committed. Structural caches, local provider logs, credentials, dependencies, and build output are excluded. The source repo contains the expanded enterprise example; the target remains the smaller ABAP/CDS comparison fixture.
+Portable model reports and the current tour file-tag cache are committed alongside the source and migration evidence. Structural caches, local provider logs, credentials, dependencies, and build output are excluded. The source contains the executable enterprise reference landscape; the target contains the generated HANA/AMDP calculations and .NET 10 OAuth/OData worker, with hash-bound local validation evidence under migration/.
 
 ## Use cases supported only by declarative citations
 
-- Record a customer payment against an invoice
-- Receive goods against a purchase order
-- Inspect and disposition a supplier-delivered quality lot
-- Plan and schedule production orders
-- Manage warehouse tasks for picking and put-away
-- Monitor open orders, stock, and incidents via control tower dashboard
-- Reconcile orders against fulfillment and financial records
-- Create and maintain master data records
-- Maintain pricing conditions for orders
-- Process a customer return
+- Analyze order fulfillment performance and exceptions
+- Analyze profit margins on sales orders
+- Monitor service level performance and health

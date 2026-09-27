@@ -1,32 +1,32 @@
 {
  "version": 1,
  "prompt_version": 1,
- "generated_from_merkle": "3bbeb4bf8209ecc1a5bc01d6441de4c9ec45e2d5e207c7c6d066dd92f301c9f5",
+ "generated_from_merkle": "e762aadaa1c26b2d47f7ca1e987eb3b8a4abc0c80c9cbf9988ba5448eb5a1155",
  "chapters": [
   {
    "id": "orientation",
    "label": "Get oriented",
    "steps": [
-    1,
-    2,
-    3,
-    4,
-    5
+    1
    ]
   },
   {
    "id": "entry",
    "label": "Where execution starts",
    "steps": [
-    6,
-    7,
-    8
+    2,
+    3,
+    4,
+    5,
+    6
    ]
   },
   {
-   "id": "data",
-   "label": "The data model",
+   "id": "logic",
+   "label": "The core logic",
    "steps": [
+    7,
+    8,
     9,
     10,
     11,
@@ -40,39 +40,33 @@
     19,
     20,
     21,
-    22
-   ]
-  },
-  {
-   "id": "logic",
-   "label": "The core logic",
-   "steps": [
+    22,
     23,
     24,
     25,
     26,
     27,
     28,
-    29,
-    30,
-    31,
-    32,
-    33
+    29
    ]
   },
   {
    "id": "api",
    "label": "The API surface",
    "steps": [
-    34,
-    35,
-    36
+    30,
+    31,
+    32
    ]
   },
   {
    "id": "supporting",
    "label": "Supporting cast",
    "steps": [
+    33,
+    34,
+    35,
+    36,
     37
    ]
   }
@@ -95,339 +89,91 @@
   },
   {
    "n": 2,
-   "path": "enterprise/README.md",
-   "chapter": "orientation",
-   "role": "config",
-   "one_liner": "README introducing the enterprise SAP control-tower sample project and pointing to key files to read first.",
-   "teaches": [
-    "project scope and purpose",
-    "which files/docs to read first",
-    "how to run tests/build"
-   ],
-   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 5
-  },
-  {
-   "n": 3,
-   "path": "enterprise/abap/rap/zi_entorder.dcls.asdcls",
-   "chapter": "orientation",
-   "role": "config",
-   "one_liner": "Defines a DCL access control role restricting ZI_EntOrder rows by company code authorization.",
-   "teaches": [
-    "ABAP CDS role-based row-level security",
-    "PFCG authorization checks on entity fields",
-    "Company code data segregation pattern"
-   ],
-   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 3
-  },
-  {
-   "n": 4,
-   "path": "enterprise/.gitignore",
-   "chapter": "orientation",
-   "role": "config",
-   "one_liner": "Git ignore rules excluding build artifacts, dependencies, and local env files from version control.",
-   "teaches": [
-    "project build/output directories",
-    "local secrets/config are excluded"
-   ],
-   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 8
-  },
-  {
-   "n": 5,
-   "path": "enterprise/scripts/package-ui.js",
-   "chapter": "orientation",
-   "role": "config",
-   "one_liner": "Build script that copies the app UI folder into the dist server directory for packaging.",
-   "teaches": [
-    "build/packaging steps",
-    "expected dist folder layout"
-   ],
-   "why_now": "Read this first \u2014 it sets the project's ground rules before any code.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 3
-  },
-  {
-   "n": 6,
-   "path": "README.md",
+   "path": "external/settlement/src/SapSettlement.Batch/Operations/SettlementJob.cs",
    "chapter": "entry",
    "role": "entry",
-   "one_liner": "SAP modernization reference: enterprise fixture + ABAP core with CAP services, HANA artifacts, and BTP integration patterns",
+   "one_liner": "Orchestrates the monthly settlement reconciliation workflow from bank statement upload to mismatch report",
    "teaches": [
-    "Layered SAP application structure (ABAP classic + CAP + BTP)",
-    "Local-first enterprise demo setup with pinned dependencies",
-    "How to explore multi-stack SAP codebases in CogniDev"
-   ],
-   "why_now": "Execution starts here. Everything else hangs off this file.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 29
-  },
-  {
-   "n": 7,
-   "path": "enterprise/app/controltower/webapp/Component.js",
-   "chapter": "entry",
-   "role": "entry",
-   "one_liner": "SAPUI5 Fiori app component bootstrap for the ControlTower module, extending AppComponent with manifest-based config.",
-   "teaches": [
-    "SAP Fiori Elements app component pattern",
-    "sap.ui.define module declaration",
-    "manifest.json-driven component setup"
-   ],
-   "why_now": "Execution starts here. Everything else hangs off this file.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 4
-  },
-  {
-   "n": 8,
-   "path": "enterprise/abap/reports/zent_release.prog.abap",
-   "chapter": "entry",
-   "role": "entry",
-   "one_liner": "ABAP report that lets a user trigger release of an enterprise order by ID and company code",
-   "teaches": [
-    "report parameter input pattern",
-    "calling domain class static methods",
-    "commit/rollback on domain exceptions"
+    "settlement batch job entry point",
+    "reconciliation scope validation (company code + currency)",
+    "CSV bank statement parsing + ledger invoice matching",
+    "cancellation token propagation in async workflows"
    ],
    "why_now": "Execution starts here. Everything else hangs off this file.",
    "depends_on": [
-    "enterprise/abap/classes/zcl_ent_order.clas.abap"
+    "external/settlement/src/SapSettlement.Batch/Domain/Reconciler.cs"
    ],
+   "imported_by": 3,
+   "loc": 19
+  },
+  {
+   "n": 3,
+   "path": "enterprise/integration/runtime/security.js",
+   "chapter": "entry",
+   "role": "wiring",
+   "one_liner": "HMAC-SHA256 envelope verification for integration messages with timestamp window validation and role-based access control",
+   "teaches": [
+    "Timing-safe HMAC signature verification for webhook-style integrations",
+    "Combining role-based and company-scoped authorization checks",
+    "Rejection pattern for configuration/payload/timing/signature failures"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 1,
+   "loc": 13
+  },
+  {
+   "n": 4,
+   "path": "enterprise/srv/billing.js",
+   "chapter": "entry",
+   "role": "wiring",
+   "one_liner": "CAP service registration that wires invoiceOrder and settlePayment operations to the Billing ApplicationService",
+   "teaches": [
+    "CAP ApplicationService lifecycle hook pattern",
+    "Event handler registration with this.on()",
+    "Transaction context forwarding via cds.tx(req)"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 10
+  },
+  {
+   "n": 5,
+   "path": "enterprise/srv/master-data.js",
+   "chapter": "entry",
+   "role": "wiring",
+   "one_liner": "CAP service handler binding master-data CDS actions to business operations with transaction context",
+   "teaches": [
+    "CAP ApplicationService extension pattern",
+    "Action handler registration with cds.tx for managed transactions",
+    "Separation of service wiring from business logic"
+   ],
+   "why_now": "Next in this chapter's dependency order.",
+   "depends_on": [],
    "imported_by": 0,
    "loc": 11
   },
   {
-   "n": 9,
-   "path": "enterprise/abap/rap/zi_entorder.ddls.asddls",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "CDS view entity exposing enterprise order fields (id, company code, customer, status, amount) from zent_order table.",
+   "n": 6,
+   "path": "enterprise/srv/pricing.js",
+   "chapter": "entry",
+   "role": "wiring",
+   "one_liner": "SAP CAP service binding that wires pricing operations (maintainPrice, quotePrice) to the CDS runtime event bus",
    "teaches": [
-    "ABAP RAP CDS view definition",
-    "Root view entity with authorization check",
-    "Field renaming/projection from a database table"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 1,
-   "loc": 3
-  },
-  {
-   "n": 10,
-   "path": "database/ztable_1.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS DDL definition for a custom database table (ZTABLE_1) with a key and two fields",
-   "teaches": [
-    "ABAP table definition syntax",
-    "key vs non-key fields",
-    "basic data typing (char, dec)"
+    "CAP ApplicationService subclass pattern for domain event handlers",
+    "Transaction propagation via cds.tx(req) into business operations",
+    "Separation: routing layer (this) vs business logic (./lib/business/pricing)"
    ],
    "why_now": "Next in this chapter's dependency order.",
    "depends_on": [],
    "imported_by": 0,
-   "loc": 7
+   "loc": 10
   },
   {
-   "n": 11,
-   "path": "database/ztable_2.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "DDL defining ztable_2, a custom ABAP database table with an ID key and two data fields",
-   "teaches": [
-    "ABAP table DDL syntax",
-    "custom table structure with key and fields"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 12,
-   "path": "enterprise/abap/classes/zcl_ent_quality_reader.clas.abap",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP class that reads a count of open records from the ZENT_QUALITY table",
-   "teaches": [
-    "ABAP class-methods pattern",
-    "simple SELECT COUNT query",
-    "public static read access to a DB table"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 9
-  },
-  {
-   "n": 13,
-   "path": "database/ztable_10.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for ztable_10 with an id key and two data fields",
-   "teaches": [
-    "ABAP DDL table syntax",
-    "custom table field types (char, dec)",
-    "AbapCatalog annotations"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 14,
-   "path": "database/ztable_3.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for ztable_3 with an id key and two data fields",
-   "teaches": [
-    "ABAP table (DDL) syntax",
-    "primary key definition",
-    "basic field typing (char, dec)"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 15,
-   "path": "database/ztable_4.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for ztable_4, a custom table with id, field1, and field2 columns.",
-   "teaches": [
-    "ABAP table definition syntax",
-    "AbapCatalog annotations",
-    "basic field typing (char/dec)"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 16,
-   "path": "database/ztable_5.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for a custom table storing an id key with two fields",
-   "teaches": [
-    "ABAP table definition syntax",
-    "AbapCatalog annotations",
-    "basic field typing (char, dec)"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 17,
-   "path": "database/ztable_6.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS DDL defining a custom database table 'ztable_6' with id, field1, and field2 columns",
-   "teaches": [
-    "ABAP table definition syntax",
-    "AbapCatalog annotations",
-    "basic field typing (char, dec)"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 18,
-   "path": "database/ztable_7.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for ztable_7 with an id key and two data fields.",
-   "teaches": [
-    "ABAP table DDL syntax",
-    "custom Z-table structure",
-    "key/field declaration"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 19,
-   "path": "database/ztable_8.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "Defines the custom ABAP database table ZTABLE_8 with an id key and two data fields.",
-   "teaches": [
-    "ABAP CDS table definition syntax",
-    "primary key declaration",
-    "basic field typing (char, dec)"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 20,
-   "path": "database/ztable_9.ddl",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP CDS table definition for ztable_9 with an id key and two data fields",
-   "teaches": [
-    "ABAP table DDL syntax",
-    "custom Z-table structure",
-    "primary key definition"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 7
-  },
-  {
-   "n": 21,
-   "path": "enterprise/abap/classes/zcl_ent_delivery_reader.clas.abap",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP class that reads a count of open delivery records from the zent_delivery table.",
-   "teaches": [
-    "ABAP class definition/implementation syntax",
-    "SELECT COUNT query pattern"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 9
-  },
-  {
-   "n": 22,
-   "path": "enterprise/abap/classes/zcl_ent_stock_reader.clas.abap",
-   "chapter": "data",
-   "role": "data",
-   "one_liner": "ABAP class that counts open stock records from the zent_stock table.",
-   "teaches": [
-    "ABAP class definition/implementation syntax",
-    "simple SELECT COUNT query pattern"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 9
-  },
-  {
-   "n": 23,
+   "n": 7,
    "path": "enterprise/srv/lib/order-workflow.js",
    "chapter": "logic",
    "role": "domain",
@@ -442,11 +188,143 @@
    "depends_on": [
     "enterprise/srv/lib/errors.js"
    ],
-   "imported_by": 2,
+   "imported_by": 82,
    "loc": 43
   },
   {
-   "n": 24,
+   "n": 8,
+   "path": "external/settlement/src/SapSettlement.Batch/Domain/Reconciler.cs",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Core reconciliation engine matching ledger invoices against bank payments within a scope",
+   "teaches": [
+    "Three-way reconciliation logic (ledger \u00d7 bank \u00d7 tolerance)",
+    "Scope validation and boundary enforcement (company/currency/date filters)",
+    "Outcome classification (MATCHED, UNDERPAID, OVERPAID, UNMATCHED_BANK, MISSING_PAYMENT)"
+   ],
+   "why_now": "A load-bearing file \u2014 8 files import it.",
+   "depends_on": [],
+   "imported_by": 8,
+   "loc": 69
+  },
+  {
+   "n": 9,
+   "path": "enterprise/integration/runtime/identifiers.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Bidirectional identifier mapping service bridging external system IDs to internal entity keys",
+   "teaches": [
+    "CDS query builder patterns (SELECT.one.from, INSERT.into.entries)",
+    "External system integration contract (companyCode+sourceSystem+objectType+externalID \u2192 int",
+    "Idempotent registration with conflict detection (409 on mismatch, silent on duplicate)"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 2,
+   "loc": 15
+  },
+  {
+   "n": 10,
+   "path": "enterprise/integration/runtime/inbound.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Unified inbound integration router that verifies envelopes, validates source systems, and dispatches to channel-specific handlers (IDoc/SOAP/EventMesh).",
+   "teaches": [
+    "envelope-based message routing pattern",
+    "security verification at integration boundary",
+    "channel-agnostic inbound orchestration"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/integration/runtime/security.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 1,
+   "loc": 14
+  },
+  {
+   "n": 11,
+   "path": "enterprise/srv/lib/business/inventory.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Stock transfer and physical count operations with optimistic locking and cross-plant validation",
+   "teaches": [
+    "Optimistic concurrency control using revision counters",
+    "Multi-step database transactions with rollback semantics via command wrapper",
+    "Cross-plant stock movement audit trail through StockMovements entity"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 0,
+   "loc": 32
+  },
+  {
+   "n": 12,
+   "path": "enterprise/srv/lib/business/logistics.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Warehouse shipping orchestration with reservation-to-delivery promotion and atomic stock adjustment",
+   "teaches": [
+    "multi-entity transaction pattern (order \u2192 reservations \u2192 stock \u2192 delivery)",
+    "command/transition domain wrappers for audit",
+    "quantity-match validation across entities before state change",
+    "pessimistic concurrency (revision counter + range check)"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/errors.js",
+    "enterprise/srv/lib/order-workflow.js"
+   ],
+   "imported_by": 1,
+   "loc": 30
+  },
+  {
+   "n": 13,
+   "path": "enterprise/srv/lib/business/manufacturing.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Manufacturing production-order lifecycle: schedule with BOM expansion, component reservation, completion reconciliation with scrap/good split",
+   "teaches": [
+    "Production orders consume materials via bill-of-material explosion and stock reservation",
+    "Integral component quantity enforcement (no fractional BOM rounding)",
+    "Two-phase production: SCHEDULED \u2192 COMPLETED with good/scrap reconciliation",
+    "Transactional stock movements (available \u2194 reserved) for component locking"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 0,
+   "loc": 48
+  },
+  {
+   "n": 14,
+   "path": "enterprise/srv/lib/business/quality.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Quality inspection workflow: validates sampled lots against policies, records characteristics, and updates stock for accepted goods",
+   "teaches": [
+    "Multi-level validation (sample bounds, policy thresholds, characteristic ranges)",
+    "Event-sourced state transition (OPEN \u2192 ACCEPTED/REJECTED) with disposition routing",
+    "Conditional stock availability unlock only after quality approval"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/order-workflow.js"
+   ],
+   "imported_by": 0,
+   "loc": 30
+  },
+  {
+   "n": 15,
    "path": "enterprise/srv/lib/finance.js",
    "chapter": "logic",
    "role": "domain",
@@ -461,57 +339,243 @@
    "depends_on": [
     "enterprise/srv/lib/errors.js"
    ],
-   "imported_by": 12,
+   "imported_by": 30,
    "loc": 30
   },
   {
-   "n": 25,
-   "path": "enterprise/srv/lib/outbox.js",
+   "n": 16,
+   "path": "enterprise/srv/lib/business/billing.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Orchestrates invoice creation from shipped orders and payment settlement with double-entry journal postings",
+   "teaches": [
+    "command pattern wrapping business transactions",
+    "multi-currency tax calculation from policy basis points",
+    "double-entry accounting journal generation",
+    "optimistic-lock concurrency guards on invoice payment"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/finance.js",
+    "enterprise/srv/lib/order-workflow.js"
+   ],
+   "imported_by": 1,
+   "loc": 50
+  },
+  {
+   "n": 17,
+   "path": "enterprise/srv/lib/business/pricing.js",
    "chapter": "logic",
    "role": "domain",
-   "one_liner": "Implements outbox pattern delivery: sends pending integration events with retry/backoff and dead-lettering.",
+   "one_liner": "Price-condition lifecycle: validate intervals, enforce exclusivity, quote unit + total pricing for orders",
    "teaches": [
-    "transactional outbox pattern",
-    "at-least-once delivery with dedup by event ID",
-    "exponential backoff retry",
-    "dead letter queue handling"
+    "Temporal non-overlap constraint (interval intersection check)",
+    "Bigint-based money arithmetic (unit \u00d7 quantity)",
+    "Command-pattern audit trail for pricing changes"
    ],
-   "why_now": "A load-bearing file \u2014 5 files import it.",
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/finance.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 0,
+   "loc": 30
+  },
+  {
+   "n": 18,
+   "path": "enterprise/srv/lib/business/procurement.js",
+   "chapter": "logic",
+   "role": "domain",
+   "one_liner": "Purchase order lifecycle: creation, approval, and goods receipt orchestration with state transitions and multi-step validation",
+   "teaches": [
+    "Purchase order creation with line-item validation and cost aggregation",
+    "Approval workflow with separation-of-duty checks",
+    "Goods receipt posting with quality inspection lot creation",
+    "Event-sourced state transitions (DRAFT\u2192APPROVED\u2192RECEIVED)"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/errors.js",
+    "enterprise/srv/lib/finance.js"
+   ],
+   "imported_by": 0,
+   "loc": 50
+  },
+  {
+   "n": 19,
+   "path": "enterprise/srv/lib/business/sales.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Sales order creation and cancellation orchestration with inventory reservation and credit exposure management",
+   "teaches": [
+    "Command pattern for business transactions with event sourcing",
+    "Optimistic concurrency via revision counter and exposure consistency checks",
+    "Reversing reserved stock and credit exposure on order cancellation"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/order-workflow.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 1,
+   "loc": 45
+  },
+  {
+   "n": 20,
+   "path": "enterprise/integration/runtime/orders05.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "SAP ORDERS05 IDoc inbound parser and sales-order creation orchestrator with identity resolution",
+   "teaches": [
+    "How SAP EDI_DC40 control-record validation gates IDoc acceptance",
+    "Bi-directional ID mapping (IDoc partner/material numbers \u2194 internal UUIDs)",
+    "Idempotency via requestID hashing (sender:company:docnum)",
+    "XML\u2192domain transformation with strict position/quantity/partner cardinality"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/integration/runtime/xml.js",
+    "enterprise/srv/lib/business/sales.js",
+    "enterprise/srv/lib/business/validation.js"
+   ],
+   "imported_by": 0,
+   "loc": 36
+  },
+  {
+   "n": 21,
+   "path": "enterprise/srv/lib/outbox.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "At-least-once outbox delivery engine with lease-based concurrency and exponential backoff retry logic",
+   "teaches": [
+    "Lease-based distributed locking to prevent double-delivery (leaseToken + leaseExpiresAt)",
+    "Exponential backoff retry with budget (attempts < maxAttempts, delay = 2^attempts)",
+    "Optimistic concurrency via claim-check UPDATE (match status+attempts+leaseToken before pro",
+    "Dead-letter queue pattern when retry budget exhausted"
+   ],
+   "why_now": "A load-bearing file \u2014 11 files import it.",
    "depends_on": [],
-   "imported_by": 5,
-   "loc": 25
+   "imported_by": 11,
+   "loc": 29
+  },
+  {
+   "n": 22,
+   "path": "enterprise/srv/purchasing.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "CAP service binding procurement operations to domain logic",
+   "teaches": [
+    "CAP ApplicationService wiring pattern",
+    "Handler registration for custom actions",
+    "Transaction context delegation (cds.tx)"
+   ],
+   "why_now": "A load-bearing file \u2014 0 files import it.",
+   "depends_on": [],
+   "imported_by": 0,
+   "loc": 11
+  },
+  {
+   "n": 23,
+   "path": "enterprise/integration/runtime/delivery-soap.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "SOAP endpoint handler that parses ConfirmDelivery XML requests, validates scoping, resolves order IDs, and orchestrates shipment confirmation",
+   "teaches": [
+    "SOAP envelope parsing and validation for delivery confirmation",
+    "Cross-system order ID resolution via runtime identifiers",
+    "Request deduplication using SHA-256 hashing of source+company+message",
+    "Integration layer authentication scoping (companyCode boundary)"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/integration/runtime/xml.js",
+    "enterprise/integration/runtime/identifiers.js",
+    "enterprise/srv/lib/business/logistics.js"
+   ],
+   "imported_by": 0,
+   "loc": 16
+  },
+  {
+   "n": 24,
+   "path": "enterprise/integration/runtime/payment-event.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "CloudEvents 1.0 payment-received webhook \u2192 resolve external invoice \u2192 settlePayment call, with strict validation and idempotency key",
+   "teaches": [
+    "CloudEvents 1.0 contract enforcement (spec version, type, source)",
+    "Cross-system identifier resolution (invoice number \u2192 internal ID)",
+    "Idempotency key generation from event source/company/ID digest"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/integration/runtime/identifiers.js",
+    "enterprise/srv/lib/business/billing.js"
+   ],
+   "imported_by": 0,
+   "loc": 15
+  },
+  {
+   "n": 25,
+   "path": "enterprise/srv/lib/business/master-data.js",
+   "chapter": "logic",
+   "role": "service",
+   "one_liner": "Master data orchestration for partner registration, credit limit management, and blocking workflow",
+   "teaches": [
+    "command-based master data mutations with role gates",
+    "optimistic concurrency control via WHERE predicates on exposure + limit",
+    "partner entity lifecycle: REGISTERED \u2192 ACTIVE/BLOCKED with credit guard rails"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/errors.js",
+    "enterprise/srv/lib/finance.js"
+   ],
+   "imported_by": 0,
+   "loc": 32
   },
   {
    "n": 26,
-   "path": "enterprise/abap/classes/zcl_ent_auth.clas.abap",
+   "path": "enterprise/srv/lib/business/returns.js",
    "chapter": "logic",
    "role": "domain",
-   "one_liner": "Checks a user's authorization for a company code (BUKRS) via an ABAP authority check.",
+   "one_liner": "Business logic for customer returns: authorization against invoices, quantity tracking, refund calculation, and warehouse disposition (restock/scrap)",
    "teaches": [
-    "ABAP AUTHORITY-CHECK usage",
-    "custom exception raising",
-    "authorization object pattern for company code"
+    "Return authorization validates invoice status and calculates prorated credit using bigint ",
+    "Optimistic concurrency on invoice credited amounts prevents double-crediting",
+    "Disposition routing (RESTOCK updates stock, SCRAP does not) and credit note generation"
    ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 1,
-   "loc": 10
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/finance.js",
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 0,
+   "loc": 47
   },
   {
    "n": 27,
-   "path": "enterprise/abap/classes/zcl_ent_credit.clas.abap",
+   "path": "enterprise/srv/lib/business/warehouse.js",
    "chapter": "logic",
-   "role": "domain",
-   "one_liner": "Checks credit validity of an order by verifying its total amount is positive, raising a domain exception otherwise.",
+   "role": "service",
+   "one_liner": "Warehouse picking workflow: assigns tasks to pickers and confirms completed picks against reserved inventory.",
    "teaches": [
-    "ABAP class definition/implementation split",
-    "domain validation via exception raising",
-    "inline SELECT SINGLE with @DATA declaration"
+    "command pattern with owned() for multi-tenant warehouse actions",
+    "reservation \u2192 warehouse task lifecycle (ASSIGNED \u2192 CONFIRMED)",
+    "role-based authorization (WarehouseSupervisor assigns, Warehouse confirms)"
    ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 1,
-   "loc": 10
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/business/transaction.js",
+    "enterprise/srv/lib/order-workflow.js"
+   ],
+   "imported_by": 0,
+   "loc": 27
   },
   {
    "n": 28,
@@ -534,91 +598,22 @@
   },
   {
    "n": 29,
-   "path": "enterprise/abap/classes/zcl_ent_events.clas.abap",
+   "path": "external/settlement/src/SapSettlement.Batch/Operations/ReportStore.cs",
    "chapter": "logic",
-   "role": "domain",
-   "one_liner": "ABAP class that records an order release event by inserting a pending status row into zent_event.",
+   "role": "service",
+   "one_liner": "Content-addressed storage for immutable reconciliation reports with SHA256 collision detection",
    "teaches": [
-    "Recording domain events for order releases",
-    "Raising domain exceptions on insert failure",
-    "Basic ABAP class-method pattern with static methods"
+    "Content-addressed file naming (SHA256 digest prevents silent overwrites)",
+    "Atomic file writes via temp-then-move pattern",
+    "Custom JSON converter for decimal money formatting"
    ],
    "why_now": "Next in this chapter's dependency order.",
    "depends_on": [],
-   "imported_by": 1,
-   "loc": 14
+   "imported_by": 3,
+   "loc": 39
   },
   {
    "n": 30,
-   "path": "enterprise/abap/classes/zcl_ent_order.clas.abap",
-   "chapter": "logic",
-   "role": "domain",
-   "one_liner": "ABAP class that releases a draft order after checking company auth and credit, then records the event.",
-   "teaches": [
-    "order release workflow",
-    "cross-check with auth and credit domain classes",
-    "status transition via direct UPDATE",
-    "domain exception raising on failure"
-   ],
-   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
-   "depends_on": [
-    "enterprise/abap/classes/zcl_ent_auth.clas.abap",
-    "enterprise/abap/classes/zcl_ent_credit.clas.abap",
-    "enterprise/abap/classes/zcl_ent_events.clas.abap"
-   ],
-   "imported_by": 1,
-   "loc": 13
-  },
-  {
-   "n": 31,
-   "path": "enterprise/abap/classes/zcl_ent_inventory.clas.abap",
-   "chapter": "logic",
-   "role": "domain",
-   "one_liner": "ABAP class implementing inventory reservation logic that decrements stock for a material",
-   "teaches": [
-    "domain exception raising pattern",
-    "reserving stock with conditional UPDATE",
-    "checking sy-dbcnt for row-affected validation"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 11
-  },
-  {
-   "n": 32,
-   "path": "enterprise/abap/classes/zcx_ent_domain.clas.abap",
-   "chapter": "logic",
-   "role": "domain",
-   "one_liner": "Defines a custom exception class for domain-level errors in the enterprise ABAP module.",
-   "teaches": [
-    "custom exception class definition",
-    "inheriting from cx_static_check",
-    "ABAP error-handling convention"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 4
-  },
-  {
-   "n": 33,
-   "path": "enterprise/abap/reports/zent_reconcile.prog.abap",
-   "chapter": "logic",
-   "role": "service",
-   "one_liner": "ABAP report that reconciles released orders against integration events and flags missing ones",
-   "teaches": [
-    "authority-check pattern",
-    "reconciliation via table lookup between two entities",
-    "reporting missing integration events for orders"
-   ],
-   "why_now": "Next in this chapter's dependency order.",
-   "depends_on": [],
-   "imported_by": 0,
-   "loc": 9
-  },
-  {
-   "n": 34,
    "path": "enterprise/srv/control-tower.js",
    "chapter": "api",
    "role": "api",
@@ -637,41 +632,39 @@
    "loc": 12
   },
   {
-   "n": 35,
-   "path": "enterprise/abap/rap/zc_entorder.ddls.asddls",
+   "n": 31,
+   "path": "enterprise/srv/inventory.js",
    "chapter": "api",
    "role": "api",
-   "one_liner": "CDS projection view exposing enterprise order fields for consumption on top of the base interface view.",
+   "one_liner": "CAP ApplicationService registering OData actions for inventory stock transfer and counting",
    "teaches": [
-    "CDS projection view syntax",
-    "authorization check annotation",
-    "field exposure/consumption pattern"
+    "CAP service class extension pattern",
+    "OData custom action handlers",
+    "Transaction propagation via cds.tx(req)"
    ],
-   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
-   "depends_on": [
-    "enterprise/abap/rap/zi_entorder.ddls.asddls"
-   ],
+   "why_now": "A load-bearing file \u2014 0 files import it.",
+   "depends_on": [],
    "imported_by": 0,
-   "loc": 3
+   "loc": 10
   },
   {
-   "n": 36,
-   "path": "enterprise/srv/finance.js",
+   "n": 32,
+   "path": "enterprise/srv/manufacturing.js",
    "chapter": "api",
    "role": "api",
-   "one_liner": "CDS application service exposing a postJournal action that delegates to finance library logic",
+   "one_liner": "CDS service endpoint that exposes scheduleProduction and completeProduction manufacturing operations",
    "teaches": [
-    "CDS ApplicationService event handler pattern",
-    "wiring service actions to lib functions",
-    "using cds.tx for transactional context"
+    "CDS ApplicationService subclass pattern",
+    "Event handler registration with this.on()",
+    "Transaction context passing with cds.tx(req)"
    ],
    "why_now": "Next in this chapter's dependency order.",
    "depends_on": [],
    "imported_by": 0,
-   "loc": 5
+   "loc": 10
   },
   {
-   "n": 37,
+   "n": 33,
    "path": "enterprise/srv/lib/errors.js",
    "chapter": "supporting",
    "role": "util",
@@ -681,16 +674,87 @@
     "role-based access control pattern",
     "company-scoped authorization pattern"
    ],
-   "why_now": "A load-bearing file \u2014 30 files import it.",
+   "why_now": "A load-bearing file \u2014 151 files import it.",
    "depends_on": [],
-   "imported_by": 30,
+   "imported_by": 151,
    "loc": 5
+  },
+  {
+   "n": 34,
+   "path": "enterprise/srv/lib/business/transaction.js",
+   "chapter": "supporting",
+   "role": "util",
+   "one_liner": "Shared business-transaction primitives: ownership, state transitions, audit, idempotent commands, and validation helpers.",
+   "teaches": [
+    "Idempotent command pattern with request-ID deduplication and fingerprint comparison",
+    "Optimistic locking for state transitions via status-predicate UPDATE",
+    "Dual-write audit + outbox pattern for domain events",
+    "Canonical value digests for change detection"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 65,
+   "loc": 43
+  },
+  {
+   "n": 35,
+   "path": "validation/abap/lib/execute.mjs",
+   "chapter": "supporting",
+   "role": "util",
+   "one_liner": "Runtime bridge that loads transpiled ABAP classes via abap-runtime, instantiates their typed parameters from JSON rows/parameters, and executes the CALCULATE method",
+   "teaches": [
+    "ABAP-to-JS runtime contract: dynamically resolve ZCL_ENT_* classes and their method signat",
+    "Type marshalling: map JSON inputs to ABAP runtime primitives (Character, table types) usin",
+    "Table construction: iterate rows, clone row types, set fields, append to ABAP table instan"
+   ],
+   "why_now": "A load-bearing file \u2014 8 files import it.",
+   "depends_on": [],
+   "imported_by": 8,
+   "loc": 31
+  },
+  {
+   "n": 36,
+   "path": "enterprise/integration/runtime/xml.js",
+   "chapter": "supporting",
+   "role": "util",
+   "one_liner": "Safe XML parsing utility with DTD/entity injection guards and type coercion helpers",
+   "teaches": [
+    "XML security: blocking DTD and ENTITY attacks before parsing",
+    "Defensive validation pattern: XMLValidator \u2192 parse \u2192 scalar checks",
+    "Type normalization: list() forces arrays, scalar() enforces strings with length caps"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 18,
+   "loc": 15
+  },
+  {
+   "n": 37,
+   "path": "enterprise/srv/lib/business/validation.js",
+   "chapter": "supporting",
+   "role": "util",
+   "one_liner": "ISO 8601 date validation with strict calendar-date checking",
+   "teaches": [
+    "Regex pre-flight before Date parse (fail fast)",
+    "Round-trip ISO slice comparison to catch Feb 30 / leap year lies",
+    "Throwing custom 422 errors via imported reject helper"
+   ],
+   "why_now": "Builds directly on what you just read \u2014 its dependencies are behind you now.",
+   "depends_on": [
+    "enterprise/srv/lib/errors.js"
+   ],
+   "imported_by": 5,
+   "loc": 9
   }
  ],
  "stats": {
   "candidates": 36,
-  "llm_calls": 1,
-  "cache_hits": 35,
+  "llm_calls": 3,
+  "cache_hits": 33,
   "fallbacks": 0
  }
 }

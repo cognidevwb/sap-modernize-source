@@ -1,3 +1,6 @@
+# Ignore analyzer caches inside independently analyzed modules.
+**/.cognidev/
+!/.cognidev/
 # Keep only portable, explicitly generated model reports. Rebuild structure locally.
 .cognidev/*
 !.cognidev/understand/

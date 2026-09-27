@@ -1,9 +1,0 @@
-*& Procure-to-Pay Component 14
-CLASS zcl_p2p_14 DEFINITION PUBLIC.
-  PUBLIC SECTION.
-    METHODS: execute.
-ENDCLASS.
-CLASS zcl_p2p_14 IMPLEMENTATION.
-  METHOD execute.
-  ENDMETHOD.
-ENDCLASS.

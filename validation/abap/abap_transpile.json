@@ -1,0 +1,12 @@
+{
+  "input_folder": [
+    "../../enterprise/abap/analytics",
+    "../../src/domain"
+  ],
+  "output_folder": "node_modules/.abap-generated",
+  "write_unit_tests": false,
+  "options": {
+    "unknownTypes": "compileError",
+    "addFilenames": true
+  }
+}

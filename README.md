@@ -1,17 +1,23 @@
-# SAP modernization — expanded enterprise source
+# SAP enterprise modernization source
 
-Open **this folder** in CogniDev, choose **Understand it → SAP**, and explore the detail cards. Use **Re-analyze** if it is already open.
+Open this folder in CogniDev and choose **Understand it → SAP**. Re-analyze an already open project. The SAP cards expose objects, typed contracts, data access, integrations, business groupings, modernization plans and external jobs. Use Cases and Guided Tour add saved model-generated interpretations with source references.
 
-The original 90-file ABAP fixture remains in `src/`. The new `enterprise/` application adds:
+This is a coherent company-scoped reference landscape with executable business behavior, migration recipes and failure cases. The earlier empty/repeated ABAP fixture classes have been retired; their inventory and baseline commit are in `migration/retired-fixtures.json`.
 
-- 36 business entities spanning sales, inventory, procurement, manufacturing, quality, finance, and operations.
-- Three CAP services with atomic order release, stock/credit reservation, idempotency, finance posting, audit evidence, event outbox and normalized Cloud ALM incident handling.
-- Native HANA tables, joined analytical views, SQLScript functions/procedures, HDI configuration and an analyst role.
-- ABAP classes, DDIC tables/domain/data element, authorization checks, transactions, scheduled jobs, CDS projection, DCL and an OData V4 service definition/binding.
-- BTP MTA/XSUAA/app-router descriptors, Fiori elements source, and three branching Integration Suite design flows.
-- Executable local tests, synthetic master data, architecture and operational documentation.
+## Business and integration scope
 
-## Run the core
+- Sales order creation, credit/stock reservation, picking, shipping, invoicing, exact-decimal tax, balanced journals, partial payments and returns.
+- Purchasing with creator/approver separation, partial receipts, quality inspection and stock release; BOM-based production with yield/scrap reconciliation.
+- Inventory transfers/counts, effective-dated pricing, master data and credit controls.
+- Signed IDoc order intake, SOAP delivery messages and payment CloudEvents, explicit external-ID mapping, company/role checks and replay protection.
+- A transactional outbox with atomic worker leases, crash recovery, bounded retries and dead-letter handling; receivers still deduplicate at-least-once deliveries.
+- A real C# settlement job reading a parameterized SQL extract and bank CSV, producing immutable reconciliation reports.
+- Typed ABAP domain policies and ten executable ABAP analytical reducers; DDIC exports, CDS/DCL, service bindings, jobs and authorization examples.
+- HANA HDI tables/views/procedures/functions, CAP services, Fiori source, BTP/XSUAA/app-router descriptors and Integration Suite design artifacts.
+
+## Reproduce the checks
+
+Requires Node 22+, Python 3 and .NET 9. The generated target requires .NET 10.
 
 ```sh
 cd enterprise
@@ -19,15 +25,22 @@ npm ci
 npm test
 npm run check:model
 npm run build
-npm start
+cd ../validation/abap
+npm ci
+npm test
+cd ../..
+dotnet run --project external/settlement/tests/SapSettlement.Tests
+python3 operations/maintenance/run-scenarios.py --playbooks /path/to/playbooks-v2
 ```
 
-Dependencies are pinned to registry versions verified on 2026-09-26. No external SAP credentials are included.
+Development CAP uses SQLite and mock identities; production declares HANA/XSUAA bindings. `enterprise/xs-security.json` includes the business roles and company attribute. Assign least-privilege roles per workflow; integration identities need IntegrationOperator and the corresponding business role.
 
-This is an enterprise-oriented reference application with a locally tested core. Live HANA execution, ABAP activation, Fiori/identity-provider integration and deployment qualification still require your SAP environment. Integration flow files are explicitly non-executable designs. See `enterprise/docs/OPERATIONS.md` and `enterprise/docs/SOURCES.md`.
+## Generate and validate the target
 
-The original ABAP fixture remains under `src/` for comparison with the enterprise additions.
+Run the existing **SAP HANA Modernization** playbook. Its qualified repository recipe reads `migration/modernization.json`, validates the source, compiles ten bounded pure ABAP reducers to SQLScript/AMDP, migrates the C# job to .NET 10 OAuth/OData, tests both implementations and automatically runs target Understand. A staged target is promoted only after local checks pass; a prior target is backed up. Modified plans or receipts are rejected.
 
-## Model-generated demo reports
+The generated target includes file-level differences, 620 source-versus-SQL calculation cases and validation evidence under `migration/`. Run **SAP Validation and Cutover** to rerun the local validation cycle. Native SAP activation, native HANA execution, exact SAP release/API compatibility and production acceptance remain separate gates.
 
-The existing **Use Cases** and **Guided Tour** cycles were run with Claude Sonnet. Open Understand to load the saved views; structural analysis rebuilds locally. See [.cognidev/DEMO_ANALYSIS.md](.cognidev/DEMO_ANALYSIS.md) for provenance, validation and interpretation limits. These are source-inferred reports, not proof of deployed functionality.
+`migration/scenario-coverage.json` maps all 124 service scenarios to explicit acceptance and demo evidence. Coverage of the catalog does not mean all 124 migrations have been executed. `operations/maintenance/` exercises FPS/SPS, incompatible add-ons, failed regression, correction ownership, stale inputs and failure recovery through the existing playbook using clearly marked synthetic SAP stack evidence.
+
+See `enterprise/docs/ARCHITECTURE.md`, `enterprise/docs/OPERATIONS.md`, `enterprise/integration/README.md` and `external/settlement/README.md`. Model reports in `.cognidev/understand/` describe source evidence; they do not establish deployed SAP behavior.

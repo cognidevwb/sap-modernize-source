@@ -1,352 +1,643 @@
 {
-  "domain": "Enterprise resource planning (ERP) \u2014 sales, procurement, inventory, manufacturing, quality, and finance operations (SAP-based)",
-  "summary": "This application is a full-scale ERP system covering the core operational and financial processes of a manufacturing/distribution enterprise: taking and fulfilling sales orders, procuring materials from suppliers, tracking inventory and warehouse tasks across plants, running production and quality inspections, and posting the resulting financial transactions. It serves order management and customer service teams, procurement/purchasing staff, warehouse and logistics personnel, quality inspectors, finance/accounting teams, and business/operations managers who need a real-time view of the business through a control-tower dashboard.\n\nThe system is organized around classic end-to-end business chains: order-to-cash (create an order, check credit and stock, reserve inventory, release for fulfillment, ship and invoice the customer, post revenue) and procure-to-pay (create and approve a purchase order, receive goods, inspect supplier quality lots and findings). Supporting these chains are master data (companies, plants, business partners, materials, suppliers, cost centers, exchange rates), pricing conditions, production orders and bills of material, and quality lots/findings. A control-tower layer built on dedicated services and views gives managers visibility into open orders, stock, incidents, and objectives, with monitoring-event ingestion, incident acknowledgement, and scheduled reconciliation jobs keeping records consistent.\n\nIntegration flows connect these processes across systems: releasing an order runs authorization and credit checks before recording the release and emitting an integration event; supplier quality inspection results can block or release stock; and operational monitoring events feed incidents into the control tower for acknowledgement. Together the pieces give the business a single, auditable operational backbone from customer order through fulfillment, quality assurance, and financial close.",
+  "domain": "Enterprise Resource Planning (ERP) system for manufacturing and distribution operations",
+  "summary": "This enterprise reference application contains company-scoped sales, purchasing, inventory, quality, production, finance and integration workflows. Business roles create and release orders, receive and inspect goods, manage stock and picking, invoice shipments, record payments and reconcile bank files. It also includes effective-dated pricing, returns with credit notes, operational incident handling and analytical source code.\n\nInbound IDoc, SOAP delivery and payment-event adapters use explicit external identifiers and business authorization. The external settlement job reconciles invoices with bank CSV. This source includes typed ABAP policies and reducers and a .NET 9 settlement job using a parameterized SQL extract.\n\nThis is a model-derived map reviewed against repository implementations. Source code, declared contracts and locally tested behavior are distinct evidence scopes. Native SAP activation, native HANA execution and deployed external connectivity remain unverified; local validation details are recorded separately.",
   "useCases": [
     {
-      "id": "create-sales-order",
-      "title": "Create a sales order",
-      "actor": "Order manager",
-      "description": "An order management user captures a new customer sales order for fulfillment.",
+      "id": "create-manage-sales-order",
+      "title": "Create and manage sales orders",
+      "actor": "Sales Manager",
+      "description": "Sales staff create new customer orders, validate them against credit limits and inventory availability, and track their status through fulfillment. The system checks authorization rules and company policies before accepting orders.",
       "steps": [
-        "Order manager submits order details",
-        "Order is validated and created via CREATE_ORDER",
-        "Order record is stored in SalesOrders/SalesOrderItems for downstream processing"
+        "Sales Manager initiates order creation through the order management interface",
+        "System validates customer is not blocked and belongs to the company",
+        "System validates order lines (1-100 items) with positive quantities and prices",
+        "System verifies materials and plants exist",
+        "Order is recorded in the SalesOrders entity with unique order ID, status DRAFT, and calculated total",
+        "Order items are inserted into SalesOrderItems with material, plant, quantity, and unit price"
       ],
-      "evidence": "CREATE_ORDER (zcl_sales_order.abap); enterprise.SalesOrders, enterprise.SalesOrderItems (sales.cds)",
+      "evidence": "createOrder function in sales.js, enterprise.SalesOrders and SalesOrderItems entities in sales.cds, ZCL_ENT_ORDER ABAP class",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/order_to_cash/zcl_sales_order.abap",
-        "enterprise/db/sales.cds"
-      ],
-      "folders": [
-        "enterprise/db",
-        "src/order_to_cash"
-      ]
-    },
-    {
-      "id": "cancel-sales-order",
-      "title": "Cancel a sales order",
-      "actor": "Order manager",
-      "description": "An order manager cancels an existing sales order before or during processing.",
-      "steps": [
-        "Order manager selects the order to cancel",
-        "System validates order state",
-        "Order status is updated to cancelled via CANCEL_ORDER"
-      ],
-      "evidence": "CANCEL_ORDER (zcl_sales_order.abap)",
-      "files": [
-        "src/order_to_cash/zcl_sales_order.abap"
-      ],
-      "folders": [
-        "src/order_to_cash"
-      ]
-    },
-    {
-      "id": "check-order-status",
-      "title": "Check the status of an order",
-      "actor": "Customer service representative",
-      "description": "A user looks up the current fulfillment/billing status of a sales order.",
-      "steps": [
-        "User queries an order by ID",
-        "GET_ORDER_STATUS retrieves current order status",
-        "Status is displayed"
-      ],
-      "evidence": "GET_ORDER_STATUS (zcl_sales_order.abap)",
-      "files": [
-        "src/order_to_cash/zcl_sales_order.abap"
-      ],
-      "folders": [
-        "src/order_to_cash"
-      ]
-    },
-    {
-      "id": "release-sales-order",
-      "title": "Release a held sales order for fulfillment",
-      "actor": "Order manager",
-      "description": "An order manager (or scheduled job) releases an order so it can proceed through delivery and billing, after authorization and credit checks pass.",
-      "steps": [
-        "releaseOrder is triggered for an order",
-        "Company/customer is checked against authorization rules (CHECK_COMPANY)",
-        "Order is checked against credit exposure (CHECK_ORDER)",
-        "RELEASE and RECORD_RELEASE record the release",
-        "An integration event is emitted for downstream systems"
-      ],
-      "evidence": "releaseOrder (order-workflow.js); RELEASE (zcl_ent_order.clas.abap); CHECK_COMPANY (zcl_ent_auth.clas.abap); CHECK_ORDER (zcl_ent_credit.clas.abap); RECORD_RELEASE (zcl_ent_events.clas.abap)",
-      "files": [
-        "enterprise/srv/lib/order-workflow.js",
-        "enterprise/abap/classes/zcl_ent_order.clas.abap",
-        "enterprise/abap/classes/zcl_ent_auth.clas.abap",
-        "enterprise/abap/classes/zcl_ent_credit.clas.abap",
-        "enterprise/abap/classes/zcl_ent_events.clas.abap"
+        "enterprise/srv/lib/business/sales.js",
+        "enterprise/db/sales.cds",
+        "enterprise/abap/classes/zcl_ent_order.clas.abap"
       ],
       "folders": [
         "enterprise/abap/classes",
+        "enterprise/db",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "release-order-fulfillment",
+      "title": "Release order for fulfillment",
+      "actor": "Order Fulfillment Coordinator",
+      "description": "After validating credit and inventory availability, authorized staff release approved orders to trigger warehouse picking and delivery preparation. The system enforces authorization checks, reserves inventory, updates customer credit exposure, and records release events atomically.",
+      "steps": [
+        "Coordinator selects orders ready for release with order ID and expected revision",
+        "System validates user has Planner role and company authorization",
+        "System performs atomic credit check: customer exposure plus order total must not exceed credit limit",
+        "System reserves inventory by decrementing available stock and incrementing reserved stock for each item",
+        "Order status transitions from DRAFT to RELEASED with incremented revision",
+        "Credit decision, integration event, audit event, and idempotent command record are written in the same transaction"
+      ],
+      "evidence": "releaseOrder function in order-workflow.js, ZCL_ENT_ORDER.release method in ABAP, ZENT_RELEASE report",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/order-workflow.js",
+        "enterprise/abap/classes/zcl_ent_order.clas.abap",
+        "enterprise/abap/reports/zent_release.prog.abap"
+      ],
+      "folders": [
+        "enterprise/abap/classes",
+        "enterprise/abap/reports",
         "enterprise/srv/lib"
       ]
     },
     {
-      "id": "check-release-credit-hold",
-      "title": "Check and release customer credit holds on orders",
-      "actor": "Credit manager",
-      "description": "A credit/finance team member reviews orders blocked due to customer credit exposure and records credit decisions.",
+      "id": "process-purchase-orders",
+      "title": "Create and approve purchase orders",
+      "actor": "Procurement Officer",
+      "description": "Buyers create company-scoped purchase orders with validated suppliers, materials, plants, quantities and prices. A different PurchasingManager actor approves a draft order; the CAP implementation does not provide a budget-routing workflow.",
       "steps": [
-        "Order is checked against customer credit limit (CHECK_ORDER)",
-        "Credit hold is identified",
-        "Credit decision is recorded (CreditDecisions)",
-        "Order release proceeds"
+        "Validate supplier, organizational scope and purchase lines",
+        "Create a draft order and its line items transactionally",
+        "Reject approval by the creator",
+        "Record approval by a different authorized actor"
       ],
-      "evidence": "CHECK_ORDER (zcl_ent_credit.clas.abap); enterprise.CreditDecisions (finance.cds)",
+      "evidence": "createPurchaseOrder and approvePurchaseOrder functions in procurement.js, zcl_po_approval_policy.clas.abap policy class, enterprise.PurchaseOrders entity",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "enterprise/abap/classes/zcl_ent_credit.clas.abap",
-        "enterprise/db/finance.cds"
+        "enterprise/srv/lib/business/procurement.js",
+        "enterprise/srv/purchasing.cds"
       ],
       "folders": [
-        "enterprise/abap/classes",
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/srv/lib/business",
+        "src/domain"
       ]
     },
     {
-      "id": "reserve-inventory-order",
-      "title": "Reserve inventory for an order",
-      "actor": "Warehouse planner",
-      "description": "Stock is reserved against a sales order to guarantee fulfillment ahead of shipping.",
+      "id": "receive-goods",
+      "title": "Receive goods from suppliers",
+      "actor": "Warehouse Clerk",
+      "description": "Warehouse staff record goods receipt when materials arrive from suppliers, validate quantities against purchase orders, create quality inspection lots, and update order receipt status.",
       "steps": [
-        "Order requiring fulfillment is identified",
-        "Available stock is checked at the plant",
-        "RESERVE creates a Reservation record against Stock"
+        "Warehouse Clerk records goods receipt with purchase order, item, quantity, and batch number",
+        "System validates purchase order is approved or partially received",
+        "System validates received quantity does not exceed outstanding quantity on the order line",
+        "Received quantity is incremented on the purchase order item",
+        "Quality lot is created with status OPEN for inspection",
+        "Goods receipt record is created linking to purchase order and quality lot",
+        "If all items are fully received, purchase order status changes to RECEIVED; otherwise PARTIALLY_RECEIVED"
       ],
-      "evidence": "RESERVE (zcl_ent_inventory.clas.abap); enterprise.Stock, enterprise.Reservations (supply.cds)",
+      "evidence": "receiveGoods function in procurement.js, enterprise.GoodsReceipts and QualityLots entities",
+      "evidenceLevel": "source-implemented",
       "files": [
+        "enterprise/srv/lib/business/procurement.js",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "reserve-inventory",
+      "title": "Reserve inventory for customer orders",
+      "actor": "Warehouse Coordinator",
+      "description": "When orders are released, the system automatically reserves available inventory to fulfill customer demand. Stock available quantity is decremented and reserved quantity is incremented atomically.",
+      "steps": [
+        "System receives order requiring inventory reservation during release workflow",
+        "For each order line item, system checks available stock at the plant",
+        "Available stock is decremented and reserved stock is incremented using atomic UPDATE with WHERE predicate",
+        "Stock reservation record is created linking order, material, plant, quantity with status RESERVED",
+        "If any line has insufficient stock, the entire transaction rolls back"
+      ],
+      "evidence": "releaseOrder function in order-workflow.js, ZCL_ENT_INVENTORY.reserve method in ABAP, RESERVE_STOCK HANA procedure, enterprise.Reservations entity",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/order-workflow.js",
         "enterprise/abap/classes/zcl_ent_inventory.clas.abap",
+        "enterprise/hana/src/procedures/RESERVE_STOCK.hdbprocedure",
         "enterprise/db/supply.cds"
       ],
       "folders": [
         "enterprise/abap/classes",
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/hana/src/procedures",
+        "enterprise/srv/lib"
       ]
     },
     {
-      "id": "check-stock-availability",
-      "title": "Check stock availability for a material",
-      "actor": "Order manager",
-      "description": "A user checks whether sufficient stock exists to fulfill an order line before committing.",
+      "id": "transfer-inventory",
+      "title": "Transfer inventory between plants",
+      "actor": "Warehouse Coordinator",
+      "description": "Warehouse staff transfer stock between plants within the same company. The system decrements stock at the source plant and increments stock at the destination plant atomically.",
       "steps": [
-        "User requests availability for a material/plant",
-        "CHECK_STOCK calculates available quantity",
-        "Result is returned to the user"
+        "Warehouse Coordinator initiates stock transfer with material, from plant, to plant, and quantity",
+        "System validates both plants belong to the company",
+        "Available stock is decremented at the source plant using atomic UPDATE with quantity check",
+        "Available stock is incremented at the destination plant (or new stock record created if none exists)",
+        "Stock movement record is created with reason TRANSFER"
       ],
-      "evidence": "CHECK_STOCK (zcl_inv_1.abap); enterprise.Stock (supply.cds)",
+      "evidence": "transferStock function in inventory.js, enterprise.StockMovements entity",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/inventory/zcl_inv_1.abap",
+        "enterprise/srv/lib/business/inventory.js",
         "enterprise/db/supply.cds"
       ],
       "folders": [
         "enterprise/db",
-        "src/inventory"
+        "enterprise/srv/lib/business"
       ]
     },
     {
-      "id": "generate-customer-invoice",
-      "title": "Generate a customer invoice for a sales order",
-      "actor": "Billing clerk",
-      "description": "A billing clerk creates an invoice for a fulfilled sales order and posts it to financial accounting.",
+      "id": "count-inventory",
+      "title": "Count and adjust inventory",
+      "actor": "Inventory Controller",
+      "description": "Inventory controllers conduct physical stock counts and adjust system quantities to match actual quantities, respecting committed reservations.",
       "steps": [
-        "Order is confirmed as delivered/billable",
-        "CREATE_INVOICE generates an invoice with line items and pricing",
-        "POST_TO_FI posts the invoice to finance"
+        "Inventory Controller records physical count with material, plant, counted quantity, expected revision, and reason",
+        "System retrieves current stock record and validates expected revision matches",
+        "System validates counted quantity is not less than reserved quantity (cannot discard committed reservations)",
+        "Available quantity is set to counted quantity minus reserved quantity",
+        "Stock revision is incremented to detect concurrent modifications",
+        "Stock movement record is created with the adjustment quantity and reason"
       ],
-      "evidence": "CREATE_INVOICE, POST_TO_FI (zcl_billing.abap); enterprise.Invoices (finance.cds)",
+      "evidence": "countStock function in inventory.js, enterprise.Stock and StockMovements entities",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/order_to_cash/zcl_billing.abap",
+        "enterprise/srv/lib/business/inventory.js",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "conduct-quality-inspection",
+      "title": "Conduct quality inspections on received materials",
+      "actor": "Quality Inspector",
+      "description": "Quality inspectors record bounded sample measurements and defect counts against the material quality policy. Accepted lots release stock; rejected lots remain quarantined.",
+      "steps": [
+        "Quality Inspector validates lot and material against quality lot record created during goods receipt",
+        "Inspector conducts physical or laboratory tests per quality specifications",
+        "Quality policy evaluates sample size, defective count, and defect rate threshold in basis points",
+        "If defect rate exceeds threshold, policy returns QUARANTINE; otherwise ACCEPT",
+        "Inspection results are recorded with pass/fail outcome",
+        "If failed, batch is blocked; if passed, stock is released for unrestricted use"
+      ],
+      "evidence": "zcl_quality_policy.clas.abap policy class, enterprise.QualityInspections, QualityLots, and QualityFindings entities",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/business/quality.js",
+        "enterprise/srv/lib/business/procurement.js"
+      ],
+      "folders": [
+        "enterprise/db",
+        "src/domain"
+      ]
+    },
+    {
+      "id": "schedule-production",
+      "title": "Schedule production and reserve BOM components",
+      "actor": "Production Planner",
+      "description": "Production planners schedule an order using an effective bill of materials and reserve required component stock. The sample validates dates and quantities; it does not implement machine-capacity optimization.",
+      "steps": [
+        "Validate company, plant, production quantity and planned dates",
+        "Resolve the effective bill of materials",
+        "Reserve component quantities",
+        "Create the production order"
+      ],
+      "evidence": "scheduleProduction function in manufacturing.js, enterprise.ProductionOrders, ProductionComponents, and BillsOfMaterial entities",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/business/manufacturing.js"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "complete-production",
+      "title": "Complete production and record yield",
+      "actor": "Production Planner",
+      "description": "Production planners confirm production completion, record good and scrap quantities, consume reserved components, and add finished goods to inventory.",
+      "steps": [
+        "Production Planner confirms completion with production order ID, good quantity, and scrap quantity",
+        "System validates good plus scrap equals planned production quantity",
+        "Production order status transitions from SCHEDULED to COMPLETED",
+        "For each reserved component, reserved stock is decremented",
+        "Production components status changes from RESERVED to CONSUMED",
+        "Good quantity is added to available stock for the finished material at the plant"
+      ],
+      "evidence": "completeProduction function in manufacturing.js, zcl_production_policy.clas.abap policy class, enterprise.ProductionOrders entity",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/business/manufacturing.js",
+        "src/domain/zcl_production_policy.clas.abap",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib/business",
+        "src/domain"
+      ]
+    },
+    {
+      "id": "generate-invoice",
+      "title": "Generate customer invoices for delivered orders",
+      "actor": "Billing Specialist",
+      "description": "Billing staff generate invoices for shipped orders, applying tax policies and creating draft journal entries for accounts receivable and revenue recognition.",
+      "steps": [
+        "Billing Specialist selects delivered orders ready for invoicing",
+        "System retrieves tax policy for customer country and order currency, validates it is effective",
+        "System calculates net amount from order total and tax amount using policy rate in basis points",
+        "Invoice is recorded with net amount, tax amount, paid amount 0.00, status OPEN, and due date",
+        "Order status transitions from SHIPPED to INVOICED with incremented revision",
+        "Draft journal entry is created with debit to receivables (110000), credit to revenue (400000), and credit to tax payable (220000) if tax > 0",
+        "Journal lines are inserted with currency and amounts"
+      ],
+      "evidence": "invoiceOrder function in billing.js, enterprise.Invoices, JournalEntries, JournalLines, and TaxPolicies entities",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/srv/lib/business/billing.js",
         "enterprise/db/finance.cds"
       ],
       "folders": [
         "enterprise/db",
-        "src/order_to_cash"
+        "enterprise/srv/lib/business"
       ]
     },
     {
-      "id": "post-financial-document",
-      "title": "Post a financial accounting document",
-      "actor": "Accountant",
-      "description": "An accountant or automated process posts a journal entry resulting from a billing or procurement transaction.",
+      "id": "process-payment",
+      "title": "Process customer payments and settle invoices",
+      "actor": "Accounts Receivable Clerk",
+      "description": "Accountants record partial or final payments against an open company-scoped invoice. The transaction validates currency and unique bank reference, prevents overpayment, updates the invoice and releases customer exposure when fully paid; it does not create a cash-account journal.",
       "steps": [
-        "Transaction requiring financial posting is identified",
-        "POST_DOCUMENT prepares the journal entry",
-        "postJournal writes JournalEntries/JournalLines to the ledger"
+        "Validate invoice, company, currency, amount and bank reference",
+        "Atomically update the paid amount and record the payment",
+        "Keep partial payments open or mark the invoice paid",
+        "Release customer exposure once on full settlement"
       ],
-      "evidence": "POST_DOCUMENT (zcl_fi_1..10.abap); postJournal (finance.js); enterprise.JournalEntries, enterprise.JournalLines (finance.cds)",
+      "evidence": "settlePayment function in billing.js, enterprise.Payments entity, zcl_payment_policy.clas.abap policy class",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/finance/zcl_fi_1.abap",
+        "enterprise/srv/lib/business/billing.js"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/srv/lib/business",
+        "src/domain"
+      ]
+    },
+    {
+      "id": "reconcile-payments-invoices",
+      "title": "Reconcile bank payments against invoice ledger",
+      "actor": "Finance Controller",
+      "description": "Finance controllers run periodic reconciliation processes to match bank payment files against open invoices from a SQL ledger extract, identifying discrepancies and generating settlement reports.",
+      "steps": [
+        "Reconciliation batch job reads bank payment CSV file with transaction ID, invoice ID, company, currency, amount, and value date",
+        "System queries SQL ledger for open invoices (status OPEN or PARTIAL) for the company and currency up to the as-of date",
+        "Payment records are matched to invoices by invoice ID, aggregating multiple bank payments per invoice",
+        "System calculates expected (ledger amount), received (bank total), and difference for each invoice",
+        "Outcome is determined: MATCHED (within tolerance), MISSING_PAYMENT (no bank record), UNDERPAID, OVERPAID, or UNMATCHED_BANK (bank payment with no ledger invoice)",
+        "Reconciliation report is generated with lines, totals, and exception count, saved as content-addressed JSON file"
+      ],
+      "evidence": "SettlementJob.RunAsync in SettlementJob.cs, Reconciler.Run in Reconciler.cs, BankCsvReader.Read in BankCsvReader.cs, SqlInvoiceLedger.ReadOpenAsync in SqlInvoiceLedger.cs",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "external/settlement/src/SapSettlement.Batch/Operations/SettlementJob.cs",
+        "external/settlement/src/SapSettlement.Batch/Domain/Reconciler.cs",
+        "external/settlement/src/SapSettlement.Batch/Connectors/BankCsvReader.cs",
+        "external/settlement/src/SapSettlement.Batch/Connectors/SqlInvoiceLedger.cs",
+        "external/settlement/src/SapSettlement.Batch/Operations/ReportStore.cs"
+      ],
+      "folders": [
+        "external/settlement/src/SapSettlement.Batch/Connectors",
+        "external/settlement/src/SapSettlement.Batch/Domain",
+        "external/settlement/src/SapSettlement.Batch/Operations"
+      ]
+    },
+    {
+      "id": "post-journal-entry",
+      "title": "Post financial journal entries for transactions",
+      "actor": "Financial Accountant",
+      "description": "Accounting staff post journal entries to record financial impacts of business transactions. The system validates accounting rules, verifies balanced debits and credits using integer minor units, and transitions journals from draft to posted status.",
+      "steps": [
+        "Accountant selects draft journal entry for posting",
+        "System retrieves journal and validates user has Accountant role and company authorization",
+        "System retrieves journal lines and validates at least 2 lines exist in a single currency",
+        "System validates each line has exactly one debit or credit (not both, not neither)",
+        "System sums debits and credits using integer minor units and validates they balance",
+        "Journal status transitions from DRAFT to POSTED using atomic UPDATE with status predicate",
+        "Audit event is recorded with user, action, journal ID, and verification detail"
+      ],
+      "evidence": "postJournal function in finance.js, cents helper for minor unit conversion, enterprise.JournalEntries and JournalLines entities",
+      "evidenceLevel": "source-implemented",
+      "files": [
         "enterprise/srv/lib/finance.js",
         "enterprise/db/finance.cds"
       ],
       "folders": [
         "enterprise/db",
-        "enterprise/srv/lib",
-        "src/finance"
+        "enterprise/srv/lib"
       ]
     },
     {
-      "id": "record-payment",
-      "title": "Record a customer payment against an invoice",
-      "actor": "Accountant",
-      "description": "An accountant records a payment received against a customer invoice, closing out the receivable.",
+      "id": "evaluate-credit-approval",
+      "title": "Evaluate customer credit for order approval",
+      "actor": "Credit Manager",
+      "description": "Credit managers review and approve customer orders based on credit limits and current exposure. The system enforces credit policies atomically during order release by checking exposure plus order total does not exceed limit.",
       "steps": [
-        "Invoice awaiting payment is identified",
-        "Payment amount and reference are recorded",
-        "Payment is linked to the invoice"
+        "Order is submitted for release which triggers credit approval evaluation",
+        "System retrieves customer credit limit and current outstanding exposure",
+        "Credit policy evaluates whether customer is blocked or exposure plus order total exceeds limit",
+        "If approved, customer exposure is incremented by order total using atomic UPDATE with credit limit predicate",
+        "If credit limit exceeded, order release is rejected and transaction rolls back",
+        "Credit decision is recorded with order ID, decision, exposure before, limit, and reason"
       ],
-      "evidence": "enterprise.Payments (finance.cds)",
+      "evidence": "releaseOrder function in order-workflow.js, zcl_credit_policy.clas.abap policy class, enterprise.CreditDecisions entity",
+      "evidenceLevel": "source-implemented",
       "files": [
+        "enterprise/srv/lib/order-workflow.js",
+        "src/domain/zcl_credit_policy.clas.abap",
         "enterprise/db/finance.cds"
       ],
       "folders": [
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/srv/lib",
+        "src/domain"
       ]
     },
     {
-      "id": "create-purchase-order",
-      "title": "Create a purchase order for a supplier",
-      "actor": "Procurement officer",
-      "description": "A procurement officer creates a purchase order to source materials from a supplier.",
+      "id": "cancel-order",
+      "title": "Cancel sales orders and release reservations",
+      "actor": "Sales Manager",
+      "description": "Sales staff cancel draft or released orders. The system reverses inventory reservations and customer credit exposure if the order was released.",
       "steps": [
-        "Procurement officer selects supplier and materials",
-        "CREATE_PO creates the purchase order with line items",
-        "Order is stored for approval"
+        "Sales Manager cancels order with order ID, company, and expected revision",
+        "System validates order revision matches expected revision to prevent concurrent modification",
+        "Order status transitions from DRAFT or RELEASED to CANCELLED with incremented revision",
+        "If order was RELEASED, system retrieves all reservations with status RESERVED",
+        "For each reservation, available stock is incremented and reserved stock is decremented atomically",
+        "Reservations status changes from RESERVED to CANCELLED",
+        "Customer exposure is decremented by order total using atomic UPDATE"
       ],
-      "evidence": "CREATE_PO (zcl_purchase_order.abap); enterprise.PurchaseOrders, enterprise.PurchaseOrderItems (supply.cds)",
+      "evidence": "cancelOrder function in sales.js, enterprise.SalesOrders and Reservations entities",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/procure_to_pay/zcl_purchase_order.abap",
-        "enterprise/db/supply.cds",
-        "enterprise/srv/supply.cds"
+        "enterprise/srv/lib/business/sales.js",
+        "enterprise/db/sales.cds",
+        "enterprise/db/supply.cds"
       ],
       "folders": [
         "enterprise/db",
-        "enterprise/srv",
-        "src/procure_to_pay"
+        "enterprise/srv/lib/business"
       ]
     },
     {
-      "id": "approve-purchase-order",
-      "title": "Approve a purchase order",
-      "actor": "Procurement manager",
-      "description": "A procurement manager reviews and approves a submitted purchase order before it is sent to the supplier.",
+      "id": "reconcile-order-status",
+      "title": "Reconcile order status across systems",
+      "actor": "Operations Analyst",
+      "description": "Operations staff run reconciliation processes to verify order and event data consistency, identifying discrepancies between operational and integration tables.",
       "steps": [
-        "Manager reviews pending purchase order",
-        "APPROVE_PO records the approval decision",
-        "Order status is updated to approved"
+        "Reconciliation job is triggered via ZENT_RECONCILE report or scheduled batch job ZENT_SCHEDULE",
+        "System reads orders with status RELEASED from order table",
+        "System reads integration events linked to orders from event table",
+        "For each released order, system checks if corresponding integration event exists",
+        "Discrepancies (released orders without events) are logged",
+        "HANA reconciliation procedure inserts results into RECONCILIATION_RESULT table with run ID, entity, expected count, actual count, and timestamp"
       ],
-      "evidence": "APPROVE_PO (zcl_purchase_order.abap)",
+      "evidence": "ZENT_RECONCILE report, ZENT_SCHEDULE report, RECONCILE_ORDERS HANA procedure, enterprise.ReconciliationRuns entity",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "src/procure_to_pay/zcl_purchase_order.abap"
+        "enterprise/abap/reports/zent_reconcile.prog.abap",
+        "enterprise/abap/reports/zent_schedule.prog.abap",
+        "enterprise/hana/src/procedures/RECONCILE_ORDERS.hdbprocedure",
+        "enterprise/db/operations.cds"
       ],
       "folders": [
-        "src/procure_to_pay"
+        "enterprise/abap/reports",
+        "enterprise/db",
+        "enterprise/hana/src/procedures"
       ]
     },
     {
-      "id": "receive-goods",
-      "title": "Receive goods against a purchase order",
-      "actor": "Warehouse operator",
-      "description": "A warehouse operator records receipt of goods delivered by a supplier against an open purchase order.",
+      "id": "monitor-operations-dashboard",
+      "title": "Monitor enterprise operations through control tower",
+      "actor": "Operations Manager",
+      "description": "Operations managers access dashboards showing critical business metrics across sales, inventory, production, quality, and finance using analytical views and stored procedures.",
       "steps": [
-        "Delivered goods are matched to a purchase order",
-        "Goods receipt is recorded",
-        "Stock is updated for the received quantity"
+        "Operations Manager logs into control tower web application",
+        "Dashboard calls READ_CONTROL_TOWER HANA procedure with company code",
+        "Procedure returns order margin data (order ID, revenue, margin) from ORDER_MARGIN analytical view",
+        "Dashboard loads data via ControlTower OData service exposing Orders, Materials, Stock, Incidents, and Objectives entities",
+        "Manager reviews metrics and exceptions requiring management attention",
+        "Manager drills into detailed transactions for investigation"
       ],
-      "evidence": "enterprise.GoodsReceipts (supply.cds)",
+      "evidence": "READ_CONTROL_TOWER HANA procedure, control-tower.cds service, ControlTower entities, controltower web app manifest.json",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "enterprise/db/supply.cds"
+        "enterprise/hana/src/procedures/READ_CONTROL_TOWER.hdbprocedure",
+        "enterprise/srv/control-tower.cds",
+        "enterprise/srv/control-tower.js",
+        "enterprise/app/controltower/webapp/manifest.json"
       ],
       "folders": [
-        "enterprise/db"
-      ]
-    },
-    {
-      "id": "supplier-quality-inspection",
-      "title": "Inspect and disposition a supplier-delivered quality lot",
-      "actor": "Quality inspector",
-      "description": "A quality inspector reviews an inspection result on a received supplier lot and records findings to decide whether to block or release the batch.",
-      "steps": [
-        "Supplier lot is received and queued for inspection",
-        "Inspector records QualityFindings against the QualityLot",
-        "If failed, the lot is blocked and purchasing is notified",
-        "If passed, stock is released for use"
-      ],
-      "evidence": "enterprise.QualityLots, enterprise.QualityFindings (supply.cds)",
-      "files": [
-        "enterprise/db/supply.cds"
-      ],
-      "folders": [
-        "enterprise/db"
-      ]
-    },
-    {
-      "id": "plan-production",
-      "title": "Plan and schedule production orders",
-      "actor": "Production planner",
-      "description": "A production planner schedules manufacturing runs, consuming bills of material, to replenish stock or fulfill demand.",
-      "steps": [
-        "Demand or stock shortfall is identified",
-        "A production order is created against a bill of materials",
-        "Plan is recorded for execution"
-      ],
-      "evidence": "enterprise.ProductionOrders, enterprise.BillsOfMaterial (supply.cds)",
-      "files": [
-        "enterprise/db/supply.cds"
-      ],
-      "folders": [
-        "enterprise/db"
-      ]
-    },
-    {
-      "id": "manage-warehouse-tasks",
-      "title": "Manage warehouse tasks for picking and put-away",
-      "actor": "Warehouse operator",
-      "description": "A warehouse operator works through generated warehouse tasks to pick, move, or put away stock in support of orders and receipts.",
-      "steps": [
-        "Warehouse task is generated (e.g. from a reservation or goods receipt)",
-        "Operator executes the task",
-        "Task completion updates stock/location"
-      ],
-      "evidence": "enterprise.WarehouseTasks (supply.cds)",
-      "files": [
-        "enterprise/db/supply.cds"
-      ],
-      "folders": [
-        "enterprise/db"
-      ]
-    },
-    {
-      "id": "monitor-control-tower",
-      "title": "Monitor open orders, stock, and incidents via control tower dashboard",
-      "actor": "Operations manager",
-      "description": "An operations manager views a real-time dashboard of open orders, materials, stock levels, and incidents to manage the business.",
-      "steps": [
-        "Manager opens the control tower dashboard",
-        "Open orders, materials, and stock levels are displayed via ControlTower.Orders/Materials/Stock",
-        "Incidents are surfaced via ControlTower.Incidents",
-        "Objectives/KPIs are shown via ControlTower.Objectives"
-      ],
-      "evidence": "ControlTower.Orders, ControlTower.Materials, ControlTower.Stock, ControlTower.Incidents, ControlTower.Objectives (control-tower.cds)",
-      "files": [
-        "enterprise/srv/control-tower.cds"
-      ],
-      "folders": [
+        "enterprise/app/controltower/webapp",
+        "enterprise/hana/src/procedures",
         "enterprise/srv"
       ]
     },
     {
-      "id": "acknowledge-incident",
-      "title": "Acknowledge and resolve an operational incident",
-      "actor": "Operations manager",
-      "description": "An operations manager acknowledges an incident flagged by monitoring so it can be tracked and resolved.",
+      "id": "analyze-order-fulfillment",
+      "title": "Analyze order fulfillment performance and exceptions",
+      "actor": "Sales Operations Analyst",
+      "description": "Declared capability; a complete runtime workflow is not established by this analysis. Sales analysts review historical and real-time order fulfillment metrics to identify bottlenecks and investigate delayed or problematic orders using analytical fact tables and exception views.",
       "steps": [
-        "Monitoring event is ingested via ingestMonitoringEvent",
-        "Event is evaluated and an Incident record is created",
-        "Manager acknowledges the incident via acknowledgeIncident"
+        "Analyst accesses order fulfillment analytical views",
+        "System presents order fact data from ORDER_FACT, ORDER_ITEM_FACT, and DELIVERY_FACT HANA tables",
+        "Analyst filters to identify late orders, partial deliveries, or quality holds",
+        "FULFILLMENT_EXCEPTIONS view highlights orders requiring intervention",
+        "Analyst investigates root causes (inventory shortage, quality block, logistics delay)",
+        "Findings are shared with operations teams for corrective action"
       ],
-      "evidence": "ingestMonitoringEvent, acknowledgeIncident (monitoring.js); enterprise.Incidents, enterprise.MonitoringEvents (operations.cds)",
+      "evidence": "ORDER_FACT, ORDER_ITEM_FACT, DELIVERY_FACT HANA tables, FULFILLMENT_EXCEPTIONS view declaration",
+      "evidenceLevel": "declared",
+      "files": [
+        "enterprise/hana/src/tables/ORDER_FACT.hdbtable",
+        "enterprise/hana/src/tables/ORDER_ITEM_FACT.hdbtable",
+        "enterprise/hana/src/tables/DELIVERY_FACT.hdbtable",
+        "enterprise/hana/src/views/FULFILLMENT_EXCEPTIONS.hdbview"
+      ],
+      "folders": [
+        "enterprise/hana/src/tables",
+        "enterprise/hana/src/views"
+      ]
+    },
+    {
+      "id": "forecast-customer-cash",
+      "title": "Analyze released-order exposure by customer",
+      "actor": "Treasury Analyst",
+      "description": "The SQLScript function reads released ORDER_FACT rows for one company and calculates cumulative net order exposure by customer. It does not predict payment dates or read an open-invoice ledger.",
+      "steps": [
+        "Select released orders for the requested company",
+        "Partition by customer and order rows by creation time and order ID",
+        "Return net order amounts and their cumulative exposure"
+      ],
+      "evidence": "CUSTOMER_CASH_FORECAST uses ORDER_FACT and a partitioned SUM window. Native HANA execution remains unverified.",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/hana/src/functions/CUSTOMER_CASH_FORECAST.hdbfunction"
+      ],
+      "folders": [
+        "enterprise/hana/src/functions"
+      ]
+    },
+    {
+      "id": "assess-supplier-risk",
+      "title": "Assess supplier risk and quality performance",
+      "actor": "Procurement Manager",
+      "description": "Procurement managers evaluate supplier performance using quality inspection history, delivery reliability, and risk indicators from analytical tables and functions.",
+      "steps": [
+        "Procurement Manager runs supplier risk assessment with supplier ID",
+        "SUPPLIER_RISK HANA function retrieves supplier score from SUPPLIER_SCORE analytical table",
+        "System calculates risk score using formula: (1 - on-time ratio) * 50 + defect ratio * 100 + lead days * 0.2",
+        "Default score of 100 is returned if no data exists",
+        "High-risk suppliers are flagged for review or alternative sourcing",
+        "Supplier scorecard results inform contract renewal and vendor management decisions"
+      ],
+      "evidence": "SUPPLIER_RISK HANA function, SUPPLIER_SCORE and QUALITY_RESULT analytical tables",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/hana/src/functions/SUPPLIER_RISK.hdbfunction",
+        "enterprise/hana/src/tables/SUPPLIER_SCORE.hdbtable",
+        "enterprise/hana/src/tables/QUALITY_RESULT.hdbtable"
+      ],
+      "folders": [
+        "enterprise/hana/src/functions",
+        "enterprise/hana/src/tables"
+      ]
+    },
+    {
+      "id": "check-available-to-promise",
+      "title": "Check product availability for order promising",
+      "actor": "Customer Service Representative",
+      "description": "Customer service staff check real-time product availability at specific plants to provide accurate delivery promises to customers.",
+      "steps": [
+        "Customer Service Representative enters material ID and plant code for availability check",
+        "AVAILABLE_TO_PROMISE HANA function queries STOCK_SNAPSHOT for available quantity",
+        "Function returns available quantity (or 0 if no stock record exists) for the material at the plant",
+        "Representative provides customer with confirmed delivery date based on ATP result"
+      ],
+      "evidence": "AVAILABLE_TO_PROMISE HANA function, enterprise.Stock entity",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/hana/src/functions/AVAILABLE_TO_PROMISE.hdbfunction",
+        "enterprise/db/supply.cds"
+      ],
+      "folders": [
+        "enterprise/db",
+        "enterprise/hana/src/functions"
+      ]
+    },
+    {
+      "id": "receive-external-orders",
+      "title": "Receive customer orders from external channels",
+      "actor": "Customer",
+      "description": "Customers place orders through external e-commerce platforms or B2B portals. The system receives ORDERS05 IDoc messages, validates schemas, resolves external identifiers to internal IDs, and creates sales orders.",
+      "steps": [
+        "Customer submits order through external e-commerce platform or EDI",
+        "Integration layer receives ORDERS05 IDoc message via orders05.js handler",
+        "IDoc schema is validated (MESTYP=ORDERS, IDOCTYP=ORDERS05, CIMTYP=ZENT_ORDERS05)",
+        "External identifiers (sender, IDoc number, customer partner, material IDs) are resolved to internal UUIDs using identifiers module",
+        "IDoc line items are transformed to internal order format with material, plant, quantity, unit price",
+        "Internal sales order is created via createOrder function with idempotent request ID derived from sender and IDoc number",
+        "External identifier mapping is registered for the order"
+      ],
+      "evidence": "receiveOrder function in orders05.js, parseXml and list/scalar helpers in xml.js, identifiers.resolve module, createOrder in sales.js",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/integration/runtime/orders05.js",
+        "enterprise/integration/runtime/xml.js",
+        "enterprise/srv/lib/business/sales.js"
+      ],
+      "folders": [
+        "enterprise/integration/runtime",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "send-delivery-confirmation",
+      "title": "Receive delivery confirmations and record shipment",
+      "actor": "Warehouse Operator",
+      "description": "The inbound SOAP adapter validates ConfirmDelivery, resolves the external order identifier and invokes the company-scoped shipment transaction. This is a local message contract; a deployed native SOAP endpoint is not established.",
+      "steps": [
+        "Warehouse Clerk records delivery shipment",
+        "Integration layer receives ConfirmDelivery SOAP message via delivery-soap.js handler",
+        "SOAP body is parsed and validated (one ConfirmDelivery operation, company code matches scope)",
+        "External order number is resolved to internal order ID using identifiers module",
+        "Shipment is processed via shipOrder function with carrier and tracking number",
+        "Idempotent request ID is derived from SOAP message ID to prevent duplicate processing"
+      ],
+      "evidence": "confirmDelivery function in delivery-soap.js, parseXml and scalar helpers in xml.js, identifiers.resolve module",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/integration/runtime/delivery-soap.js",
+        "enterprise/integration/runtime/inbound.js",
+        "enterprise/srv/lib/business/logistics.js"
+      ],
+      "folders": [
+        "enterprise/integration/runtime"
+      ]
+    },
+    {
+      "id": "receive-payment-events",
+      "title": "Receive payment notifications from banks",
+      "actor": "Customer",
+      "description": "Customers make payments through banks which send CloudEvents payment notifications. The system receives these events, resolves invoice references, and settles payments.",
+      "steps": [
+        "Bank or payment provider sends payment notification via CloudEvents 1.0 webhook",
+        "Integration layer receives event via payment-event.js handler",
+        "Event is validated (specversion 1.0, type enterprise.payment.received.v1, datacontenttype application/json)",
+        "External invoice number is resolved to internal invoice ID using identifiers module",
+        "Payment is processed via settlePayment function with amount, currency, and bank reference",
+        "Idempotent request ID is derived from CloudEvent source and ID to prevent duplicate processing"
+      ],
+      "evidence": "receivePayment function in payment-event.js, identifiers.resolve module, settlePayment in billing.js",
+      "evidenceLevel": "source-implemented",
+      "files": [
+        "enterprise/integration/runtime/payment-event.js",
+        "enterprise/srv/lib/business/billing.js"
+      ],
+      "folders": [
+        "enterprise/integration/runtime",
+        "enterprise/srv/lib/business"
+      ]
+    },
+    {
+      "id": "track-incidents",
+      "title": "Track and acknowledge operational incidents",
+      "actor": "System Administrator",
+      "description": "IT and operations staff monitor system health and business process execution. When monitoring events occur, staff review, categorize by severity, and acknowledge them for resolution tracking.",
+      "steps": [
+        "Cloud monitoring system detects incident or performance anomaly and sends normalized event",
+        "Integration layer receives monitoring event via ingestMonitoringEvent function",
+        "Event is validated (severity INFO/WARNING/CRITICAL, service, summary, optional correlation ID)",
+        "Event is deduplicated by external event ID; if seen, returns existing incident ID",
+        "New incident is created with source CLOUD_ALM_NORMALIZED, severity, summary, status OPEN",
+        "Monitoring event record is created linking external event ID to incident ID",
+        "System Administrator reviews incident in control tower dashboard",
+        "Administrator acknowledges incident via acknowledgeIncident function",
+        "Incident status transitions from OPEN to ACKNOWLEDGED with acknowledging user recorded",
+        "Audit event is recorded"
+      ],
+      "evidence": "ingestMonitoringEvent and acknowledgeIncident functions in monitoring.js, enterprise.Incidents and MonitoringEvents entities",
+      "evidenceLevel": "source-implemented",
       "files": [
         "enterprise/srv/lib/monitoring.js",
         "enterprise/db/operations.cds"
@@ -357,76 +648,185 @@
       ]
     },
     {
-      "id": "reconcile-orders",
-      "title": "Reconcile orders against fulfillment and financial records",
-      "actor": "Operations analyst",
-      "description": "A scheduled reconciliation process compares orders against fulfillment and finance events to detect discrepancies.",
+      "id": "analyze-order-margin",
+      "title": "Analyze profit margins on sales orders",
+      "actor": "Sales Controller",
+      "description": "Declared capability; a complete runtime workflow is not established by this analysis. Finance and sales leadership analyze profitability of sales orders by reviewing revenue and margin calculations from analytical views.",
       "steps": [
-        "A reconciliation run is initiated (ReconciliationRuns)",
-        "Order and integration events are compared to fulfillment/financial records",
-        "Discrepancies are logged as reconciliation results"
+        "Sales Controller accesses order margin analytical view",
+        "ORDER_MARGIN HANA view provides order ID, revenue, and margin data",
+        "Results are aggregated by customer, product line, or sales region",
+        "Low-margin orders are analyzed for pricing optimization or cost reduction opportunities"
       ],
-      "evidence": "enterprise.ReconciliationRuns, enterprise.IntegrationEvents (operations.cds)",
+      "evidence": "ORDER_MARGIN HANA view used by READ_CONTROL_TOWER procedure",
+      "evidenceLevel": "declared",
       "files": [
+        "enterprise/hana/src/views/ORDER_MARGIN.hdbview",
+        "enterprise/hana/src/procedures/READ_CONTROL_TOWER.hdbprocedure"
+      ],
+      "folders": [
+        "enterprise/hana/src/procedures",
+        "enterprise/hana/src/views"
+      ]
+    },
+    {
+      "id": "monitor-service-health",
+      "title": "Monitor service level performance and health",
+      "actor": "Service Manager",
+      "description": "Declared capability; a complete runtime workflow is not established by this analysis. Service managers track operational service level objectives (SLOs) and performance metrics using analytical views of service measurements.",
+      "steps": [
+        "Service Manager accesses service health analytical dashboard",
+        "SERVICE_HEALTH HANA view retrieves service measurement data from SERVICE_MEASUREMENT table",
+        "Current performance is compared against defined SLO thresholds",
+        "Services violating SLOs are highlighted for attention",
+        "Manager investigates root causes and initiates corrective actions",
+        "Trend analysis identifies systemic issues requiring architectural or process changes"
+      ],
+      "evidence": "SERVICE_HEALTH HANA view, SERVICE_MEASUREMENT table, enterprise.ServiceObjectives entity",
+      "evidenceLevel": "declared",
+      "files": [
+        "enterprise/hana/src/views/SERVICE_HEALTH.hdbview",
+        "enterprise/hana/src/tables/SERVICE_MEASUREMENT.hdbtable",
         "enterprise/db/operations.cds"
       ],
       "folders": [
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/hana/src/tables",
+        "enterprise/hana/src/views"
       ]
     },
     {
-      "id": "manage-master-data",
-      "title": "Create and maintain master data records",
-      "actor": "Master data administrator",
-      "description": "A master data administrator creates and updates core records such as companies, plants, business partners, materials, suppliers, and cost centers used throughout the ERP.",
+      "id": "register-business-partner",
+      "title": "Register business partners with credit limits",
+      "actor": "Master Data Administrator",
+      "description": "Master data administrators create business partner records for customers and suppliers, assigning initial credit limits and country information.",
       "steps": [
-        "Administrator selects a master data object",
-        "Record is created or updated",
-        "Record is validated and stored"
+        "Administrator creates business partner with company, name, country, and initial credit limit",
+        "System validates name (max 120 chars) and ISO country code (2 letters)",
+        "Credit limit is converted to integer minor units (cents)",
+        "Business partner is recorded with exposure initialized to 0.00, blocked set to false",
+        "Partner ID is returned with status ACTIVE and credit limit"
       ],
-      "evidence": "enterprise.Companies, enterprise.Plants, enterprise.BusinessPartners, enterprise.Materials, enterprise.Suppliers, enterprise.CostCenters, enterprise.ExchangeRates (master.cds)",
+      "evidence": "registerPartner function in master-data.js, enterprise.BusinessPartners entity",
+      "evidenceLevel": "source-implemented",
       "files": [
+        "enterprise/srv/lib/business/master-data.js",
         "enterprise/db/master.cds"
       ],
       "folders": [
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/srv/lib/business"
       ]
     },
     {
-      "id": "manage-pricing-conditions",
-      "title": "Maintain pricing conditions for orders",
-      "actor": "Pricing administrator",
-      "description": "A pricing administrator sets up and maintains the pricing conditions applied to sales orders and items.",
+      "id": "revise-credit-limit",
+      "title": "Revise customer credit limits",
+      "actor": "Credit Manager",
+      "description": "Credit managers update customer credit limits based on payment history and risk assessment, ensuring new limits do not fall below current exposure.",
       "steps": [
-        "Pricing condition record is created or updated",
-        "Condition is scoped to material/customer/plant",
-        "Condition is applied during order pricing"
+        "Credit Manager revises credit limit for business partner",
+        "System validates new limit is not less than current exposure",
+        "Credit limit is updated using atomic UPDATE with concurrent exposure check",
+        "Partner ID is returned with status UPDATED and new credit limit"
       ],
-      "evidence": "enterprise.PricingConditions (sales.cds)",
+      "evidence": "reviseCreditLimit function in master-data.js, enterprise.BusinessPartners entity",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "enterprise/db/sales.cds"
+        "enterprise/srv/lib/business/master-data.js",
+        "enterprise/db/master.cds"
       ],
       "folders": [
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/srv/lib/business"
       ]
     },
     {
-      "id": "process-return",
-      "title": "Process a customer return",
-      "actor": "Customer service representative",
-      "description": "A customer service representative records a return of previously delivered goods against a sales order.",
+      "id": "block-partner",
+      "title": "Block or unblock business partners",
+      "actor": "Master Data Administrator",
+      "description": "Master data administrators block or unblock business partners to prevent or allow transactions with them based on business decisions.",
       "steps": [
-        "Customer requests a return for a delivered order",
-        "Return record is created against the order/delivery",
-        "Return status is tracked to resolution"
+        "Administrator blocks or unblocks business partner with reason",
+        "System validates blocked is boolean and reason is provided",
+        "Partner blocked flag is updated",
+        "Partner ID is returned with status BLOCKED or ACTIVE and reason detail"
       ],
-      "evidence": "enterprise.Returns (sales.cds)",
+      "evidence": "blockPartner function in master-data.js, enterprise.BusinessPartners entity",
+      "evidenceLevel": "source-implemented",
       "files": [
-        "enterprise/db/sales.cds"
+        "enterprise/srv/lib/business/master-data.js",
+        "enterprise/db/master.cds"
       ],
       "folders": [
-        "enterprise/db"
+        "enterprise/db",
+        "enterprise/srv/lib/business"
       ]
+    },
+    {
+      "id": "source-review-pricing",
+      "title": "Maintain and quote effective-dated prices",
+      "actor": "Pricing Manager",
+      "description": "Maintain company/customer/material prices with validated date ranges and no overlapping periods, then quote an effective price for a requested date and quantity.",
+      "steps": [
+        "Validate organization, amount and calendar dates",
+        "Reject overlapping customer/material/currency price periods",
+        "Select the effective record and calculate an exact-money quote"
+      ],
+      "evidence": "maintainPrice and quotePrice",
+      "files": [
+        "enterprise/srv/lib/business/pricing.js"
+      ],
+      "evidenceLevel": "source-implemented",
+      "origin": "source-review"
+    },
+    {
+      "id": "source-review-returns",
+      "title": "Authorize and receive customer returns",
+      "actor": "Customer Service Representative",
+      "description": "Authorize bounded quantities against an invoiced order, then receive the return with restock or scrap disposition and create a credit note with cumulative tax allocation. This does not issue a cash refund.",
+      "steps": [
+        "Validate invoice ownership and remaining returnable quantities",
+        "Authorize return lines",
+        "Inspect and receive the return with restock or scrap disposition",
+        "Create the credit note without over-crediting invoice tax"
+      ],
+      "evidence": "authorizeReturn and receiveReturn",
+      "files": [
+        "enterprise/srv/lib/business/returns.js"
+      ],
+      "evidenceLevel": "source-implemented",
+      "origin": "source-review"
+    },
+    {
+      "id": "source-review-picking",
+      "title": "Assign and confirm warehouse picking",
+      "actor": "Warehouse Supervisor",
+      "description": "Assign one picking task to an actor for an order reservation and require that actor to confirm the exact quantity before shipment.",
+      "steps": [
+        "Assign an existing reservation to a warehouse actor",
+        "Reject duplicate assignment for that reservation",
+        "Confirm the assigned quantity with the assigned actor",
+        "Block shipment while assigned picking remains incomplete"
+      ],
+      "evidence": "assignPicking and confirmPicking; shipOrder picking guard",
+      "files": [
+        "enterprise/srv/lib/business/warehouse.js"
+      ],
+      "evidenceLevel": "source-implemented",
+      "origin": "source-review"
     }
-  ]
+  ],
+  "analysisEvidence": {
+    "status": "implementation-refined",
+    "scope": "model-inferred-from-source",
+    "runtimeVerified": false,
+    "version": 4
+  },
+  "sourceReview": {
+    "method": "source-review-after-model-generation",
+    "originalReportSha256": "ef64766aa1710f122f56b3ef98dfffac4852f4aa3046c6d5bada91207af17c2e",
+    "corrections": 9,
+    "addedCases": 3,
+    "runtimeVerified": false
+  }
 }

@@ -20,7 +20,7 @@ flowchart LR
   CDS --> T
 ```
 
-The CAP core has 36 persisted domain entities across master data, sales, supply, finance, and operations. Three services separate order operations, purchasing visibility, and financial posting. Company attributes govern order, stock, incident and journal operations. The application is single-tenant with multiple company codes; it is not an implemented SaaS tenant-isolation solution.
+The CAP core separates master data, sales, purchasing, quality, production, inventory, logistics, billing, pricing, returns, warehouse and integration commands into typed services. The model includes business command receipts, external identifiers, audit records and leased outbox events. Company attributes govern order, stock, incident and journal operations. The application is single-tenant with multiple company codes; it is not an implemented SaaS tenant-isolation solution.
 
 Order release checks authorization, command identity, revision, customer, credit and inventory; it creates reservations, a credit decision, an audit record and an integration event in the same database transaction. Failed later steps roll back earlier updates. Commands provide retry deduplication. Journal posting sums integer minor units and refuses unbalanced or mixed-currency entries.
 
@@ -28,4 +28,6 @@ Native HANA analytics has a separate HDI container and explicit SQLScript inputs
 
 The ABAP folder provides a distinct operational implementation and repository export examples. It is useful for source exploration alongside the CAP extension; these are not two writers sharing one physical database. DDIC activation and standard type resolution require SAP. The service projection uses DCL for read access; it does not invent an activated endpoint.
 
-Explore the original legacy `src/` alongside `enterprise/` to compare direct-table ABAP patterns with the newer CAP/HANA extension architecture.
+The `src/domain/` ABAP policies and `enterprise/abap/analytics/` reducers execute in the ABAP transpiler tests. The target replaces the qualified analytics subset with generated SQLScript/AMDP and retains exact source copies only for validation. The CAP workflows are preserved; they are not falsely reported as ABAP-to-HANA migrations.
+
+The external settlement worker reconciles a scoped SQL extract with bank CSV in the source. Its generated target obtains the same invoice contract through authenticated OData, using bounded endpoint-safe pagination and retries. Tests compare numeric and serialized reconciliation outputs.
