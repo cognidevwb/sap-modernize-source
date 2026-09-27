@@ -1,20 +1,19 @@
-# SAP ECC 6.0 Modernization Source - Enterprise Scale
+# SAP modernization source — structural-analysis demo
 
-**100-file SAP custom code base** demonstrating S/4HANA Clean Core transformation
+A synthetic legacy-style ABAP example for exploring a modernization candidate. This repository is a demo fixture, not an export from a running ECC system.
 
-## Domains (10)
-- Order-to-Cash (15 files) - CRITICAL
-- Procure-to-Pay (15 files) - CRITICAL  
-- Financial Accounting (10 files) - HIGH
-- Inventory Management (10 files) - HIGH
-- Master Data (8 files) - MEDIUM
-- Pricing & Conditions (7 files) - MEDIUM
-- Logistics (7 files) - MEDIUM
-- Production Planning (5 files) - LOW
-- Quality Management (5 files) - LOW
-- Cross-Cutting Utilities (8 files) - LOW
-- Custom Tables (10 DDL files)
+## Explore in CogniDev
 
-## Clean Core Violations: 47
-## S/4HANA Readiness: 32%
-## Migration Effort: 18 months
+Open this folder and choose **Understand**. Structural analysis runs automatically; no separate SAP playbook needs to be started. Open the **SAP** subsection for smaller cards covering classes, data entities, dependencies, database access, functional areas, transactions, and coverage. **Source files & tags** retains source-folder groups and parsed symbol types; functional-area inferences are labeled separately from observed facts.
+
+- 90 ABAP source files across ten business areas.
+- Examples of direct database access, including MARD and VBAK.
+- 10 illustrative custom-table DDL files in `database/`. Their `.ddl` format is not consumed by the current SAP export adapter; inspect them as source files.
+
+Inspect classes, routines, database accesses, and source links. Compare the structure with `sap-modernize-target`. SAP standard objects and omitted declarations can remain unresolved.
+
+Analysis artifacts are generated locally and are not committed to this repository.
+
+## Scope
+
+This fixture does not establish a readiness percentage, Clean Core compliance score, migration effort, or runtime correctness. Those require separate assessments and SAP-system evidence. Static analysis coverage is partial.
